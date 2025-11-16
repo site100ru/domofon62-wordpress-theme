@@ -1372,7 +1372,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 
-#play-circle {
+/* #play-circle {
 	width: 35%;
 	height: 35%;
 	background: url(../img/ico/play-circle.png) no-repeat;
@@ -1381,9 +1381,9 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 	top: 33%;
     left: 40%;
 	z-index: 100;
-}
+} */
 
-#stop-circle {
+/* #stop-circle {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1395,21 +1395,23 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 	font-size: 50px;
 	cursor: pointer;
 	transition: .25;
-}
+} */
 
-#stop-circle {
-	width: 19%;
-	aspect-ratio: 1;
+#stop {
+    max-width: 50px;
+    max-height: 75px;
+    width: 100%;
+    height: 100%;
 	background: url(../img/ico/video-stop-button-ico.svg) no-repeat;
 	background-size: contain;
 	position: absolute;
-	top: 34%;
-    left: 22%;
+	bottom: 25px;
+    right: 25px;
 	cursor: pointer;
 	transition: .25s;
 }
 
-#stop-circle:hover {
+#stop:hover {
 	background: url(../img/ico/video-stop-button-ico-hover.svg) no-repeat;
 	background-size: contain;
 	position: absolute;
@@ -1418,15 +1420,19 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 #play {
-	width: 19%;
-	aspect-ratio: 1;
-	background: url(../img/ico/video-play-button-ico.svg) no-repeat;
-	background-size: contain;
-	position: absolute;
-	top: 34%;
-    left: 22%;
-	cursor: pointer;
-	transition: .25s;
+    max-width: 179px;
+    max-height: 125px;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ico/video-play-button-ico.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: .25s;
+
 }
 
 #play:hover {
@@ -1442,6 +1448,22 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
         hyphens: auto; /* Включает автоматический перенос по слогам */
         word-wrap: break-word; /* Обеспечивает перенос длинных слов на новую строку, если необходимо */
     }
+
+    #stop {
+        max-width: 30px;
+        max-height: 60px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #play {
+        max-width: 72px;
+        max-height: 50px;
+    }
+}
+
+.section-video {
+    padding-bottom: 60px;
 }
 
 .second-section-home .product-cat-card {
