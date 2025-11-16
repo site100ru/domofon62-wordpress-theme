@@ -118,24 +118,20 @@
 								<!-- <source src="header-bg.webm" type='video/webm; codecs="vp8, vorbis"'> -->
 							</video>
 
-							<div id="play-circle">
-                                <div id="play" onclick="play();"></div>
-							</div>
-							<div id="stop-circle" style="display: none;">
-                                <div id="stop" onclick="pause();"></div>
-							</div>
+                            <div id="play" onclick="play();"></div>
+                            <div id="stop" onclick="pause();" style="display: none;"></div>
 
                             <script>
                                 function play() {
                                     document.getElementById("video-player").play();
-                                    document.getElementById("play-circle").style.display = "none";
-                                    document.getElementById("stop-circle").style.display = "flex";
+                                    document.getElementById("play").style.display = "none";
+                                    document.getElementById("stop").style.display = "flex";
                                 }
 
                                 function pause() {
                                     document.getElementById("video-player").pause();
-                                    document.getElementById("stop-circle").style.display = "none";
-                                    document.getElementById("play-circle").style.display = "flex";
+                                    document.getElementById("stop").style.display = "none";
+                                    document.getElementById("play").style.display = "flex";
                                 }
                             </script>
 

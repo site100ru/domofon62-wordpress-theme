@@ -1397,20 +1397,30 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 	transition: .25;
 }
 
-#stop-circle:hover {
-	color: white;
+#stop-circle {
+	width: 19%;
+	aspect-ratio: 1;
+	background: url(../img/ico/video-stop-button-ico.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 34%;
+    left: 22%;
+	cursor: pointer;
+	transition: .25s;
 }
 
-#stop-circle i {
+#stop-circle:hover {
+	background: url(../img/ico/video-stop-button-ico-hover.svg) no-repeat;
+	background-size: contain;
 	position: absolute;
-	right: 5%;
-	bottom: 5%;
+	cursor: pointer;
+	transition: .25s
 }
 
 #play {
 	width: 19%;
 	aspect-ratio: 1;
-	background: url(../img/ico/play-border.png) no-repeat;
+	background: url(../img/ico/video-play-button-ico.svg) no-repeat;
 	background-size: contain;
 	position: absolute;
 	top: 34%;
@@ -1420,7 +1430,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 #play:hover {
-	background: url(../img/ico/play-blue.svg) no-repeat;
+	background: url(../img/ico/video-play-button-ico-hover.svg) no-repeat;
 	background-size: contain;
 	position: absolute;
 	cursor: pointer;
