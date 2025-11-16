@@ -1371,64 +1371,60 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
     position: relative;
 }
 
+
 #play-circle {
-    max-width: 250px;
-    aspect-ratio: 1;
-    width: 100%;
-    height: auto;
-    background: rgba(169, 169, 169, 0.5); /* серовато-прозрачный цвет */
-    border-radius: 50%; /* для круглой формы */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    display: flex;
-    justify-content: center; /* Выравнивание по горизонтали */
-    align-items: center; /* Выравнивание по вертикали */
-}
-
-@media (max-width: 768px) {
-    #play-circle {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 568px) {
-    #play-circle {
-        max-width: 100px;
-    }
+	width: 35%;
+	height: 35%;
+	background: url(../img/ico/play-circle.png) no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 33%;
+    left: 40%;
+	z-index: 100;
 }
 
 #stop-circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 999;
-    display: none;
-    cursor: pointer;
-    transition: 0.25s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	color: rgba(255,255,255,.25);
+	display: none;
+	font-size: 50px;
+	cursor: pointer;
+	transition: .25;
+}
+
+#stop-circle:hover {
+	color: white;
+}
+
+#stop-circle i {
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
 }
 
 #play {
-    width: 35%;
-    height: 35%;
-    background: url(../img/ico/play.png) no-repeat;
-    background-size: contain;
-    cursor: pointer;
-    transition: 0.25s;
+	width: 19%;
+	aspect-ratio: 1;
+	background: url(../img/ico/play-border.png) no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 34%;
+    left: 22%;
+	cursor: pointer;
+	transition: .25s;
 }
 
 #play:hover {
-    background: url(../img/ico/play-accent.png) no-repeat;
-    background-size: contain;
-}
-
-#stop-circle #stop {
-    width: 100%;
-    height: 100%;
+	background: url(../img/ico/play-blue.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	cursor: pointer;
+	transition: .25s
 }
 
 @media (max-width: 768px) {
