@@ -1642,7 +1642,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			echo '<td>';
 			echo '<label>';
 			echo '<input type="checkbox" name="show_all_button" value="1" ' . checked(1, $show_all_button, false) . '> ';
-			echo 'Показывать кнопку "Смотреть еще примеры" по умолчанию';
+			echo 'Показывать кнопку "Смотреть все работы" по умолчанию';
 			echo '</label>';
 			echo '</td>';
 			echo '</tr>';
@@ -1792,7 +1792,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 										
 										<?php if ($show_button) : ?>
 												<div class="text-center mt-4">
-														<a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть еще примеры</a>
+														<a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть все работы</a>
 												</div>
 										<?php endif; ?>
 							</div>
