@@ -1981,3 +1981,13 @@ add_action('all', function($hook) {
     }
 });*/
 /* END ПРИНУДИТЕЛЬНАЯ ГЕНЕРАЦИЯ ЛАТИНСКИХ URL ДЛЯ ТОВРОВ ПРИ СОХРАНЕНИИ */
+
+
+// КЛАССЫ В BODY_CLASS
+add_filter('body_class', 'custom_body_classes');
+
+function custom_body_classes($classes) {
+    // Добавить класс для всех страниц
+    $classes[] = 'b-new-year';
+    return $classes;
+}

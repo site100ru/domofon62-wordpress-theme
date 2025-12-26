@@ -1497,3 +1497,68 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 .container-card .card {
     height: 100%;
 }
+
+
+/*** NEW YEAR ***/
+/*
+a.navbar-brand.new-year {
+    position: relative;
+}
+
+a.navbar-brand.new-year:before {
+    content: '';
+    background: url(https://unistyle-spb.ru/wp-content/uploads/2022/12/shapka.png) no-repeat;
+    width: 50px;
+    height: 63px;
+    z-index: 9999;
+    position: absolute;
+    background-size: contain;
+    left: -19px;
+    top: -14px;
+}*/
+body.b-new-year {
+    position: relative;
+}
+body.b-new-year:before {
+    position: fixed;
+    background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-footer-banner.png) repeat-x;
+    content: '';
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background-size: contain;
+}
+/*a.navbar-brand.new-year img {
+    margin-top: -20px;
+}*/
+
+
+@media (max-width: 1300px){
+    body.b-new-year:before {
+		background-size: cover;
+		}
+		a.navbar-brand.new-year:before {
+		width: 47px;
+		left: -21px;
+		top: -12px;
+	}
+}
+
+/*
+@media (max-width: 980px) {
+	a.navbar-brand.new-year:before {
+		width: 44px;
+		left: -19px;
+		top: -12px;
+	}
+}
+@media (max-width: 570px) {
+	a.navbar-brand.new-year:before {
+		width: 40px;
+		left: -14px;
+		top: -9px;
+	}
+}
+/*** END NEW YEAR ***/
