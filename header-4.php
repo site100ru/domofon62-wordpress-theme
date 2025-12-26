@@ -214,7 +214,7 @@
 		<div class="col-md-6 col-xl-5">
 			<div class="d-flex align-items-center py-md-3">
 				<a href="https://domofon62.ru/">
-					<a href="https://domofon62.ru/" class="custom-logo-link" rel="home" aria-current="page">
+					<a href="https://domofon62.ru/" class="custom-logo-link new-year" rel="home" aria-current="page">
 						<img width="185" height="60" src="https://domofon62.ru/wp-content/uploads/2023/02/logo-header.svg" class="custom-logo" alt="Логотип в шапке" decoding="async" />
 					</a>
 				</a>
