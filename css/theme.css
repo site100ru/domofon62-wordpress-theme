@@ -1500,14 +1500,13 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 
 
 /*** NEW YEAR ***/
-/*
 a.navbar-brand.new-year {
     position: relative;
 }
 
 a.navbar-brand.new-year:before {
     content: '';
-    background: url(https://unistyle-spb.ru/wp-content/uploads/2022/12/shapka.png) no-repeat;
+    background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-cap.png) no-repeat;
     width: 50px;
     height: 63px;
     z-index: 9999;
@@ -1515,10 +1514,12 @@ a.navbar-brand.new-year:before {
     background-size: contain;
     left: -19px;
     top: -14px;
-}*/
+}
+
 body.b-new-year {
     position: relative;
 }
+
 body.b-new-year:before {
     position: fixed;
     background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-footer-banner.png) repeat-x;
@@ -1530,10 +1531,10 @@ body.b-new-year:before {
     z-index: 3;
     background-size: contain;
 }
-/*a.navbar-brand.new-year img {
-    margin-top: -20px;
-}*/
 
+a.navbar-brand.new-year img {
+    margin-top: -20px;
+}
 
 @media (max-width: 1300px){
     body.b-new-year:before {
@@ -1546,7 +1547,6 @@ body.b-new-year:before {
 	}
 }
 
-/*
 @media (max-width: 980px) {
 	a.navbar-brand.new-year:before {
 		width: 44px;
