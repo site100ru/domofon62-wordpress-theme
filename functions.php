@@ -1959,7 +1959,7 @@ function manual_slug_fix_check() {
     }
 }
 
-// 6. Улучшенная диагностика - логируем ВСЕ хуки связанные с постами
+/* 6. Улучшенная диагностика - логируем ВСЕ хуки связанные с постами
 add_action('all', function($hook) {
     $post_hooks = ['post_', 'save_', 'wp_', 'updated_', 'added_', 'edited_'];
     $is_post_hook = false;
@@ -1979,5 +1979,5 @@ add_action('all', function($hook) {
             FILE_APPEND | LOCK_EX
         );
     }
-});
+});*/
 /* END ПРИНУДИТЕЛЬНАЯ ГЕНЕРАЦИЯ ЛАТИНСКИХ URL ДЛЯ ТОВРОВ ПРИ СОХРАНЕНИИ */
