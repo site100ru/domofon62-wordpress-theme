@@ -175,5 +175,7 @@
 </script>
 <!-- End send YM target -->
   
+<?php include get_template_directory() . '/inc/snowflake/snowflake.php'; ?>
+
 </body>
 </html>
