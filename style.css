@@ -2327,10 +2327,11 @@ select.orderby {
 
 .happy-ny-container p {
 	font-family: var(--font-gilroy-regular);
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .happy-ny-container p span {
+    font-weight: 600;
 	font-family: Gilroy-Semibold;
 }
 /* End Happy NY container */
