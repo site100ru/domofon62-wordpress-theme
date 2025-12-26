@@ -19,7 +19,7 @@ if (is_admin()) {
     .snowflake {
         position: fixed;
         top: -10px;
-        color: #fff;
+        color: #1454ccff;
         font-size: 1em;
         pointer-events: none;
         z-index: 9999;
