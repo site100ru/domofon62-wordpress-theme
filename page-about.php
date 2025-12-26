@@ -111,34 +111,42 @@
 				<div class="row">
 					<div class="col">
 						<div style="position: relative">
-							<video id="video-player" poster="<?php echo get_template_directory_uri(); ?>/img/video-poster-img.jpg" playsinline="playsinline" loop="loop">
+							<video id="video-player" poster="<?php echo get_template_directory_uri(); ?>/img/video-poster-img-new.jpg" playsinline loop>
 								<!-- muted="muted" autoplay="autoplay" -->
 								<!-- <source src="header-bg.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
-								<source  src="<?php echo get_template_directory_uri(); ?>/video/video.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+								<source  src="<?php echo get_template_directory_uri(); ?>/video/video-2.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
 								<!-- <source src="header-bg.webm" type='video/webm; codecs="vp8, vorbis"'> -->
 							</video>
-							<div id="play-circle">
-								<div id="play" onclick="play();"></div>
-							</div>
-							<div id="stop-circle">
-								<div id="stop" onclick="pause();"></div>
-							</div>
+
+                            <div id="play" onclick="play();"></div>
+                            <div id="stop" onclick="pause();" style="display: none;"></div>
+
+                            <script>
+                                function play() {
+                                    document.getElementById("video-player").play();
+                                    document.getElementById("play").style.display = "none";
+                                    document.getElementById("stop").style.display = "flex";
+                                }
+
+                                function pause() {
+                                    document.getElementById("video-player").pause();
+                                    document.getElementById("stop").style.display = "none";
+                                    document.getElementById("play").style.display = "flex";
+                                }
+                            </script>
+
+                            <!-- <video 
+                                id="video-player" 
+                                poster="<?php echo get_template_directory_uri(); ?>/img/video-poster-img.jpg"  
+                                playsinline 
+                                loop 
+                                muted 
+                                controls>
+                                <source src="<?php echo get_template_directory_uri(); ?>/video/video.mp4" type="video/mp4"/>
+                            </video> -->
 						</div>
 					</div>
 				</div>
-				<script>
-					function play() {
-						document.getElementById("video-player").play();
-						document.getElementById("play-circle").style.display = "none";
-						document.getElementById("stop-circle").style.display = "block";
-					}
-
-					function pause() {
-						document.getElementById("video-player").pause();
-						document.getElementById("stop-circle").style.display = "none";
-						document.getElementById("play-circle").style.display = "block";
-					}
-				</script>
 			</div>
 		</div>
 	</div>

@@ -1933,7 +1933,7 @@ span.wpcf7-list-item input {
 }
 
 .h3-title {
-	font-family: TTNorms-Medium;
+	font-family: 'ALSSchlangeSansBold';
 	font-size: 18px;
 	margin-bottom: 20px;
 	font-weight: 700;
@@ -2007,7 +2007,7 @@ span.wpcf7-list-item input {
 
 .card-description {
 	color: #212121;
-	font-family: TTNorms-Regular;
+	font-family: var(--font-gilroy-regular);
 	font-size: 16px;
 	margin-bottom: 0;
 }
@@ -2075,7 +2075,7 @@ span.wpcf7-list-item input {
 }
 
 .accordion-button {
-	font-family: TTNorms-Medium;
+	font-family: Gilroy-Meduim;
 	font-size: 16px;
 	color: #0D2A79;
 }

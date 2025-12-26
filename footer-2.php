@@ -35,13 +35,12 @@
 				?>
 			</div>
 			
-
 			<div class="col-12 col-md-6 col-lg-3 text-start text-lg-end footer-end">
 				<div class="">
-					<p class="chasy pt-2 fw-bold mb-0 lh-1">Служба поддержки:</p>
+					<p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
 					<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
 					<p class="tel-header pt-1 mb-0">
-						<a href="tel:84912255046">8 (4912) 25-50-46</a>
+						<a href="tel:84912202526">8 (4912) 20-25-26</a>
 					</p>
 					<a
 					   href="tg://resolve?domain=RDK62"
@@ -99,9 +98,9 @@
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
+                        <h2 class="product-modal-title" id="productModalLabel">Заказ товара</h2>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<h2 class="product-modal-title" id="productModalLabel">Заказ товара</h2>
 					<div class="modal-body">
 						<h5 class="text-center product-modal-name"><strong>Наименование продукта:</strong></h5>
 						<p id="modalProduct" class="text-center">
@@ -138,9 +137,9 @@
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
+                        <h2 class="product-modal-title" id="serviceModalLabel">Заказ услуги</h2>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<h2 class="product-modal-title" id="serviceModalLabel">Заказ услуги</h2>
 					<div class="modal-body">
 						<h5 class="text-center product-modal-name"><strong>Наименование услуги:</strong></h5>
 						<p class="text-center"><?php echo the_title(); ?></p>

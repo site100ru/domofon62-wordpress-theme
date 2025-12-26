@@ -123,7 +123,7 @@ h2.wp-block-heading {
 .action-btn {
 	/* display: inline-block; */
 	max-width: 219px;
-	height: 100%;
+	/* height: 100%; */
 	font-family: var(--font-gilroy-regular);
 	text-decoration: none;
 	font-weight: 700;
@@ -139,6 +139,18 @@ h2.wp-block-heading {
 	line-height: 1;
 	border: none;
 	border-color: var(--secondary-pale-blue);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+@media (max-width: 568px) {
+    .action-btn {
+        padding: 22px 20px 18px 20px;
+    }
 }
 
 .action-btn:hover {
@@ -661,6 +673,8 @@ nav li > ul {
 /* SECTION GET */
 .block-get {
 	width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Строчный способ
@@ -708,7 +722,7 @@ nav li > ul {
 }
 
 .example-and-price-section h5 {
-	font-family: 'TT Norms';
+	/* font-family: 'TT Norms'; */
 	font-weight: bold;
 	font-size: 16px;
 	letter-spacing: 2px;
@@ -1349,4 +1363,137 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 
 .row-card-section .card {
 	height: 100%;
+}
+
+#video-player {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+/* #play-circle {
+	width: 35%;
+	height: 35%;
+	background: url(../img/ico/play-circle.png) no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 33%;
+    left: 40%;
+	z-index: 100;
+} */
+
+/* #stop-circle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	color: rgba(255,255,255,.25);
+	display: none;
+	font-size: 50px;
+	cursor: pointer;
+	transition: .25;
+} */
+
+#stop {
+    max-width: 50px;
+    max-height: 75px;
+    width: 100%;
+    height: 100%;
+	background: url(../img/ico/video-stop-button-ico.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	bottom: 25px;
+    right: 25px;
+	cursor: pointer;
+	transition: .25s;
+}
+
+#stop:hover {
+	background: url(../img/ico/video-stop-button-ico-hover.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	cursor: pointer;
+	transition: .25s
+}
+
+#play {
+    max-width: 179px;
+    max-height: 125px;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ico/video-play-button-ico.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: .25s;
+
+}
+
+#play:hover {
+	background: url(../img/ico/video-play-button-ico-hover.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	cursor: pointer;
+	transition: .25s
+}
+
+@media (max-width: 768px) {
+    h2.woocommerce-loop-category__title {
+        hyphens: auto; /* Включает автоматический перенос по слогам */
+        word-wrap: break-word; /* Обеспечивает перенос длинных слов на новую строку, если необходимо */
+    }
+
+    #stop {
+        max-width: 30px;
+        max-height: 60px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    #play {
+        max-width: 72px;
+        max-height: 50px;
+    }
+}
+
+.section-video {
+    padding-bottom: 60px;
+}
+
+.second-section-home .product-cat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.second-section-home .product-cat-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.second-section-home .woocommerce-loop-category__title {
+    margin-top: auto; 
+}
+
+.modal-header h2 {
+    text-align: start;
+}
+
+.modal-content .modal-header {
+    align-items: flex-start;
+}
+
+.modal-header button.btn-close {
+    margin-top: 4px;
+}
+
+.container-card .card {
+    height: 100%;
 }

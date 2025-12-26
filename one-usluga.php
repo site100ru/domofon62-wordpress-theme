@@ -185,9 +185,9 @@ endif;
   <div class="popups modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
+        <h2 class="product-modal-title" id="product2ModalLabel">Заказ товара</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <h2 class="product-modal-title" id="product2ModalLabel">Заказ товара</h2>
       <div class="modal-body">
         <h5 class="text-center product-modal-name"><strong>Наименование продукта:</strong></h5>
         <p class="text-center">
