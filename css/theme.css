@@ -1517,7 +1517,7 @@ a.custom-logo-link.new-year:before {
 }
 
 a.custom-logo-link.new-year img {
-    margin-top: -20px;
+    margin-top: auto;
 }
 
 @media (max-width: 980px) {
