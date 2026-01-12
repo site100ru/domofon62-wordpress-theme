@@ -298,7 +298,7 @@ $('#card-doors').on('click', function() {
 
 <section class="second-section-home">
     <div class="container pb-2 pb-md-5">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col happy-ny-container" style="padding-top: 80px;">
 				<div class="bg-white rounded" style="overflow: hidden;">
 					<div class="row">
@@ -318,7 +318,7 @@ $('#card-doors').on('click', function() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="row">
 			<div class="col">
 				
