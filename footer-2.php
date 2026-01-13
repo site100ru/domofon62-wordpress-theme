@@ -238,7 +238,7 @@
 
 					// Если прошло более 1 часа (3600000 миллисекунд) с последнего закрытия
 					const now = new Date().getTime();
-					return now - parseInt(lastClosed) > 3600000;
+					return now - parseInt(lastClosed) > 10800000; // 3600000 * 3
 				}
 
 				// Показываем форму если нужно
