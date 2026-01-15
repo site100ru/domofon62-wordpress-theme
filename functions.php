@@ -1292,7 +1292,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 					
 					// Получаем остальные данные
 					$comments  = 'Имя лида: '.$posted_data['text-306'].'.<br>';
-					$comments .= 'Наименование товара: '.$posted_data['text-547'];
+                    $comments .= 'Наименование товара: ' . ( $posted_data['product-title'] ?? '' );
 					
 					/* Подготовка данных для отправки в Битрикс с помощью вебхука */
 					$webhook_data = array(
