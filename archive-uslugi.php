@@ -67,44 +67,44 @@
 			<div class="col-12 col-md-6 col-lg-3 serv-height" style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/dom-servse.jpg');">
 				<div class="serv-content">
 					<img src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg" alt="Установка домофонов" class="ps-3 pb-2" />
-					<a href="https://domofon62.ru/uslugi/domofony/">
+					<a href="https://domofon62.ru/uslugi-cat/domofony/">
 						<div class="serv-title ps-3 pe-3 mb-3">Установка домофонов и видеодомофонов</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/uslugi/domofony/" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/usluguslugi-cati/domofony/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3 serv-height" style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/vid-servse.jpg');">
 				<div class="serv-content">
 					<img src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg" alt="Монтаж видеонаблюдения в Рязани" class="ps-3 pb-2" />
-					<a href="https://domofon62.ru/uslugi/videonablyudenie/">
+					<a href="https://domofon62.ru/uslugi-cat/videonablyudenie/">
 						<div class="serv-title ps-3 pe-3 mb-3"><br class="d-none d-md-block">Установка видеонаблюдения</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/uslugi/videonablyudenie/" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 col-lg-3 serv-height" style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/fence-servse.jpg');">
 				<div class="serv-content">
 					<img src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg" alt="Установка автоматических ворот" class="ps-3 pb-2" />
-					<a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy">
+					<a href="https://domofon62.ru/uslugi-cat/vorota-i-shlagbaumy">
 						<div class="serv-title ps-3 pe-3 mb-3">Установка автоматических ворот и шлагбаумов</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/uslugi-cat/vorota-i-shlagbaumy" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div> 
 			<div class="col-12 col-md-6 col-lg-3 serv-height" style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/skd-servse.jpg');">
 				<div class="serv-content">
 					<img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg" alt="Установка СКД" class="ps-3 pb-2" />
-					<a href="https://domofon62.ru/uslugi/skud/">
+					<a href="https://domofon62.ru/uslugi-cat/skud/">
 						<div class="serv-title ps-3 pe-3 mb-3">Установка систем контроля доступа и учета рабочего времени.</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/uslugi/skud/" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div>  
