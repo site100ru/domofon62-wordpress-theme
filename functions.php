@@ -257,8 +257,8 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			'public' => true,
 			'has_archive' => 'uslugi', // Архив по адресу /uslugi/
 			'rewrite'      => array(
-			      	'slug' => 'uslugi/%uslugi-cat%', // Базовый URL для записей (/uslugi/%категория%/%запись%/)
-			  'with_front' => false, // Убрать префикс (например, /blog/)
+                'slug' => 'uslugi', // Базовый URL для записей (/uslugi/%категория%/%запись%/)
+			    'with_front' => false, // Убрать префикс (например, /blog/)
 			),
 			'hierarchical' => false,
 			'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
@@ -269,17 +269,17 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 	}
 	
 	//Чтобы WordPress включал категорию в URL (/uslugi/категория/запись/), добавьте фильтр:
-	function custom_post_type_permalink($permalink, $post, $leavename) {
-		if ($post->post_type == 'uslugi') {
-			$terms = get_the_terms($post->ID, 'uslugi-cat');
-			if ($terms && !is_wp_error($terms)) {
-				$term_slug = current($terms)->slug;
-				$permalink = str_replace('%uslugi-cat%', $term_slug, $permalink);
-			}
-		}
-		return $permalink;
-	}
-	add_filter('post_type_link', 'custom_post_type_permalink', 10, 3);
+	// function custom_post_type_permalink($permalink, $post, $leavename) {
+	// 	if ($post->post_type == 'uslugi') {
+	// 		$terms = get_the_terms($post->ID, 'uslugi-cat');
+	// 		if ($terms && !is_wp_error($terms)) {
+	// 			$term_slug = current($terms)->slug;
+	// 			$permalink = str_replace('%uslugi-cat%', $term_slug, $permalink);
+	// 		}
+	// 	}
+	// 	return $permalink;
+	// }
+	// add_filter('post_type_link', 'custom_post_type_permalink', 10, 3);
 	
 
 	function custom_breadcrumbs() {
