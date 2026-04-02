@@ -282,6 +282,10 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 	// add_filter('post_type_link', 'custom_post_type_permalink', 10, 3);
 	
 
+    add_action('init', function() {
+        flush_rewrite_rules();
+    });
+
 	function custom_breadcrumbs() {
 		$sep = ' » ';
 		echo '<div class="breadcrumbs">';
