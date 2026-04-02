@@ -195,7 +195,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			'public' => true,
 			'hierarchical' => true, // true — как категории, false — как метки
 			'rewrite' => array(
-				'slug' => 'uslugi', // URL будет /uslugi/категория/
+				'slug' => 'uslugi-cat', // URL будет /uslugi/категория/
 				'with_front' => false,
 			),
 		));
