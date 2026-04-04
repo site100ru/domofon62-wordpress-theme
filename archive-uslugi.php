@@ -71,7 +71,7 @@
 						<div class="serv-title ps-3 pe-3 mb-3">Установка домофонов и видеодомофонов</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/usluguslugi-cati/domofony/" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/uslugi-cat/domofony/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 						<div class="serv-title ps-3 pe-3 mb-3">Установка автоматических ворот и шлагбаумов</div>
 					</a> 
 					<div class="ps-3">
-						<a href="https://domofon62.ru/uslugi-cat/vorota-i-shlagbaumy" class="serv-page-btn">Узнать подробнее</a>
+						<a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 				</div>
 			</div> 
