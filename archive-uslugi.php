@@ -89,7 +89,7 @@
 			<div class="col-12 col-md-6 col-lg-3 serv-height" style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/fence-servse.jpg');">
 				<div class="serv-content">
 					<img src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg" alt="Установка автоматических ворот" class="ps-3 pb-2" />
-					<a href="https://domofon62.ru/uslugi-cat/vorota-i-shlagbaumy">
+					<a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/">
 						<div class="serv-title ps-3 pe-3 mb-3">Установка автоматических ворот и шлагбаумов</div>
 					</a> 
 					<div class="ps-3">
