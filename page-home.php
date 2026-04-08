@@ -295,9 +295,9 @@ $('#card-doors').on('click', function() {
     </div>
 </section>
 
-
+<!-- 
 <section class="second-section-home">
-    <div class="container pb-2 pb-md-5">
+    <div class="container pb-2 pb-md-5"> -->
 		<!-- <div class="row">
 			<div class="col happy-ny-container" style="padding-top: 80px;">
 				<div class="bg-white rounded" style="overflow: hidden;">
@@ -319,19 +319,19 @@ $('#card-doors').on('click', function() {
 				</div>
 			</div>
 		</div> -->
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col">
 				
 				<h1 class="catalog-goods-h1 text-center text-md-start"><?php echo $title_catalog; ?></h1>
 				
 				<div class="row">
-					<div class="col">
+					<div class="col"> -->
 						<!--p class="catalog-goods-text-under maxw-849 mb-30 col-12 col-md-8 col-lg-9 text-center 	text-md-start"><?php echo $text_cataloga; ?></p-->
-						<p class="catalog-goods-text-under maxw-849 mb-30"><?php echo $text_cataloga; ?></p>
+						<!-- <p class="catalog-goods-text-under maxw-849 mb-30"><?php echo $text_cataloga; ?></p>
 					</div>
-				</div>
+				</div> -->
 				
-			   
+<!-- 			   
 				<?php
 							
 					//if ( is_product_category() ) {
@@ -380,7 +380,7 @@ $('#card-doors').on('click', function() {
 					}
 				//}
 				
-			?>
+			?> -->
 				
 				
 				
@@ -473,10 +473,10 @@ $('#card-doors').on('click', function() {
 					</div>
 				</div><!-- /.row -->
 				
-			</div>
+			<!-- </div>
 		</div>
     </div>
-</section>
+</section> -->
     
 	
 <section>

@@ -64,203 +64,138 @@
 }
 
 @keyframes change {
+	/* === Иконка 1: callback-button-ico (0-25%) === */
 	0% {
 		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
 		background-size: cover;
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
 		transform: rotate(0deg);
 		opacity: 0;
 	}
-	1%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
-		background-position: center;
-		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-		opacity: 1;
-	}
-	24%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
-		background-position: center;
-		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-		opacity: 1;
-	}
-	25%{
+	1% {
 		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+	24% {
+		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+	25% {
+		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-button-ico.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
 		opacity: 0;
 	}
-	26%{
+
+	/* === Иконка 2: phone (26-50%) === */
+	26% {
 		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-phone-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
 		transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		opacity:0;
+		opacity: 0;
 	}
-	27%{
+	27% {
 		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-phone-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
 		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
 		opacity: 1;
 	}
-	49%{
-		background-image:url(../img/messengers-button-img/messengers-button-ico/callback-phone-ico.png);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		opacity: 1;
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-	50%{
+	49% {
 		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-phone-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		opacity: 0;
-	}
-	51%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-whatsapp-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		transform: rotate(0deg);
-		opacity: 0;
-	}
-	52%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-whatsapp-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		opacity: 1;
-		transform: rotate(360deg);
-	}
-	74%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-whatsapp-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		opacity:1;
-		transform: rotate(360deg);
-	}
-	75%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-whatsapp-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		opacity:0;
-	}
-	76%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-telegram-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		opacity: 0;
-	}
-	77%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-telegram-ico.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		-moz-background-size: cover;
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 		opacity: 1;
 	}
-	99%{
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-telegram-ico.svg);
+	50% {
+		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-phone-ico.png);
 		background-position: center;
 		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
 		background-size: cover;
-		-webkit-transform: rotate(360deg);
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+
+	/* === Иконка 3: telegram (51-75%) === */
+	51% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/telegram.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+	52% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/telegram.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+	74% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/telegram.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+	75% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/telegram.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+
+	/* === Иконка 4: max (76-100%) === */
+	76% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+	77% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform: rotate(360deg);
+		opacity: 1;
+	}
+	99% {
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		transform: rotate(360deg);
 		opacity: 1;
 	}
 	100% {
-		background-image: url(../img/messengers-button-img/messengers-button-ico/callback-telegram-ico.svg);
+		background-image: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png);
 		background-position: center;
 		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size :cover;
-		-o-background-size: cover;
 		background-size: cover;
-		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 		opacity: 0;
 	}
@@ -409,5 +344,21 @@
 	-moz-background-size: contain;
 	-webkit-background-size: contain;
 	-o-background-size :contain;
+}
+
+.callback-telegram-button-ico {
+	width: 30px;
+	height: 30px;
+	filter: invert();
+	background: url(https://domofon62.ru/wp-content/uploads/2026/04/telegram.png) center no-repeat;
+	background-size: contain;
+}
+
+.callback-max-button-ico {
+	width: 30px;
+	height: 30px;
+	filter: invert();
+	background: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png) center no-repeat;
+	background-size: contain;
 }
 /*** End messengers button ***/

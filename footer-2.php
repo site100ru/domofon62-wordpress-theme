@@ -165,6 +165,14 @@
 	<div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
 		<a href="tel:+74912202526"><div class="callback-phone-button-ico"></div></a>
 	</div>
+
+    <div id="telegramBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в telegram">
+		<a href="tg://resolve?domain=RDK62bot/"><div class="callback-telegram-button-ico"></div></a>
+	</div>
+
+    <div id="maxBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в Max">
+		<a href="tel:+74912202526"><div class="callback-max-button-ico"></div></a>
+	</div>
 	<!--div id="whatsappBtn" class="callback-whatsapp-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Whatsapp">
 		<a href="whatsapp://send?phone=+79521236612"><div class="callback-whatsapp-button-ico"></div></a>
 	</div-->
@@ -199,68 +207,50 @@
 </script>
 
 
-	<!-- Всплывающая форма Политики конфиденциальности -->
-		<div class="popup-form py-3" id="popupForm">
-			<div class="form-content container">
-				<div class="row justify-content-center align-items-center">
-					<div class="col-md-9">
-						<p class="mb-md-0">
-							На на нашем сайте используются cookie-файлы, в том числе сервисов
-							веб-аналитики. Используя сайт, вы соглашаетесь на <a
-								href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf"
-								target="blank"
-								>обработку персональных данных</a
-							> при помощи cookie-файлов. Подробнее об обработке персональных данных
-							вы можете узнать в <a
-								href="https://domofon62.ru/docs/Privacy-Policy.pdf"
-								target="blank"
-								>Политике конфиденциальности.</a
-							>
-						</p>
-					</div>
-					<div class="col-md-3 text-md-center">
-						<button id="closeBtn" class="btn action-btn">Понятно</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const popupForm = document.getElementById('popupForm');
-				const closeBtn = document.getElementById('closeBtn');
+<!-- Всплывающая форма Политики конфиденциальности -->
+<div class="popup-form form-content py-3" id="popupForm">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-9">
+                <p class="mb-md-0">
+                    Продолжая пользоваться сайтом вы соглашаетесь на <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработку персональных данных</a>
+                    сохраненных в cookie-файлах. Подробнее об обработке персональных данных
+                    в <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">Политике конфиденциальности.</a>
+                </p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <button id="closeBtn" class="btn action-btn">Понятно</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const popupForm = document.getElementById('popupForm');
+        const closeBtn = document.getElementById('closeBtn');
 
-				// Проверяем нужно ли показывать форму
-				function shouldShowPopup() {
-					const lastClosed = localStorage.getItem('popupLastClosed');
+        function shouldShowPopup() {
+            const lastClosed = localStorage.getItem('popupLastClosed');
+            if (!lastClosed) return true;
+            const now = new Date().getTime();
+            return now - parseInt(lastClosed) > 10800000;
+        }
 
-					// Если пользователь никогда не закрывал форму
-					if (!lastClosed) return true;
+        if (shouldShowPopup()) {
+            setTimeout(() => {
+                popupForm.classList.add('active');
+            }, 3000);
+        }
 
-					// Если прошло более 1 часа (3600000 миллисекунд) с последнего закрытия
-					const now = new Date().getTime();
-					return now - parseInt(lastClosed) > 10800000; // 3600000 * 3
-				}
+        function closePopup() {
+            popupForm.classList.remove('active');
+            localStorage.setItem('popupLastClosed', new Date().getTime().toString());
+        }
 
-				// Показываем форму если нужно
-				if (shouldShowPopup()) {
-					setTimeout(() => {
-						popupForm.classList.add('active');
-					}, 3000);
-				}
-
-				// Функция закрытия формы
-				function closePopup() {
-					popupForm.classList.remove('active');
-
-					// Сохраняем время закрытия
-					localStorage.setItem('popupLastClosed', new Date().getTime().toString());
-				}
-
-				// Закрытие по кнопке
-				closeBtn.addEventListener('click', closePopup);
-			});
-		</script>
-		<!-- /Всплывающая форма Политики конфиденциальности -->
+        closeBtn.addEventListener('click', closePopup);
+    });
+</script>
+<!-- /Всплывающая форма Политики конфиденциальности -->
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

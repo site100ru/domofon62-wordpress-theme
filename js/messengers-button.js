@@ -12,28 +12,22 @@ function callbackButtonClick() {
 		document.getElementById('btnIco').style.webkitTransform = "rotate(180deg)";
 		document.getElementById('btnIco').style.transform = "rotate(180deg)";
 		
-		
 		document.getElementById('btnIco').style.backgroundImage = "url(https://domofon62.ru/wp-content/themes/domoftwo/img/messengers-button-img/messengers-button-ico/callback-button-close.png)";
 		document.getElementById('btnIco').style.backgroundPosition = "center";
 		document.getElementById('btnIco').style.backgroundRepeat = "no-repeat";
-		
 		document.getElementById('btnIco').style.webkitBackgroundSize = "cover";
 		document.getElementById('btnIco').style.backgroundSize = "cover";
 		
-		//document.getElementById('formBtn').style.top = "";
-		//document.getElementById('formBtn').style.opacity = "";
-		
+		// Показываем кнопки (раскрытие)
 		document.getElementById('phoneBtn').style.top = "-60px";
 		document.getElementById('phoneBtn').style.opacity = "1";
-		
-		//document.getElementById('whatsappBtn').style.top = "-120px";
-		//document.getElementById('whatsappBtn').style.opacity = "1";
 		
 		document.getElementById('telegramBtn').style.top = "-120px";
 		document.getElementById('telegramBtn').style.opacity = "1";
 		
-		//document.getElementById('telegramBtn').style.top = "-240px";
-		//document.getElementById('telegramBtn').style.opacity = "1";
+		document.getElementById('maxBtn').style.top = "-180px";
+		document.getElementById('maxBtn').style.opacity = "1";
+		
 	} else {
 		document.getElementById('callbackBtn').style.animation = "waves linear 2s infinite";
 		document.getElementById('btnIco').style.animation = "change linear 16s infinite";
@@ -44,24 +38,18 @@ function callbackButtonClick() {
 		document.getElementById('btnIco').style.backgroundImage = "url(https://domofon62.ru/wp-content/themes/domoftwo/img/messengers-button-img/messengers-button-ico/callback-button-ico.png)";
 		document.getElementById('btnIco').style.backgroundPosition = "center";
 		document.getElementById('btnIco').style.backgroundRepeat = "no-repeat";
-		
 		document.getElementById('btnIco').style.webkitBackgroundSize = "cover";
 		document.getElementById('btnIco').style.backgroundSize = "cover";
 		
-		//document.getElementById('formBtn').style.top = "";
-		//document.getElementById('formBtn').style.opacity = "";
-		
+		// Скрываем кнопки (закрытие)
 		document.getElementById('phoneBtn').style.top = "0px";
 		document.getElementById('phoneBtn').style.opacity = "0";
-		
-		//document.getElementById('whatsappBtn').style.top = "0px";
-		//document.getElementById('whatsappBtn').style.opacity = "0";
 		
 		document.getElementById('telegramBtn').style.top = "0px";
 		document.getElementById('telegramBtn').style.opacity = "0";
 		
-		//document.getElementById('telegramBtn').style.top = "0px";
-		//document.getElementById('telegramBtn').style.opacity = "0";
+		document.getElementById('maxBtn').style.top = "0px";
+		document.getElementById('maxBtn').style.opacity = "0";
 	}
 }
 /* End messengers button JS */
