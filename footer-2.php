@@ -165,14 +165,6 @@
 	<div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
 		<a href="tel:+74912202526"><div class="callback-phone-button-ico"></div></a>
 	</div>
-
-    <div id="telegramBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в telegram">
-		<a href="tg://resolve?domain=RDK62"><div class="callback-telegram-button-ico"></div></a>
-	</div>
-
-    <div id="maxBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в Max">
-		<a href="tel:+74912202526"><div class="callback-max-button-ico"></div></a>
-	</div>
 	<!--div id="whatsappBtn" class="callback-whatsapp-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Whatsapp">
 		<a href="whatsapp://send?phone=+79521236612"><div class="callback-whatsapp-button-ico"></div></a>
 	</div-->
