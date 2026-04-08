@@ -266,9 +266,10 @@
 	padding-left: 10px;
 	position: absolute;
 	left: 10px;
-	top: 10px;
+	top: 0px;      
+	opacity: 0;  
 	z-index: 1;
-	transition: .25s;
+	transition: top 0.25s ease, opacity 0.25s ease;
 }
 
 .callback-phone-button:hover {
@@ -323,12 +324,13 @@
 	border-radius: 50%;
 	cursor: pointer;
 	padding-top: 10px;
-	padding-left:10px;
+	padding-left: 10px;
 	position: absolute;
 	left: 10px;
-	top: 10px;
+	top: 0px;
+	opacity: 0; 
 	z-index: 1;
-	transition: .25s;
+	transition: top 0.25s ease, opacity 0.25s ease;
 }
 
 .callback-telegram-button:hover {
@@ -360,5 +362,29 @@
 	filter: invert();
 	background: url(https://domofon62.ru/wp-content/uploads/2026/04/max.png) center no-repeat;
 	background-size: contain;
+}
+
+.callback-phone-button,
+.callback-telegram-button,
+.callback-max-button {
+	opacity: 0;
+	top: 0px;
+	transition: top 0.25s ease, opacity 0.25s ease;
+}
+
+.callback-max-button {
+	width: 50px;
+	height: 50px;
+	background: var(--corporate-color-1);
+	border-radius: 50%;
+	cursor: pointer;
+	padding-top: 10px;
+	padding-left: 10px;
+	position: absolute;
+	left: 10px;
+	top: 0px;
+	opacity: 0;
+	z-index: 1;
+	transition: top 0.25s ease, opacity 0.25s ease;
 }
 /*** End messengers button ***/

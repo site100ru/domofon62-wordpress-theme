@@ -167,7 +167,7 @@
 	</div>
 
     <div id="telegramBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в telegram">
-		<a href="tg://resolve?domain=RDK62bot/"><div class="callback-telegram-button-ico"></div></a>
+		<a href="tg://resolve?domain=RDK62"><div class="callback-telegram-button-ico"></div></a>
 	</div>
 
     <div id="maxBtn" class="callback-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Написать в Max">
