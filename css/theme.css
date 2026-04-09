@@ -1628,3 +1628,70 @@ body.b-new-year:before {
     }
 }
 /* /Check Connection Banner */
+
+
+body {
+    padding-bottom: 70px;
+}
+
+.fz-15 {
+    font-size: 15px;
+}
+
+input.wpcf7-form-control.wpcf7-text,
+input.wpcf7-form-control.wpcf7-tel {
+    width: 100%;
+    padding-left: 30px;
+}
+
+.btn-check-connection {
+    text-align: center;
+}
+
+.check-connection-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.conf-modal {
+    font-size: 15px;
+}
+
+.title-modal {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#checkConnectionModal .modal-header {
+    border-bottom: 0;
+}
+
+.modal-header button.btn-close {
+    margin-top: -4px;
+}
+
+.conf-modal a {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px;
+    }
+
+    .title-modal {
+        font-size: 18px;
+    }
+
+    input.wpcf7-form-control.wpcf7-text,
+    input.wpcf7-form-control.wpcf7-tel {
+        padding-left: 12px;
+        height: 40px;
+    }
+
+    .check-connection-info,
+    .conf-modal,
+    .conf-modal a {
+        font-size: 14px;
+    }
+}
