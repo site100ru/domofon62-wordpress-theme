@@ -159,22 +159,19 @@
 		<div id="btnIco" class="callback-button-ico"></div>
 	</div>
 	
-	<!--div id="formBtn" class="callback-form-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Перезвонить Вам?">
-		<a data-bs-toggle="modal" data-bs-target="#callbackModal"><div class="callback-form-button-ico"></div></a>
-	</div-->
 	<div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
 		<a href="tel:+74912202526"><div class="callback-phone-button-ico"></div></a>
 	</div>
-	<!--div id="whatsappBtn" class="callback-whatsapp-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Whatsapp">
-		<a href="whatsapp://send?phone=+79521236612"><div class="callback-whatsapp-button-ico"></div></a>
-	</div-->
-	
-	<!-- Telegram -->
-	<?php if ( get_theme_mod( 'mytheme_telegram' ) ) : ?>
-		<div id="telegramBtn" class="callback-telegram-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Telegram">
-			<a href="<?php echo get_theme_mod( 'mytheme_telegram' ); ?>"><div class="callback-telegram-button-ico"></div></a>
-		</div>
-	<?php endif; ?>
+
+	<div id="telegramBtn" class="callback-telegram-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Telegram">
+		<a href="tg://resolve?domain=RDK62" target="_blank"><div class="callback-telegram-button-ico"></div></a>
+	</div>
+
+	<div id="maxBtn" class="callback-max-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Max">
+		<a href="https://max.ru/u/" target="_blank">
+			<div class="callback-max-button-ico"></div>
+		</a>
+	</div>
 </div>
 <!-- /Messengers button HTML -->
 
