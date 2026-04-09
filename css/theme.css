@@ -1262,11 +1262,6 @@ textarea.wpcf7-textarea {
 	padding: 0 20px;
 }
 
-.form-content .col-md-9 p,
-.form-content .col-md-9 a {
-    font-size: 12px;
-}
-
 #popupForm a,
 #conf-modal a {
 	transition: all 0.3s ease;
@@ -1542,6 +1537,11 @@ a.custom-logo-link.new-year img {
 		left: -14px;
 		top: -9px;
 	}
+
+    .form-content .col-md-9 p,
+    .form-content .col-md-9 a {
+        font-size: 12px;
+    }
 }
 
 body.b-new-year {
