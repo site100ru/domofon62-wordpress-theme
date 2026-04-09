@@ -150,22 +150,22 @@
 		</div>
 		<!-- Service Modal -->
 
-        
         <!-- Check Connection Modal -->
         <div class="modal fade" id="checkConnectionModal" tabindex="-1" aria-labelledby="checkConnectionModalLabel" aria-hidden="true">
-			<div class="popups modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-                        <h2 class="product-modal-title" id="checkConnectionModalLabel">Проверить подключение</h2>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
+            <div class="popups modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="product-modal-title" id="checkConnectionModalLabel">Проверить подключение:</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 						<?php echo do_shortcode('[contact-form-7 id="14bc33d" title="Форма проверить подключение"]'); ?>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- /Check Connection Modal -->
+
 	</div>
 </footer>
 
