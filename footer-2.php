@@ -168,6 +168,23 @@
 	</div>
 </footer>
 
+<!-- Check Connection Banner -->
+<div class="check-connection-banner">
+    <div class="container ">
+        <div class="row align-items-center">
+            <div class="col-7 col-md-7">
+                <p class="check-connection-banner-text mb-0">Проверить возможность подключения</p>
+            </div>
+            <div class="col-5 col-md-3 offset-md-2 d-flex justify-content-end">
+                <button class="btn check-connection-banner-btn w-100" data-bs-toggle="modal" data-bs-target="#checkConnectionModal">
+                    Проверить
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Check Connection Banner -->
+
 
 <!-- Messengers button HTML -->
 <div class="callback-button-wrapper">
@@ -184,7 +201,7 @@
 	</div>
 
 	<div id="maxBtn" class="callback-max-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Max">
-		<a href="https://max.ru/u/" target="_blank">
+		<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" target="_blank">
 			<div class="callback-max-button-ico"></div>
 		</a>
 	</div>
@@ -218,9 +235,8 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-9">
                 <p class="mb-md-0">
-                    Продолжая пользоваться сайтом вы соглашаетесь на <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработку персональных данных</a>
-                    сохраненных в cookie-файлах. Подробнее об обработке персональных данных
-                    в <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">Политике конфиденциальности.</a>
+                    Пользуясь сайтом вы соглашаетесь на <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработку персональных данных</a>. 
+                    Подробнее об этом в <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">Политике конфиденциальности.</a>
                 </p>
             </div>
             <div class="col-md-3 text-md-center">

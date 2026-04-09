@@ -38,6 +38,11 @@ body {
 }
 
 @font-face {
+	font-family: Gilroy-Semibold;
+	src: url(../fonts/Gilroy-Semibold.ttf);
+}
+
+@font-face {
 	font-family: TTNorms;
 	src: url(../fonts/TTNorms-Regular.ttf);
 	font-weight: 400;
@@ -1254,7 +1259,12 @@ textarea.wpcf7-textarea {
 
 .form-content {
 	margin: 0 auto;
-	padding: 10px 20px;
+	padding: 0 20px;
+}
+
+.form-content .col-md-9 p,
+.form-content .col-md-9 a {
+    font-size: 12px;
 }
 
 #popupForm a,
@@ -1561,3 +1571,60 @@ body.b-new-year:before {
 	}
 }
 /*** END NEW YEAR ***/
+
+
+/* Check Connection Banner */
+
+@font-face {
+	font-family: Gilroy-Semibold;
+	src: url(../fonts/Gilroy-Semibold.ttf);
+}
+
+.check-connection-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    background: linear-gradient(90deg, #5470a5 0%, #242f44 50%, #242F44 100%);
+    z-index: 989;
+    padding: 14px 0;
+}
+
+.check-connection-banner-text {
+    font-family: Gilroy-Semibold;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.check-connection-banner-btn {
+    background: var(--corporate-color-1);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background .25s;
+}
+
+.check-connection-banner-btn:hover {
+    background: var(--corporate-color-hover-1);
+    color: #fff;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .check-connection-banner-text {
+        font-size: 11px;
+    }
+
+    .check-connection-banner-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+/* /Check Connection Banner */
