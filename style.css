@@ -978,7 +978,7 @@ letter-spacing: 0.02em;
  .dostup-text-wrap {
   display: flex;
   justify-content: center;
-  max-width: 90%;
+  max-width: 100%;
  }
 
 .dostup-text {
@@ -986,8 +986,8 @@ letter-spacing: 0.02em;
   font-weight: 400;
   font-size: 13px;
   line-height: 139.9%;
-  text-align: left;
-  max-width: 90%;
+  text-align: center;
+  max-width: 100%;
   margin-top: 14px;
 }
 
@@ -1037,7 +1037,7 @@ input.wpcf7-form-control.wpcf7-file:active::before {
 .dostup-file {
   border: 1px dashed #D6D6D6;
   border-radius: 5px;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   padding-top: 10px;

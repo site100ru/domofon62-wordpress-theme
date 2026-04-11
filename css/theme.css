@@ -1230,7 +1230,7 @@ footer#footer .footer-end a:hover:not([data-bs-toggle="modal"]) {
 }
 
 textarea.wpcf7-textarea {
-	width: 90%;
+	width: 100%;
 	background: var(--light-grey);
 	border: 1px solid #d6d6d6;
 	margin: 5px auto;
