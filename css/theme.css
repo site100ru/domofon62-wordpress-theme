@@ -1616,6 +1616,13 @@ body.b-new-year:before {
     background: var(--corporate-color-hover-1);
     color: #fff;
 }
+
+.check-connection-banner-btn:active {
+    --bs-btn-active-bg: var(--corporate-color-hover-1);
+    --bs-btn-active-border-color: var(--corporate-color-hover-1);
+    --bs-btn-active-color: #fff;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
     .check-connection-banner-text {
