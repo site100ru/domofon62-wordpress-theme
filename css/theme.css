@@ -1234,8 +1234,9 @@ textarea.wpcf7-textarea {
 	background: var(--light-grey);
 	border: 1px solid #d6d6d6;
 	margin: 5px auto;
-	padding-left: 10px;
+	padding-left: 30px;
 	border-radius: 5px;
+    padding-top: 10px;
 }
 
 .popup-form.active {
@@ -1688,6 +1689,10 @@ input.wpcf7-form-control.wpcf7-tel {
 
     .title-modal {
         font-size: 18px;
+    }
+
+    textarea.wpcf7-textarea {
+        padding-left: 12px;
     }
 
     input.wpcf7-form-control.wpcf7-text,
