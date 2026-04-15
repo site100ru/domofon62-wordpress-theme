@@ -235,12 +235,11 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-9">
                 <p class="mb-md-0">
-                    Пользуясь сайтом вы соглашаетесь на <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработку персональных данных</a>. 
-                    Подробнее об этом в <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">Политике конфиденциальности.</a>
+                    Пользуясь сайтом вы соглашаетесь с <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">политикой конфиденциальности</a> и <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработкой персональных данных</a>.
                 </p>
             </div>
             <div class="col-md-3 text-md-center">
-                <button id="closeBtn" class="btn action-btn">Понятно</button>
+                <button id="closeBtn" class="btn action-btn">Согласен</button>
             </div>
         </div>
     </div>
