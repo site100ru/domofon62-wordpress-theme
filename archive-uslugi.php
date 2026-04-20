@@ -13,7 +13,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <h1 class="catalog-goods-h1-second text-center text-md-start">Услуги</h1>
+        <h1 class="catalog-goods-h1-second text-center text-md-start">Наши услуги</h1>
         <p class="catalog-goods-text-under maxw-849 text-center text-md-start d-none d-md-block">Наши специалисты
           оказывают
           квалифицированную помощь в решении вопросов выбора систем видеонаблюдения на объектах различного характера, а
