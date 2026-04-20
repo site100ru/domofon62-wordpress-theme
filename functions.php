@@ -2045,28 +2045,11 @@ function send_cf7_to_max($contact_form) {
             $message .= "№ квартиры: " . ($data['text-703'] ?? '—') . "\n";
             $message .= "ФИО собственника: " . ($data['text-710'] ?? '—') . "\n";
             $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
-
-						// ОТЛАДКА 
-						$debug  = "\n\nDEBUG file-706: " . print_r($data['file-706'], true);
-						$debug .= "\nfile_exists: " . (file_exists($data['file-706'] ?? '') ? 'ДА' : 'НЕТ');
-
-						wp_remote_post(
-								"https://platform-api.max.ru/messages?chat_id={$chat_id}",
-								[
-										'timeout' => 15,
-										'headers' => [
-												'Authorization' => $token,
-												'Content-Type'  => 'application/json',
-										],
-										'body' => json_encode(['text' => $debug]),
-								]
-						);
-
-            // Загрузка файла
-            $file_token = null;
-            $file_path  = $data['file-706'] ?? null;
-            if (is_array($file_path)) $file_path = $file_path[0];
-
+						
+						$uploaded_files = $submission->uploaded_files();
+						$file_path = $uploaded_files['file-706'] ?? null;
+						if (is_array($file_path)) $file_path = $file_path[0];
+						
             if ($file_path && file_exists($file_path)) {
                 $upload_response = wp_remote_post(
                     "https://platform-api.max.ru/uploads?type=file",
