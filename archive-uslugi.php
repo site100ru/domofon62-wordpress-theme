@@ -29,7 +29,7 @@
         style="background-image: url('https://domofon62.ru/wp-content/uploads/2026/04/info-blok.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
-          <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
+          <div class="d-flex d-md-none align-items-center gap-3 ps-0 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg"
               alt="Услуги по установке домофонов и видеодомофонов" />
             <div class="serv-title">Услуги по установке домофонов и видеодомофонов</div>
@@ -41,7 +41,7 @@
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg"
             alt="Услуги по установке домофонов и видеодомофонов" class="ps-3 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi-cat/domofony/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке домофонов и видеодомофонов</div>
+            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке домофонов и&nbsp;видеодомофонов</div>
           </a>
           <div class="ps-3 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi-cat/domofony/" class="serv-page-btn">Узнать подробнее</a>
@@ -53,7 +53,7 @@
         style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/skd-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
-          <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
+          <div class="d-flex d-md-none align-items-center gap-3 ps-0 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg"
               alt="Услуги по установке систем контроля доступа" />
             <div class="serv-title">Услуги по установке систем контроля&nbsp;доступа</div>
@@ -65,7 +65,7 @@
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg"
             alt="Услуги по установке систем контроля доступа" class="ps-3 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi-cat/skud/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке систем контроля доступа</div>
+            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке систем контроля&nbsp;доступа</div>
           </a>
           <div class="ps-3 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
@@ -77,7 +77,7 @@
         style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/vid-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
-          <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
+          <div class="d-flex d-md-none align-items-center gap-3 ps-0 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg"
               alt="Услуги по установке видеонаблюдения" />
             <div class="serv-title">Услуги по установке видеонаблюдения</div>
@@ -101,7 +101,7 @@
         style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/fence-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
-          <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
+          <div class="d-flex d-md-none align-items-center gap-3 ps-0 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg"
               alt="Шлагбаумы и ворота с распознаванием номера авто" />
             <div class="serv-title">Шлагбаумы и ворота с распознаванием&nbsp;номера авто</div>
