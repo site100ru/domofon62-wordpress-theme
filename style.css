@@ -1285,6 +1285,14 @@ width: 100%;
   color: #FFFFFF;
  }
 
+ 
+ @media (max-width: 1224px) {
+  .serv-page-btn {
+    height: 50px; 
+    width: 210px; 
+  }
+  }
+
  @media (max-width: 768px) {
 
   .serv-height {
@@ -1297,17 +1305,13 @@ width: 100%;
   }
 
   .serv-page-btn {
-    width: 200px;
-    height: 50px; 
+    height: 37px;
+    width: 155px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
   }
  }
 
- @media (max-width: 1224px) {
-  .serv-page-btn {
-    width: 210px; 
-    height: 50px;
-  }
-  }
 
   @media (min-width: 1830px) {
     .serv-height {

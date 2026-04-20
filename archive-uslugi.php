@@ -56,7 +56,7 @@
           <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg"
               alt="Услуги по установке систем контроля доступа" />
-            <div class="serv-title">Услуги по установке систем контроля доступа</div>
+            <div class="serv-title">Услуги по установке систем контроля&nbsp;доступа</div>
           </div>
           <div class="ps-3 d-block d-md-none">
             <a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
@@ -103,17 +103,17 @@
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg"
-              alt="Услуги по установке автоматических ворот" />
-            <div class="serv-title">Услуги по установке автоматических ворот</div>
+              alt="Шлагбаумы и ворота с распознаванием номера авто" />
+            <div class="serv-title">Шлагбаумы и ворота с распознаванием&nbsp;номера авто</div>
           </div>
           <div class="ps-3 d-block d-md-none">
             <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="serv-page-btn">Узнать подробнее</a>
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg"
-            alt="Услуги по установке автоматических ворот" class="ps-3 pb-2 d-none d-md-block" />
+            alt="Шлагбаумы и ворота с распознаванием номера авто" class="ps-3 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке автоматических ворот</div>
+            <div class="serv-title ps-3 pe-3 mb-3">Шлагбаумы и ворота с распознаванием номера авто</div>
           </a>
           <div class="ps-3 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="serv-page-btn">Узнать подробнее</a>
