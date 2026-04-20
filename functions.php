@@ -2045,11 +2045,13 @@ function send_cf7_to_max($contact_form) {
             $message .= "№ квартиры: " . ($data['text-703'] ?? '—') . "\n";
             $message .= "ФИО собственника: " . ($data['text-710'] ?? '—') . "\n";
             $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
-						
-						$uploaded_files = $submission->uploaded_files();
-						$file_path = $uploaded_files['file-706'] ?? null;
-						if (is_array($file_path)) $file_path = $file_path[0];
-						
+
+            $file_token = null;
+
+            $uploaded_files = $submission->uploaded_files();
+            $file_path = $uploaded_files['file-706'] ?? null;
+            if (is_array($file_path)) $file_path = $file_path[0];
+
             if ($file_path && file_exists($file_path)) {
                 $upload_response = wp_remote_post(
                     "https://platform-api.max.ru/uploads?type=file",
@@ -2108,8 +2110,7 @@ function send_cf7_to_max($contact_form) {
                 ]
             );
             return;
-
-        case 21106: // Форма проверить подключение
+				case 21106: // Форма проверить подключение
             $message  = "Проверка подключения\n\n";
             $message .= "Имя: " . ($data['text-name'] ?? '—') . "\n";
             $message .= "Адрес: " . ($data['text-address'] ?? '—') . "\n";
