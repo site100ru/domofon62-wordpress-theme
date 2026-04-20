@@ -2000,12 +2000,11 @@ add_action('all', function($hook) {
 //     $classes[] = 'b-new-year';
 //     return $classes;
 // }
-
 add_action('wpcf7_mail_sent', 'send_cf7_to_max');
 
 function send_cf7_to_max($contact_form) {
     $token   = 'f9LHodD0cOIwKem7DSmV8MbyiOUjSpZOa_pEMxjqf5HAn5rtBiF6bfzp4rIKN18o1zOB1Fq-FB-gP1zzOsrZ'; // ТОКЕН
-    $user_id = 490139202; // кому отправить 
+    $chat_id = -73744379488932; // кому отправить 
 
     $form_id = $contact_form->id();
     $submission = WPCF7_Submission::get_instance();
@@ -2062,7 +2061,7 @@ function send_cf7_to_max($contact_form) {
     }
 
     wp_remote_post(
-        "https://platform-api.max.ru/messages?user_id={$user_id}",
+        "https://platform-api.max.ru/messages?chat_id={$chat_id}",
         [
             'headers' => [
                 'Authorization' => $token,
