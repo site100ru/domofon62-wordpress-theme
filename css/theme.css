@@ -1155,13 +1155,15 @@ a.social-links:hover p {
 @media (max-width: 992px) {
 	.dropdown-toggle::after,
 	.dropend .dropdown-toggle::after {
+		position: absolute;
+		right: 20px;
 		content: url(https://domofon62.ru/wp-content/uploads/2025/06/arrow.svg) !important;
 		vertical-align: 0 !important;
 		margin-left: 0 !important;
 		width: 13px !important;
 		height: 15px !important;
 		border: none !important;
-		margin-left: calc(100% - 100px) !important;
+		/* margin-left: calc(100% - 100px) !important; */
 		margin-right: 0 !important;
 	}
 
@@ -1323,11 +1325,11 @@ textarea.wpcf7-textarea {
 	background: var(--secondary-pale-blue);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 	.container.d-flex.tadaa {
 		padding-right: 0 !important;
 	}
-}
+} */
 
 
 a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
