@@ -26,7 +26,7 @@
     <div class="row serv-cards-row g-3 g-md-0">
 
       <div class="col-12 col-md-6 col-lg-3 serv-height"
-        style="background-image: url('https://domofon62.ru/wp-content/uploads/2026/04/info-blok.jpg');">
+        style="background-size: cover; background-image: url('https://domofon62.ru/wp-content/uploads/2026/04/info-blok.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
@@ -39,18 +39,18 @@
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg"
-            alt="Услуги по установке домофонов и видеодомофонов" class="ps-3 pb-2 d-none d-md-block" />
+            alt="Услуги по установке домофонов и видеодомофонов" class="ps-5 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi-cat/domofony/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке домофонов и&nbsp;видеодомофонов</div>
+            <div class="serv-title ps-5 pe-3 mb-3">Услуги по установке домофонов и&nbsp;видеодомофонов</div>
           </a>
-          <div class="ps-3 d-none d-md-block">
+          <div class="ps-5 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi-cat/domofony/" class="serv-page-btn">Узнать подробнее</a>
           </div>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3 serv-height"
-        style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/skd-servse.jpg');">
+        style="background-size: cover; background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/skd-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
@@ -63,18 +63,18 @@
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg"
-            alt="Услуги по установке систем контроля доступа" class="ps-3 pb-2 d-none d-md-block" />
+            alt="Услуги по установке систем контроля доступа" class="ps-5 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi-cat/skud/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке систем контроля&nbsp;доступа</div>
+            <div class="serv-title ps-5 pe-3 mb-3">Услуги по установке систем контроля&nbsp;доступа</div>
           </a>
-          <div class="ps-3 d-none d-md-block">
+          <div class="ps-5 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
           </div>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3 serv-height"
-        style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/vid-servse.jpg');">
+        style="background-size: cover; background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/vid-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
@@ -87,18 +87,18 @@
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg"
-            alt="Услуги по установке видеонаблюдения" class="ps-3 pb-2 d-none d-md-block" />
+            alt="Услуги по установке видеонаблюдения" class="ps-5 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Услуги по установке видеонаблюдения</div>
+            <div class="serv-title ps-5 pe-3 mb-3">Услуги по установке видеонаблюдения</div>
           </a>
-          <div class="ps-3 d-none d-md-block">
+          <div class="ps-5 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="serv-page-btn">Узнать подробнее</a>
           </div>
         </div>
       </div>
 
       <div class="col-12 col-md-6 col-lg-3 serv-height"
-        style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/fence-servse.jpg');">
+        style="background-size: cover; background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/fence-servse.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
@@ -111,11 +111,11 @@
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg"
-            alt="Шлагбаумы и ворота с распознаванием номера авто" class="ps-3 pb-2 d-none d-md-block" />
+            alt="Шлагбаумы и ворота с распознаванием номера авто" class="ps-5 pb-2 d-none d-md-block" />
           <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="d-none d-md-block">
-            <div class="serv-title ps-3 pe-3 mb-3">Шлагбаумы и ворота с распознаванием номера авто</div>
+            <div class="serv-title ps-5 pe-3 mb-3">Шлагбаумы и ворота с распознаванием номера авто</div>
           </a>
-          <div class="ps-3 d-none d-md-block">
+          <div class="ps-5 d-none d-md-block">
             <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="serv-page-btn">Узнать подробнее</a>
           </div>
         </div>
