@@ -2012,29 +2012,29 @@ function send_cf7_to_max($contact_form) {
 
     switch ($form_id) {
 
-        case '8c4ef1b': // Контактная форма 1
-            $message  = "Контактная форма\n\n";
+        case 371: // Контактная форма 1
+            $message  = "📩 Контактная форма\n\n";
             $message .= "Имя: " . ($data['your-name'] ?? '—') . "\n";
             $message .= "Email: " . ($data['your-email'] ?? '—') . "\n";
             $message .= "Тема: " . ($data['your-subject'] ?? '—') . "\n";
             $message .= "Сообщение: " . ($data['your-message'] ?? '—');
             break;
 
-        case 'e7cd6f8': // Форма заказ товара
+        case 372: // Форма заказ товара
             $message  = "Заказ товара\n\n";
             $message .= "Имя: " . ($data['text-306'] ?? '—') . "\n";
             $message .= "Телефон: " . ($data['tel-208'] ?? '—') . "\n";
             $message .= "Товар: " . ($data['product-title'] ?? '—');
             break;
 
-        case 'e6daf21': // Форма заказа услуги
+        case 362: // Форма заказа услуги
             $message  = "Заказ услуги\n\n";
             $message .= "Имя: " . ($data['text-306'] ?? '—') . "\n";
             $message .= "Телефон: " . ($data['tel-208'] ?? '—') . "\n";
             $message .= "Услуга: " . ($data['dynamichidden-580'] ?? '—');
             break;
 
-        case 'b495753': // Форма получить доступ
+        case 373: // Форма получить доступ
             $message  = "Получить доступ\n\n";
             $message .= "Услуга: " . ($data['radio-678'] ?? '—') . "\n";
             $message .= "Телефон: " . ($data['text-690'] ?? '—') . "\n";
@@ -2047,7 +2047,7 @@ function send_cf7_to_max($contact_form) {
             $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
             break;
 
-        case '14bc33d': // Форма проверить подключение
+        case 21106: // Форма проверить подключение
             $message  = "Проверка подключения\n\n";
             $message .= "Имя: " . ($data['text-name'] ?? '—') . "\n";
             $message .= "Адрес: " . ($data['text-address'] ?? '—') . "\n";
