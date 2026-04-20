@@ -2004,7 +2004,7 @@ add_action('wpcf7_mail_sent', 'send_cf7_to_max');
 
 function send_cf7_to_max($contact_form) {
     $token   = 'f9LHodD0cOIwKem7DSmV8MbyiOUjSpZOa_pEMxjqf5HAn5rtBiF6bfzp4rIKN18o1zOB1Fq-FB-gP1zzOsrZ'; // ТОКЕН
-    $chat_id = '-73744379488932'; // кому отправить 
+    $chat_id = '-73747570792485'; // кому отправить 
 
     $form_id = $contact_form->id();
     $submission = WPCF7_Submission::get_instance();
