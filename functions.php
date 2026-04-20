@@ -2027,7 +2027,7 @@ function send_cf7_to_max($contact_form) {
             $message .= "Товар: " . ($data['product-title'] ?? '—');
             break;
 
-        case 362: // Форма заказа услуги
+        case 3628: // Форма заказа услуги
             $message  = "Заказ услуги\n\n";
             $message .= "Имя: " . ($data['text-306'] ?? '—') . "\n";
             $message .= "Телефон: " . ($data['tel-208'] ?? '—') . "\n";
