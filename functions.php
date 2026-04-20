@@ -2034,9 +2034,9 @@ function send_cf7_to_max($contact_form) {
             $message .= "Услуга: " . ($data['dynamichidden-580'] ?? '—');
             break;
 
-        case 373: // Форма получить доступ
+				case 373: // Форма получить доступ
             $message  = "Получить доступ\n\n";
-            $message .= "Услуга: " . ($data['radio-678'] ?? '—') . "\n";
+            $message .= "Услуга: " . (isset($data['radio-678']) ? implode(', ', (array)$data['radio-678']) : '—') . "\n";
             $message .= "Телефон: " . ($data['text-690'] ?? '—') . "\n";
             $message .= "Email: " . ($data['email-988'] ?? '—') . "\n";
             $message .= "Город: " . ($data['text-700'] ?? '—') . "\n";
@@ -2045,7 +2045,70 @@ function send_cf7_to_max($contact_form) {
             $message .= "№ квартиры: " . ($data['text-703'] ?? '—') . "\n";
             $message .= "ФИО собственника: " . ($data['text-710'] ?? '—') . "\n";
             $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
-            break;
+
+            // Загрузка файла
+            $file_token = null;
+            $file_path  = $data['file-706'] ?? null;
+            if (is_array($file_path)) $file_path = $file_path[0];
+
+            if ($file_path && file_exists($file_path)) {
+                $upload_response = wp_remote_post(
+                    "https://platform-api.max.ru/uploads?type=file",
+                    [
+                        'timeout' => 15,
+                        'headers' => ['Authorization' => $token],
+                    ]
+                );
+                $upload_body = json_decode(wp_remote_retrieve_body($upload_response), true);
+                $upload_url  = $upload_body['url'] ?? null;
+
+                if ($upload_url) {
+                    $file_name = basename($file_path);
+                    $file_data = file_get_contents($file_path);
+                    $boundary  = wp_generate_password(24, false);
+
+                    $file_response = wp_remote_post(
+                        $upload_url,
+                        [
+                            'timeout' => 30,
+                            'headers' => [
+                                'Authorization' => $token,
+                                'Content-Type'  => 'multipart/form-data; boundary=' . $boundary,
+                            ],
+                            'body' => "--{$boundary}\r\n"
+                                . "Content-Disposition: form-data; name=\"data\"; filename=\"{$file_name}\"\r\n"
+                                . "Content-Type: application/octet-stream\r\n\r\n"
+                                . $file_data . "\r\n"
+                                . "--{$boundary}--\r\n",
+                        ]
+                    );
+                    $file_body  = json_decode(wp_remote_retrieve_body($file_response), true);
+                    $file_token = $file_body['token'] ?? null;
+                }
+            }
+
+            // Формируем тело запроса
+            $body = ['text' => $message];
+            if ($file_token) {
+                sleep(2);
+                $body['attachments'] = [[
+                    'type'    => 'file',
+                    'payload' => ['token' => $file_token],
+                ]];
+            }
+
+            wp_remote_post(
+                "https://platform-api.max.ru/messages?chat_id={$chat_id}",
+                [
+                    'timeout' => 15,
+                    'headers' => [
+                        'Authorization' => $token,
+                        'Content-Type'  => 'application/json',
+                    ],
+                    'body' => json_encode($body),
+                ]
+            );
+            return;
 
         case 21106: // Форма проверить подключение
             $message  = "Проверка подключения\n\n";
