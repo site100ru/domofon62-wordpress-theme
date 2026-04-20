@@ -63,19 +63,20 @@ function price_new_wrap() {
 	$url = get_permalink( $id );
 	$price = $product->get_price();
 	?>
-		<div class="row align-items-center">
-			<div class="col-6 col-md-12">
-				<p class="product-price mb-0 mb-md-3"><?php echo $price; ?> руб</p>
-			</div>
-			<div class="col-6 col-md-12">
-				<!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
-				<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-				<object>
-					<a href="#" onclick="getName( '<?php echo $product->name; ?>' );" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</a>
-				</object>
-			</div>
-		</div>
-	<?php
+<div class="row align-items-center">
+  <div class="col-6 col-md-12">
+    <p class="product-price mb-0 mb-md-3"><?php echo $price; ?> руб</p>
+  </div>
+  <div class="col-6 col-md-12">
+    <!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
+    <?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
+    <object>
+      <a href="#" onclick="getName( '<?php echo $product->name; ?>' );" class="buy-btn" data-bs-toggle="modal"
+        data-bs-target="#productModal">Заказать</a>
+    </object>
+  </div>
+</div>
+<?php
 }
 add_action( 'woocommerce_after_shop_loop_item_title', 'price_new_wrap', 10 );
 
@@ -85,8 +86,8 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 
 function woocommerce_template_loop_product_title() {
     ?>
-    <p class="product-price-title"><?php echo get_the_title(); ?></p>
-    <?php
+<p class="product-price-title"><?php echo get_the_title(); ?></p>
+<?php
 }
 
 	//remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
@@ -126,8 +127,11 @@ add_action( 'woocommerce_simple_add_to_cart', 'add_action_button_single', 30 );
 /* Single product */
 function add_action_button_single() {
    $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-   <div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><a href="#" class="single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a></div>
-   <?php
+<div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span
+    class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><a href="#"
+    class="single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal"
+    onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a></div>
+<?php
 }
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);  
@@ -1655,32 +1659,32 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			
 			// JavaScript для функционала
 			?>
-			<script type="text/javascript">
-			jQuery(document).ready(function($) {
-					function updateSelectedCount() {
-							var count = $('.object-checkbox:checked').length;
-							$('#selected-count').text(count);
-					}
-					
-					$('#select-all-objects').click(function() {
-							$('.object-checkbox').prop('checked', true);
-							updateSelectedCount();
-					});
-					
-					$('#deselect-all-objects').click(function() {
-							$('.object-checkbox').prop('checked', false);
-							updateSelectedCount();
-					});
-					
-					$('.object-checkbox').change(function() {
-							updateSelectedCount();
-					});
-					
-					// Инициализация счетчика
-					updateSelectedCount();
-			});
-			</script>
-			<?php
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  function updateSelectedCount() {
+    var count = $('.object-checkbox:checked').length;
+    $('#selected-count').text(count);
+  }
+
+  $('#select-all-objects').click(function() {
+    $('.object-checkbox').prop('checked', true);
+    updateSelectedCount();
+  });
+
+  $('#deselect-all-objects').click(function() {
+    $('.object-checkbox').prop('checked', false);
+    updateSelectedCount();
+  });
+
+  $('.object-checkbox').change(function() {
+    updateSelectedCount();
+  });
+
+  // Инициализация счетчика
+  updateSelectedCount();
+});
+</script>
+<?php
 	}
 
 	/**
@@ -1766,43 +1770,44 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			// Формируем HTML
 			ob_start();
 			?>
-			<div class="uslugi-objects-section">
-					<div class="light-grey-bg py-5">
-							<div class="container">
-									<h2 class="h2-title mb-4"><?php echo esc_html($title); ?></h2>
-										<?php foreach ($objects as $object) : ?>
-												<div class="padding-row row justify-content-center justify-content-lg-evenly align-items-center p-2 mt-4 bg-white">
-														<div class="col-12 col-md-6 col-lg-4 obj-thumbnail text-center">
-																<?php 
+<div class="uslugi-objects-section">
+  <div class="light-grey-bg py-5">
+    <div class="container">
+      <h2 class="h2-title mb-4"><?php echo esc_html($title); ?></h2>
+      <?php foreach ($objects as $object) : ?>
+      <div
+        class="padding-row row justify-content-center justify-content-lg-evenly align-items-center p-2 mt-4 bg-white">
+        <div class="col-12 col-md-6 col-lg-4 obj-thumbnail text-center">
+          <?php 
 																$thumbnail_id = get_post_thumbnail_id($object->ID);
 																if ($thumbnail_id) : 
 																		$bgtnl = get_the_post_thumbnail_url($object->ID, 'full');
 																		$img_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 																?>
-																		<img src="<?php echo esc_url($bgtnl); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="img-fluid"/>
-																<?php endif; ?>
-														</div>
-														<div class="col-12 col-md-6 col-lg-8 ps-5">
-																<a href="<?php echo get_permalink($object->ID); ?>">
-																		<div class="obj-title pb-2 pt-4 pt-md-0"><?php echo esc_html($object->post_title); ?></div>
-																</a>
-																<div class="pt-2"><?php echo apply_filters('the_content', $object->post_content); ?></div>
-																<div class="pt-3">
-																		<a href="<?php echo get_permalink($object->ID); ?>" class="oneu-white-area-btn mb-3">Смотреть фото</a>
-																</div>
-														</div>
-												</div>
-										<?php endforeach; ?>
-										
-										<?php if ($show_button) : ?>
-												<div class="text-center mt-4">
-														<a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть все работы</a>
-												</div>
-										<?php endif; ?>
-							</div>
-					</div>
-			</div>
-			<?php
+          <img src="<?php echo esc_url($bgtnl); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="img-fluid" />
+          <?php endif; ?>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8 ps-5">
+          <a href="<?php echo get_permalink($object->ID); ?>">
+            <div class="obj-title pb-2 pt-4 pt-md-0"><?php echo esc_html($object->post_title); ?></div>
+          </a>
+          <div class="pt-2"><?php echo apply_filters('the_content', $object->post_content); ?></div>
+          <div class="pt-3">
+            <a href="<?php echo get_permalink($object->ID); ?>" class="oneu-white-area-btn mb-3">Смотреть фото</a>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+
+      <?php if ($show_button) : ?>
+      <div class="text-center mt-4">
+        <a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть все работы</a>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
+<?php
 			return ob_get_clean();
 	}
 
@@ -1827,26 +1832,26 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			global $post_type;
 			if ($post_type === 'uslugi') {
 					?>
-					<script type="text/javascript">
-					jQuery(document).ready(function($) {
-							$('#insert-uslugi-objects').click(function() {
-									// Проверяем, какой редактор активен
-									if (typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor && !tinyMCE.activeEditor.isHidden()) {
-											// Visual редактор
-											tinyMCE.activeEditor.execCommand('mceInsertContent', false, '[uslugi_objects]');
-									} else {
-											// Text редактор
-											var textarea = $('#content');
-											var cursorPos = textarea.prop('selectionStart');
-											var v = textarea.val();
-											var textBefore = v.substring(0, cursorPos);
-											var textAfter = v.substring(cursorPos, v.length);
-											textarea.val(textBefore + '[uslugi_objects]' + textAfter);
-									}
-							});
-					});
-					</script>
-					<?php
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $('#insert-uslugi-objects').click(function() {
+    // Проверяем, какой редактор активен
+    if (typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor && !tinyMCE.activeEditor.isHidden()) {
+      // Visual редактор
+      tinyMCE.activeEditor.execCommand('mceInsertContent', false, '[uslugi_objects]');
+    } else {
+      // Text редактор
+      var textarea = $('#content');
+      var cursorPos = textarea.prop('selectionStart');
+      var v = textarea.val();
+      var textBefore = v.substring(0, cursorPos);
+      var textAfter = v.substring(cursorPos, v.length);
+      textarea.val(textBefore + '[uslugi_objects]' + textAfter);
+    }
+  });
+});
+</script>
+<?php
 			}
 	}
 
@@ -1995,3 +2000,75 @@ add_action('all', function($hook) {
 //     $classes[] = 'b-new-year';
 //     return $classes;
 // }
+
+add_action('wpcf7_mail_sent', 'send_cf7_to_max');
+
+function send_cf7_to_max($contact_form) {
+    $token   = 'f9LHodD0cOIwKem7DSmV8MbyiOUjSpZOa_pEMxjqf5HAn5rtBiF6bfzp4rIKN18o1zOB1Fq-FB-gP1zzOsrZ'; // ТОКЕН
+    $user_id = 490139202; // кому отправить 
+
+    $form_id = $contact_form->id();
+    $submission = WPCF7_Submission::get_instance();
+    $data = $submission->get_posted_data();
+
+    switch ($form_id) {
+
+        case '8c4ef1b': // Контактная форма 1
+            $message  = "Контактная форма\n\n";
+            $message .= "Имя: " . ($data['your-name'] ?? '—') . "\n";
+            $message .= "Email: " . ($data['your-email'] ?? '—') . "\n";
+            $message .= "Тема: " . ($data['your-subject'] ?? '—') . "\n";
+            $message .= "Сообщение: " . ($data['your-message'] ?? '—');
+            break;
+
+        case 'e7cd6f8': // Форма заказ товара
+            $message  = "Заказ товара\n\n";
+            $message .= "Имя: " . ($data['text-306'] ?? '—') . "\n";
+            $message .= "Телефон: " . ($data['tel-208'] ?? '—') . "\n";
+            $message .= "Товар: " . ($data['product-title'] ?? '—');
+            break;
+
+        case 'e6daf21': // Форма заказа услуги
+            $message  = "Заказ услуги\n\n";
+            $message .= "Имя: " . ($data['text-306'] ?? '—') . "\n";
+            $message .= "Телефон: " . ($data['tel-208'] ?? '—') . "\n";
+            $message .= "Услуга: " . ($data['dynamichidden-580'] ?? '—');
+            break;
+
+        case 'b495753': // Форма получить доступ
+            $message  = "Получить доступ\n\n";
+            $message .= "Услуга: " . ($data['radio-678'] ?? '—') . "\n";
+            $message .= "Телефон: " . ($data['text-690'] ?? '—') . "\n";
+            $message .= "Email: " . ($data['email-988'] ?? '—') . "\n";
+            $message .= "Город: " . ($data['text-700'] ?? '—') . "\n";
+            $message .= "Улица: " . ($data['text-701'] ?? '—') . "\n";
+            $message .= "№ дома: " . ($data['text-702'] ?? '—') . "\n";
+            $message .= "№ квартиры: " . ($data['text-703'] ?? '—') . "\n";
+            $message .= "ФИО собственника: " . ($data['text-710'] ?? '—') . "\n";
+            $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
+            break;
+
+        case '14bc33d': // Форма проверить подключение
+            $message  = "Проверка подключения\n\n";
+            $message .= "Имя: " . ($data['text-name'] ?? '—') . "\n";
+            $message .= "Адрес: " . ($data['text-address'] ?? '—') . "\n";
+            $message .= "Email: " . ($data['email-addr'] ?? '—') . "\n";
+            $message .= "Телефон: " . ($data['tel-phone'] ?? '—') . "\n";
+            $message .= "Мессенджер: " . ($data['text-messenger'] ?? '—');
+            break;
+
+        default:
+            return; // Неизвестная форма — не отправляем
+    }
+
+    wp_remote_post(
+        "https://platform-api.max.ru/messages?user_id={$user_id}",
+        [
+            'headers' => [
+                'Authorization' => $token,
+                'Content-Type'  => 'application/json',
+            ],
+            'body' => json_encode(['text' => $message]),
+        ]
+    );
+}
