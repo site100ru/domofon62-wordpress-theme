@@ -26,7 +26,7 @@
     <div class="row serv-cards-row g-3 g-md-0">
 
       <div class="col-12 col-md-6 col-lg-3 serv-height"
-        style="background-image: url('https://domofon62.ru/wp-content/uploads/2023/02/dom-servse.jpg');">
+        style="background-image: url('https://domofon62.ru/wp-content/uploads/2026/04/info-blok.jpg');">
         <div class="serv-content">
           <!-- МОБИЛКА -->
           <div class="d-flex d-md-none align-items-center gap-3 ps-3 pe-3 mb-3">
