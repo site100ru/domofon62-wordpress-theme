@@ -104,7 +104,7 @@
           <div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
             <img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/automatic-doors-1.svg"
               alt="Шлагбаумы и ворота с распознаванием номера авто" />
-            <div class="serv-title">Шлагбаумы и ворота с распознаванием&nbsp;номера авто</div>
+            <div class="serv-title">Шлагбаумы и ворота с распознаванием номера авто</div>
           </div>
           <div class="ps-3 d-block d-md-none">
             <a href="https://domofon62.ru/uslugi/vorota-i-shlagbaumy/" class="serv-page-btn">Узнать подробнее</a>
