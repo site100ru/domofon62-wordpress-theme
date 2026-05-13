@@ -59,16 +59,19 @@
             <div class="serv-title">Услуги по установке систем контроля&nbsp;доступа</div>
           </div>
           <div class="ps-3 d-block d-md-none">
-            <a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
+            <a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/"
+              class="serv-page-btn">Узнать подробнее</a>
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg"
             alt="Услуги по установке систем контроля доступа" class="ps-5 pb-2 d-none d-md-block" />
-          <a href="https://domofon62.ru/uslugi-cat/skud/" class="d-none d-md-block">
+          <a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/"
+            class="d-none d-md-block">
             <div class="serv-title ps-5 pe-3 mb-3">Услуги по установке систем контроля&nbsp;доступа</div>
           </a>
           <div class="ps-5 d-none d-md-block">
-            <a href="https://domofon62.ru/uslugi-cat/skud/" class="serv-page-btn">Узнать подробнее</a>
+            <a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/"
+              class="serv-page-btn">Узнать подробнее</a>
           </div>
         </div>
       </div>
@@ -83,16 +86,18 @@
             <div class="serv-title">Услуги по установке видеонаблюдения</div>
           </div>
           <div class="ps-3 d-block d-md-none">
-            <a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="serv-page-btn">Узнать подробнее</a>
+            <a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="serv-page-btn">Узнать
+              подробнее</a>
           </div>
           <!-- ПК -->
           <img src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg"
             alt="Услуги по установке видеонаблюдения" class="ps-5 pb-2 d-none d-md-block" />
-          <a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="d-none d-md-block">
+          <a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="d-none d-md-block">
             <div class="serv-title ps-5 pe-3 mb-3">Услуги по установке видеонаблюдения</div>
           </a>
           <div class="ps-5 d-none d-md-block">
-            <a href="https://domofon62.ru/uslugi-cat/videonablyudenie/" class="serv-page-btn">Узнать подробнее</a>
+            <a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="serv-page-btn">Узнать
+              подробнее</a>
           </div>
         </div>
       </div>
