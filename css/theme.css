@@ -17,6 +17,7 @@ a {
 	--light-grey: #f3f3f3;
 	--font-gilroy-regular: 'Gilroy-Regular', sans-serif;
 	--font-TT: 'TTNorms', sans-serif;
+	--second-family: "ALSSchlangeSansBold", sans-serif;
 }
 
 body {
@@ -1784,4 +1785,18 @@ input.wpcf7-form-control.wpcf7-tel {
 	.header-social {
 		flex-direction: column;
 	}
+}
+
+.section-order-1.section-action .section-action-text {
+	color: #F3F3F3;
+	font-weight: 500;
+}
+
+.section-dop .card-description {
+	font-size: 22px;
+	font-family: var(--second-family);
+
+	font-weight: 700;
+	line-height: 137%;
+	letter-spacing: 0.02em;
 }
