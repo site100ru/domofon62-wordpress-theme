@@ -1790,6 +1790,7 @@ input.wpcf7-form-control.wpcf7-tel {
 .section-order-1.section-action .section-action-text {
 	color: #F3F3F3;
 	font-weight: 500;
+	font-size: 15px;
 }
 
 .section-dop .card-description {
@@ -1799,4 +1800,8 @@ input.wpcf7-form-control.wpcf7-tel {
 	font-weight: 700;
 	line-height: 137%;
 	letter-spacing: 0.02em;
+}
+
+.hero .h2-title {
+	font-size: 28px;
 }
