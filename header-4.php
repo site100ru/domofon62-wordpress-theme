@@ -159,7 +159,7 @@
 
 									<a href="https://max.ru/id6234057300_bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
 										<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" class="" />
-										<p class="chasy fw-bold p-0 m-0">Мах бот</p>
+										<p class="chasy fw-bold p-0 m-0" style="text-transform: none;">Мах бот</p>
 									</a>
 								</li>
 									<li class="d-none d-lg-inline-block">
