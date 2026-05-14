@@ -24,6 +24,7 @@ body {
 	font-style: normal;
 	color: var(--black-color);
 }
+
 /*** ALL ***/
 
 /*** FONTS ***/
@@ -96,6 +97,7 @@ h2.wp-block-heading {
 .p-blue {
 	max-width: 380px;
 }
+
 /*** END FONTS ***/
 
 /*** BUTTONS ***/
@@ -145,17 +147,17 @@ h2.wp-block-heading {
 	border: none;
 	border-color: var(--secondary-pale-blue);
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	box-sizing: border-box;
 }
 
 @media (max-width: 568px) {
-    .action-btn {
-        padding: 22px 20px 18px 20px;
-    }
+	.action-btn {
+		padding: 22px 20px 18px 20px;
+	}
 }
 
 .action-btn:hover {
@@ -165,6 +167,7 @@ h2.wp-block-heading {
 .top-btn {
 	display: none;
 }
+
 /*** END BUTTONS ***/
 
 /*** MENU ***/
@@ -222,7 +225,10 @@ a.top-btn {
 	z-index: 20;
 }
 
-.tadaa {z-index: 100;}
+.tadaa {
+	z-index: 100;
+}
+
 .tadaa .bread-top {
 	-webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 	transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -377,7 +383,7 @@ nav .plus {
 	padding-bottom: 0;
 }
 
-nav li > ul {
+nav li>ul {
 	overflow: inherit;
 }
 
@@ -422,7 +428,7 @@ nav li > ul {
 	column-gap: clamp(2px, 1vw, 10px);
 }
 
-#new-main-menu nav > ul > li > a {
+#new-main-menu nav>ul>li>a {
 	padding: 8px 10px 7px;
 	font-family: var(--font-gilroy-regular);
 	font-weight: 700;
@@ -453,7 +459,7 @@ nav li > ul {
 	padding: 0;
 }
 
-#new-main-menu ul:not(.sub-menu) > li {
+#new-main-menu ul:not(.sub-menu)>li {
 	display: block;
 }
 
@@ -471,6 +477,7 @@ nav li > ul {
 #new-main-menu .minus:hover {
 	display: none;
 }
+
 /* End delete plus and minus in old menu */
 /* End Bootstrap menu */
 /*** END MENU ***/
@@ -514,6 +521,7 @@ nav li > ul {
 	background-position: 100% 50%;
 	background-repeat: no-repeat;
 }
+
 /* END SECTION ORDER 1 */
 
 /* SECTION ORDER 2 */
@@ -523,13 +531,12 @@ nav li > ul {
 	background-position: 100% 50%;
 	background-repeat: no-repeat;
 }
+
 /* END SECTION ORDER 2 */
 
 /* USTANOVKA VIDEONABLYUDENIYA */
 .section-home-background-img {
-	background: #ffffff
-		url(https://domofon62.ru/wp-content/themes/domoftwo/img/section-home-img-2.png) 100% 50%
-		no-repeat;
+	background: #ffffff url(https://domofon62.ru/wp-content/themes/domoftwo/img/section-home-img-2.png) 100% 50% no-repeat;
 	background-size: contain;
 }
 
@@ -545,13 +552,12 @@ nav li > ul {
 	background-color: #ffffff;
 	min-height: 490px;
 }
+
 /* END USTANOVKA VIDEONABLYUDENIYA */
 
 /*** VIDEONABLYUDENIE DLYA TSJ ***/
 .section-home-background-img-3 {
-	background: #ffffff
-		url(https://domofon62.ru/wp-content/themes/domoftwo/img/section-home-img-3.jpg) 100% 50%
-		no-repeat;
+	background: #ffffff url(https://domofon62.ru/wp-content/themes/domoftwo/img/section-home-img-3.jpg) 100% 50% no-repeat;
 	background-size: contain;
 }
 
@@ -562,15 +568,15 @@ nav li > ul {
 	position: relative;
 	top: 10px;
 }
+
 /*** END VIDEONABLYUDENIE DLYA TSJ ***/
 
 /*** SKUD ***/
 .skud-home-section {
-	background: #ffffff
-		url(https://domofon62.ru/wp-content/themes/domoftwo/img/skud-home-section-img.jpg) 100% 50%
-		no-repeat;
+	background: #ffffff url(https://domofon62.ru/wp-content/themes/domoftwo/img/skud-home-section-img.jpg) 100% 50% no-repeat;
 	background-size: contain;
 }
+
 /*** END SKUD ***/
 
 /* ARCHIVE PRODUCTS */
@@ -664,6 +670,7 @@ nav li > ul {
 	font-weight: 600;
 	margin-bottom: 0;
 }
+
 /* END ARCHIVE PRODUCTS */
 
 /*** ARCHIVE SERVICES ***/
@@ -674,13 +681,14 @@ nav li > ul {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
 /*** END ARCHIVE SERVICES ***/
 
 /* SECTION GET */
 .block-get {
 	width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* Строчный способ
@@ -719,6 +727,7 @@ nav li > ul {
 .element-get:nth-of-type(3) {
 	background: #2958e1;
 }
+
 /* END SECTION GET */
 
 /*** EXAMPLE AND PRICE SECTION ***/
@@ -792,10 +801,9 @@ nav li > ul {
 	background-color: #ff5b31;
 }
 
-#webSistemPriceTab .form_radio input[type='radio']:checked + label:before,
-#autonomSistemPriceTab .form_radio input[type='radio']:checked + label:before {
-	background: url(https://domofon62.ru/wp-content/themes/domoftwo/img/ico/radio-on.svg) 0 0
-		no-repeat;
+#webSistemPriceTab .form_radio input[type='radio']:checked+label:before,
+#autonomSistemPriceTab .form_radio input[type='radio']:checked+label:before {
+	background: url(https://domofon62.ru/wp-content/themes/domoftwo/img/ico/radio-on.svg) 0 0 no-repeat;
 }
 
 input.wpcf7-form-control.wpcf7-text,
@@ -829,16 +837,17 @@ input.wpcf7-form-control.wpcf7-tel {
 	position: absolute;
 	left: 0;
 	top: -2px;
-	background: url(https://domofon62.ru/wp-content/themes/domoftwo/img/ico/radio-off.svg) 0 0
-		no-repeat;
+	background: url(https://domofon62.ru/wp-content/themes/domoftwo/img/ico/radio-off.svg) 0 0 no-repeat;
 }
 
 @media (max-width: 575.98px) {
+
 	#webSistemPriceTab li,
 	#autonomSistemPriceTab li {
 		width: 100%;
 	}
 }
+
 /*** END EXAMPLE AND PRICE SECTION ***/
 
 /*** SECTION TESTIMONIALS ***/
@@ -860,6 +869,7 @@ input.wpcf7-form-control.wpcf7-tel {
 	font-family: var(--font-gilroy-regular);
 	font-size: 18px;
 }
+
 /*** END SECTION TESTIMONIALS ***/
 
 @media (max-width: 1199.98px) {
@@ -897,6 +907,7 @@ input.wpcf7-form-control.wpcf7-tel {
 		top: 9px;
 		right: 15px;
 	}
+
 	/*.container-fluid-md.tadaa .top-btn {
 		display: none;
 	}*/
@@ -934,20 +945,24 @@ input.wpcf7-form-control.wpcf7-tel {
 		display: block;
 		margin-right: auto;
 	}
+
 	.menu-main-menu-container {
 		display: none;
 	}
+
 	.home-div-2 {
 		text-align: center;
 		position: relative;
 		height: auto;
 	}
+
 	.home-div-2-content {
 		padding-top: 30px;
 		padding-bottom: 30px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+
 	.home-div-bg {
 		position: static;
 		width: 100%;
@@ -970,12 +985,14 @@ input.wpcf7-form-control.wpcf7-tel {
 }
 
 @media (max-width: 575.98px) {
+
 	/*** BUTTONS ***/
 	.buy-btn {
 		width: 100%;
 		height: 35px;
 		padding-top: 3px;
 	}
+
 	/*** END BUTTONS ***/
 
 	/*** MENU ***/
@@ -992,7 +1009,7 @@ input.wpcf7-form-control.wpcf7-tel {
 		padding-right: 60px;
 	}
 
-	.dropdown-item + .dropdown-menu {
+	.dropdown-item+.dropdown-menu {
 		margin-left: 15px !important;
 		margin-right: 15px !important;
 	}
@@ -1030,6 +1047,7 @@ input.wpcf7-form-control.wpcf7-tel {
 		padding-bottom: 10px;
 		padding-right: 60px;
 	}
+
 	/*** END MENU ***/
 
 	/* ARCHIVE PRODUCTS */
@@ -1057,6 +1075,7 @@ input.wpcf7-form-control.wpcf7-tel {
 	.woocommerce-loop-category__title {
 		min-height: 95px;
 	}
+
 	/* END ARCHIVE PRODUCTS */
 
 	.card-3-img {
@@ -1065,6 +1084,7 @@ input.wpcf7-form-control.wpcf7-tel {
 		position: relative;
 		bottom: 25px;
 	}
+
 	.card-3 .card-body {
 		padding-top: 0px;
 	}
@@ -1086,6 +1106,7 @@ input.wpcf7-form-control.wpcf7-tel {
 		font-size: 30px;
 		line-height: 35px;
 	}
+
 	/*** END SECTION TESTIMONIALS ***/
 }
 
@@ -1153,6 +1174,7 @@ a.social-links:hover p {
 }
 
 @media (max-width: 992px) {
+
 	.dropdown-toggle::after,
 	.dropend .dropdown-toggle::after {
 		position: absolute;
@@ -1170,7 +1192,7 @@ a.social-links:hover p {
 	.dropend .dropdown-toggle::after {
 		top: 0px !important;
 	}
-	
+
 	#new-main-menu ul:not(.sub-menu) {
 		margin-left: 0 !important;
 	}
@@ -1239,7 +1261,7 @@ textarea.wpcf7-textarea {
 	margin: 5px auto;
 	padding-left: 30px;
 	border-radius: 5px;
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 .popup-form.active {
@@ -1303,19 +1325,20 @@ textarea.wpcf7-textarea {
 .header-tel-two {
 	padding-left: 10px;
 	padding-right: 10px;
-	
+
 }
 
 @media (max-width: 992px) {
 	.navbar-collapse {
 		padding-top: 12px;
 	}
-	
+
 	#new-main-menu ul li ul li {
 		margin-left: 15px;
 	}
-	
-	#new-main-menu .dropdown-menu li a, .dropdown-toggle {
+
+	#new-main-menu .dropdown-menu li a,
+	.dropdown-toggle {
 		padding-top: 0px !important;
 		padding-bottom: 0px !important;
 	}
@@ -1339,9 +1362,9 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 
 .woocommerce-loop-product__link-row {
 	display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
 }
 
 .card-dom-3 {
@@ -1354,9 +1377,9 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 
 @media (max-width: 991.98px) {
 	.card-dom-3 {
-        padding-top: 60px;
-    }
-	
+		padding-top: 60px;
+	}
+
 	.card-body-3 {
 		padding-top: 110px;
 		height: auto;
@@ -1376,9 +1399,9 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 #video-player {
-    width: 100%;
-    height: auto;
-    position: relative;
+	width: 100%;
+	height: auto;
+	position: relative;
 }
 
 
@@ -1408,15 +1431,15 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 } */
 
 #stop {
-    max-width: 50px;
-    max-height: 75px;
-    width: 100%;
-    height: 100%;
+	max-width: 50px;
+	max-height: 75px;
+	width: 100%;
+	height: 100%;
 	background: url(../img/ico/video-stop-button-ico.svg) no-repeat;
 	background-size: contain;
 	position: absolute;
 	bottom: 25px;
-    right: 25px;
+	right: 25px;
 	cursor: pointer;
 	transition: .25s;
 }
@@ -1430,18 +1453,18 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 #play {
-    max-width: 179px;
-    max-height: 125px;
-    width: 100%;
-    height: 100%;
-    background: url(../img/ico/video-play-button-ico.svg) no-repeat;
-    background-size: contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: .25s;
+	max-width: 179px;
+	max-height: 125px;
+	width: 100%;
+	height: 100%;
+	background: url(../img/ico/video-play-button-ico.svg) no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	transition: .25s;
 
 }
 
@@ -1454,80 +1477,82 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 @media (max-width: 768px) {
-    h2.woocommerce-loop-category__title {
-        hyphens: auto; /* Включает автоматический перенос по слогам */
-        word-wrap: break-word; /* Обеспечивает перенос длинных слов на новую строку, если необходимо */
-    }
+	h2.woocommerce-loop-category__title {
+		hyphens: auto;
+		/* Включает автоматический перенос по слогам */
+		word-wrap: break-word;
+		/* Обеспечивает перенос длинных слов на новую строку, если необходимо */
+	}
 
-    #stop {
-        max-width: 30px;
-        max-height: 60px;
-        bottom: 10px;
-        right: 10px;
-    }
+	#stop {
+		max-width: 30px;
+		max-height: 60px;
+		bottom: 10px;
+		right: 10px;
+	}
 
-    #play {
-        max-width: 72px;
-        max-height: 50px;
-    }
+	#play {
+		max-width: 72px;
+		max-height: 50px;
+	}
 }
 
 .section-video {
-    padding-bottom: 60px;
+	padding-bottom: 60px;
 }
 
 .second-section-home .product-cat-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .second-section-home .product-cat-card img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .second-section-home .woocommerce-loop-category__title {
-    margin-top: auto; 
+	margin-top: auto;
 }
 
 .modal-header h2 {
-    text-align: start;
+	text-align: start;
 }
 
 .modal-content .modal-header {
-    align-items: flex-start;
+	align-items: flex-start;
 }
 
 .modal-header button.btn-close {
-    margin-top: 4px;
+	margin-top: 4px;
 }
 
 .container-card .card {
-    height: 100%;
+	height: 100%;
 }
 
 
 /*** NEW YEAR ***/
 a.custom-logo-link.new-year {
-    position: relative;
+	position: relative;
 }
 
 a.custom-logo-link.new-year:before {
-    content: '';
-    background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-cap.png) no-repeat;
-    width: 60px;
-    height: 63px;
-    z-index: 9999;
-    position: absolute;
-    background-size: contain;
-    left: -22px;
-    top: -14px;
+	content: '';
+	background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-cap.png) no-repeat;
+	width: 60px;
+	height: 63px;
+	z-index: 9999;
+	position: absolute;
+	background-size: contain;
+	left: -22px;
+	top: -14px;
 }
 
 a.custom-logo-link.new-year img {
-    margin-top: auto;
+	margin-top: auto;
 }
 
 @media (max-width: 980px) {
@@ -1537,6 +1562,7 @@ a.custom-logo-link.new-year img {
 		top: -12px;
 	}
 }
+
 @media (max-width: 570px) {
 	a.custom-logo-link.new-year:before {
 		width: 60px;
@@ -1544,38 +1570,40 @@ a.custom-logo-link.new-year img {
 		top: -9px;
 	}
 
-    .form-content .col-md-9 p,
-    .form-content .col-md-9 a {
-        font-size: 12px;
-    }
+	.form-content .col-md-9 p,
+	.form-content .col-md-9 a {
+		font-size: 12px;
+	}
 }
 
 body.b-new-year {
-    position: relative;
+	position: relative;
 }
 
 body.b-new-year:before {
-    position: fixed;
-    background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-footer-banner.png) repeat-x;
-    content: '';
-    width: 100%;
-    height: 100px;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    background-size: contain;
+	position: fixed;
+	background: url(https://domofon62.ru/wp-content/uploads/2025/12/new-year-footer-banner.png) repeat-x;
+	content: '';
+	width: 100%;
+	height: 100px;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	background-size: contain;
 }
 
 @media (max-width: 1300px) {
-    body.b-new-year:before {
+	body.b-new-year:before {
 		background-size: cover;
 	}
+
 	a.custom-logo-link.new-year:before {
 		width: 60px;
 		left: -21px;
 		top: -12px;
 	}
 }
+
 /*** END NEW YEAR ***/
 
 
@@ -1587,147 +1615,148 @@ body.b-new-year:before {
 }
 
 .check-connection-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    background: linear-gradient(90deg, #5470a5 0%, #242f44 50%, #242F44 100%);
-    z-index: 989;
-    padding: 14px 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	background: linear-gradient(90deg, #5470a5 0%, #242f44 50%, #242F44 100%);
+	z-index: 989;
+	padding: 14px 0;
 }
 
 .check-connection-banner-text {
-    font-family: Gilroy-Semibold;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+	font-family: Gilroy-Semibold;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .check-connection-banner-btn {
-    background: var(--corporate-color-1);
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 30px;
-    border-radius: 6px;
-    white-space: nowrap;
-    transition: background .25s;
+	background: var(--corporate-color-1);
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 10px 30px;
+	border-radius: 6px;
+	white-space: nowrap;
+	transition: background .25s;
 }
 
 .check-connection-banner-btn:hover {
-    background: var(--corporate-color-hover-1);
-    color: #fff;
+	background: var(--corporate-color-hover-1);
+	color: #fff;
 }
 
 .check-connection-banner-btn:active {
-    --bs-btn-active-bg: var(--corporate-color-hover-1);
-    --bs-btn-active-border-color: var(--corporate-color-hover-1);
-    --bs-btn-active-color: #fff;
+	--bs-btn-active-bg: var(--corporate-color-hover-1);
+	--bs-btn-active-border-color: var(--corporate-color-hover-1);
+	--bs-btn-active-color: #fff;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-    .check-connection-banner-text {
-        font-size: 11px;
-    }
+	.check-connection-banner-text {
+		font-size: 11px;
+	}
 
-    .check-connection-banner-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
+	.check-connection-banner-btn {
+		padding: 8px 12px;
+		font-size: 12px;
+	}
 }
+
 /* /Check Connection Banner */
 
 
 body {
-    padding-bottom: 70px;
+	padding-bottom: 70px;
 }
 
 .fz-15 {
-    font-size: 15px;
+	font-size: 15px;
 }
 
 input.wpcf7-form-control.wpcf7-text,
 input.wpcf7-form-control.wpcf7-tel {
-    width: 100%;
-    padding-left: 30px;
+	width: 100%;
+	padding-left: 30px;
 }
 
 .btn-check-connection {
-    text-align: center;
+	text-align: center;
 }
 
 .check-connection-info {
-    margin-top: 20px;
-    text-align: center;
+	margin-top: 20px;
+	text-align: center;
 }
 
 .conf-modal {
-    font-size: 15px;
+	font-size: 15px;
 }
 
 .title-modal {
-    margin-bottom: 20px;
-    text-align: center;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 #checkConnectionModal .modal-header {
-    border-bottom: 0;
+	border-bottom: 0;
 }
 
 .modal-header button.btn-close {
-    margin-top: -4px;
+	margin-top: -4px;
 }
 
 .conf-modal a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-bottom: 60px;
-    }
+	body {
+		padding-bottom: 60px;
+	}
 
-    .title-modal {
-        font-size: 18px;
-    }
+	.title-modal {
+		font-size: 18px;
+	}
 
-    textarea.wpcf7-textarea {
-        padding-left: 12px;
-    }
+	textarea.wpcf7-textarea {
+		padding-left: 12px;
+	}
 
-    input.wpcf7-form-control.wpcf7-text,
-    input.wpcf7-form-control.wpcf7-tel {
-        padding-left: 12px;
-        height: 40px;
-    }
+	input.wpcf7-form-control.wpcf7-text,
+	input.wpcf7-form-control.wpcf7-tel {
+		padding-left: 12px;
+		height: 40px;
+	}
 
-    .check-connection-info,
-    .conf-modal,
-    .conf-modal a {
-        font-size: 14px;
-    }
+	.check-connection-info,
+	.conf-modal,
+	.conf-modal a {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 767px) {
-  .serv-height {
-    min-height: 130px !important;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
+	.serv-height {
+		min-height: 130px !important;
+		background-size: cover;
+		background-position: center;
+		border-radius: 10px;
 		height: 100%;
 		padding: 12px;
-  }
+	}
 }
 
 @media (max-width: 767px) {
-  .serv-cards-row {
-    padding: 0 12px;
-  }
+	.serv-cards-row {
+		padding: 0 12px;
+	}
 
 	.img-mobile {
 		width: 45px;
@@ -1736,12 +1765,23 @@ input.wpcf7-form-control.wpcf7-tel {
 
 	.serv-content {
 		position: initial;
-    bottom: initial;
+		bottom: initial;
 	}
 }
 
 @media (min-width: 768px) {
-  .serv-cards-container {
-    padding: 0 !important;
-  }
+	.serv-cards-container {
+		padding: 0 !important;
+	}
+}
+
+.header-social {
+	display: flex;
+	gap: 10px;
+}
+
+@media (max-width: 992px) {
+	.header-social {
+		flex-direction: column;
+	}
 }
