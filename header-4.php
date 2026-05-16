@@ -87,202 +87,143 @@
 
 	<header>
 		<nav class="navbar py-0 navbar-expand-lg navbar-dark for-mobile">
-			<div class="container d-flex flex-column flex-lg-row align-items-start" style="background-color: #002977;">
+			<div class="container-xxl d-flex flex-column flex-lg-row align-items-start" style="background-color: #002977;">
 
-				<!--label class="menu-button" aria-hidden="true">
-				<span class="bread bread-top">
-					<span class="ham ham-top"></span>
-				</span>
-				<span class="bread bread-bottom">
-					<span class="ham ham-bottom"></span>
-				</span>
-			</label-->
+				<div class="mobile-nav-top">
+					<a href="https://domofon62.ru/">
+						<img width="150" height="48" src="https://domofon62.ru/wp-content/uploads/2026/05/logo-header-light.svg" class="custom-logo" alt="Логотип" decoding="async" />
+					</a>
+					<label class="menu-button" aria-hidden="true" data-bs-toggle="collapse" data-bs-target="#new-main-menu">
+						<span class="bread bread-top"><span class="ham ham-top"></span></span>
+						<span class="bread bread-bottom"><span class="ham ham-bottom"></span></span>
+					</label>
+				</div>
 
-				<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal" class="top-btn">
-					<span class="action-btn">Получить доступ</span>
-				</a>
-
-				<label class="menu-button" aria-hidden="true" data-bs-toggle="collapse" data-bs-target="#new-main-menu">
-					<span class="bread bread-top">
-						<span class="ham ham-top"></span>
-					</span>
-					<span class="bread bread-bottom">
-						<span class="ham ham-bottom"></span>
-					</span>
-				</label>
-
-				<!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#new-main-menu" aria-controls="new-main-menu" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button-->
-
+				<!-- Раскрывающееся меню -->
 				<div class="collapse navbar-collapse w-100" id="new-main-menu">
 					<nav class="navbar-nav w-100">
 						<?php
-						wp_nav_menu( [
-							'theme_location'  => 'new-main-menu',
-							'menu'            => '',
-							'container'       => false,
-							'container_class' => '',
-							'container_id'    => '',
-							'menu_class'      => 'menu navbar-nav me-auto mb-2 mb-lg-0 justify-content-between',
-							'menu_id'         => '',
-							'echo'            => true,
-							'fallback_cb'     => 'wp_page_menu',
-							'before'          => '',
-							'after'           => '',
-							'link_before'     => '',
-							'link_after'      => '',
-							'items_wrap'      => '
-								<ul id="%1$s" class="%2$s">
-									%3$s
-									<li id="menu-item-18041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18041 nav-item d-block d-lg-none header-tel header-tel-one">
-									<p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
-									<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
-									<p class="tel-header py-1 mb-0">
-										<a href="tel:84912202526" class="p-0">8 (4912) 20-25-26</a>
-									</p>
-									<a href="tg://resolve?domain=RDK62bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
-										<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" width="40px" height="40px">
-										<p class="chasy fw-bold p-0 m-0">@RDK62</p>
+                    wp_nav_menu([
+                        'theme_location'  => 'new-main-menu',
+                        'menu'            => '',
+                        'container'       => false,
+                        'menu_class'      => 'menu navbar-nav me-auto mb-2 mb-lg-0 justify-content-between',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '
+                            <ul id="%1$s" class="%2$s">
+                                %3$s
+                                <li class="menu-item nav-item d-block d-lg-none header-tel header-tel-one">
+                                    <p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
+                                    <p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
+                                    <p class="tel-header py-1 mb-0">
+                                        <a href="tel:84912202526" class="p-0">8 (4912) 20-25-26</a>
+                                    </p>
+                                    <a href="tg://resolve?domain=RDK62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
+                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40px" height="40px">
+                                        <p class="chasy fw-bold p-0 m-0">@RDK62</p>
+                                    </a>
+                                </li>
+                                <li class="menu-item nav-item d-block d-lg-none header-tel header-tel-two">
+                                    <p class="chasy pt-2 fw-bold mb-0 lh-1">Служба поддержки:</p>
+                                    <p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
+                                    <p class="tel-header py-1 mb-0">
+                                        <a href="tel:848912255046" class="p-0">8 (4912) 25-50-46</a>
+                                    </p>
+                                    <a href="tg://resolve?domain=RDK62bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
+                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40px" height="40px">
+                                        <p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
+                                    </a>
+									<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal" class="mt-2 d-inline-block">
+                                        <div class="action-btn">Доступ к услугам</div>
+                                    </a>
+                                    <a href="https://max.ru/id6234057300_bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0 mt-3">
+                                        <img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" width="40px" height="40px">
+                                        <p class="bot-text" style="text-transform:none;">Доступ к услугам<br> через бот</p>
+                                    </a>
+                                </li>
+								<li class="d-none d-lg-inline-block">
+									<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
+										<div class="action-btn" style="border-radius: 0;">Доступ к услугам</div>
 									</a>
 								</li>
-								<li id="menu-item-18041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18041 nav-item d-block d-lg-none header-tel header-tel-two">
-									<p class="chasy pt-2 fw-bold mb-0 lh-1">Служба поддержки:</p>
-									<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
-									<p class="tel-header py-1 mb-0">
-										<a href="tel:848912255046" class="p-0">8 (4912) 25-50-46</a>
-									</p>
-									<a href="tg://resolve?domain=RDK62bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
-										<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" width="40px" height="40px">
-										<p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
-									</a>
 
-									<a href="https://max.ru/id6234057300_bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
-										<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" class="" />
-										<p class="chasy fw-bold p-0 m-0" style="text-transform: none;">Мах бот</p>
+								<li class="d-none d-lg-inline-block">
+									<a href="https://max.ru/id6234057300_bot" target="_blank" class="d-flex align-items-center gap-2 social-links p-0">
+										<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" width="40px" height="40px">
+										<p class="bot-text" style="text-transform: none;">Доступ к услугам<br>через бот</p>
 									</a>
 								</li>
-									<li class="d-none d-lg-inline-block">
-										<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
-											<div class="action-btn d-none d-lg-inline-block" style="border-radius: 0;">Получить доступ</div>
-										</a>
-									</li>
-								</ul>',
-							'depth'           => 0,
-							'walker'          => new My_Walker_Nav_Menu()
-						] );
-					?>
+                            </ul>',
+                        'depth'  => 0,
+                        'walker' => new My_Walker_Nav_Menu()
+                    ]);
+                    ?>
 					</nav>
 				</div>
+
 			</div>
 		</nav>
-	</header>
 
-
-	<!--div class="container">
-	<div class="row">
-		<div class="col">
-			<div class="d-flex align-items-center py-md-3">
-				<a href="<?php echo home_url( '/' ); ?>">
-					<?php if(has_custom_logo() ): ?>
-						<?php the_custom_logo(); ?>
-					<?php else: ?>
-						<p class="site-title"><?php bloginfo( 'title' ); ?></p>
-						<span><?php bloginfo( 'description' ); ?></span>
-					<?php endif; ?>
-				</a>
-				<p class="string-ryazan">
-					<?php
-						$header_desc = get_field('header_desc', 5); 
-						echo $header_desc;
-					?>
-				</p>
-			</div>
+		<!-- Белая полоса под синей — только мобильные -->
+		<div class="d-block d-lg-none" style="background-color:#fff; padding: 6px 16px;">
+			<p class="mb-0" style="font-size:14px; color:#002977; font-weight:500;">Рязанская домофонная компания</p>
 		</div>
-		<div class="col">
+
+		<!-- ПК шапка с логотипом и контактами -->
+		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-6 d-none d-md-block text-md-end">
-					<p class="chasy"><?php $header_hours = get_field('header_hours', 5); echo $header_hours; ?></p>
-					<p class="tel-header"><a href="tel:+<?php $header_phone = get_field('header_phone', 5); $phone = preg_replace('/\D+/', '', $header_phone); echo $phone; ?>"><?php echo $header_phone; ?></a></p>
+				<div class="col-md-6 col-xl-5">
+					<div class="d-none d-lg-flex align-items-center py-md-3">
+						<a href="https://domofon62.ru/">
+							<img width="185" height="60" src="https://domofon62.ru/wp-content/uploads/2023/02/logo-header.svg" class="custom-logo" alt="Логотип в шапке" decoding="async" />
+						</a>
+						<p class="string-ryazan">Рязанская<br>домофонная компания</p>
+					</div>
 				</div>
-				<div class="col-6 text-end">
-					<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
-						<div class="action-btn d-none d-lg-inline-block"><?php $header_btn_text = get_field('header_btn_text', 5); echo $header_btn_text; ?></div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div-->
-
-
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-6 col-xl-5">
-				<div class="d-flex align-items-center py-md-3">
-					<a href="https://domofon62.ru/">
-						<img width="185" height="60" src="https://domofon62.ru/wp-content/uploads/2023/02/logo-header.svg" class="custom-logo" alt="Логотип в шапке" decoding="async" />
-					</a>
-					<p class="string-ryazan">Рязанская<br>домофонная компания</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-xl-7">
-				<div class="d-flex flex-column flex-md-row align-items-end align-items-md-start align-items-xl-center justify-content-end" style="column-gap: 25px">
-					<div class="d-none d-md-flex align-items-center flex-md-row flex-column w-100" style="line-height: 1">
-						<div class="d-none d-md-block text-md-end mx-auto">
+				<div class="col-md-6 col-xl-7">
+					<div class="d-none d-lg-flex align-items-center justify-content-end" style="column-gap: 25px;">
+						<div class="text-md-end">
 							<p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
 							<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
 							<p class="tel-header pt-1 mb-0">
 								<a href="tel:84912202526">8 (4912) 20-25-26</a>
 							</p>
 							<a href="tg://resolve?domain=RDK62" target="_blank" class="d-flex justify-content-end align-items-center gap-2 lh-1 mb-2 social-links">
-								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
+								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="">
 								<p class="chasy fw-bold p-0 m-0">@RDK62</p>
 							</a>
 						</div>
-
-						<div class="d-none d-md-block text-md-end">
+						<div class="text-md-end">
 							<p class="chasy pt-2 fw-bold mb-0 lh-1">Служба поддержки:</p>
 							<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
 							<p class="tel-header pt-1 mb-0">
 								<a href="tel:84912255046">8 (4912) 25-50-46</a>
 							</p>
-
 							<div class="header-social">
 								<a href="tg://resolve?domain=RDK62bot" target="_blank" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links">
-									<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
+									<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" />
 									<p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
-								</a>
-
-								<a href="https://max.ru/id6234057300_bot" target="_blank" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links">
-									<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" class="" />
-									<p class="chasy fw-bold p-0 m-0">Мах бот</p>
 								</a>
 							</div>
 						</div>
 					</div>
-					<!-- <div class="col-6 text-end">
-<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
-<div class="action-btn d-none d-lg-inline-block">Получить доступ</div>
-</a>
-</div> -->
 				</div>
 			</div>
 		</div>
-	</div>
 
-
-	<!-- Modal 2 -->
-	<div class="modal fade" id="dostupModal" tabindex="-1" aria-labelledby="dostupModalLabel" aria-hidden="true">
-		<div class="popups modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h2 class="product-modal-title" id="dostupModalLabel">Для получения доступа к услугам заполните форму:</h2>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="373" title="Форма получить доступ"]'); ?></div>
+		<!-- Modal -->
+		<div class="modal fade" id="dostupModal" tabindex="-1" aria-labelledby="dostupModalLabel" aria-hidden="true">
+			<div class="popups modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="product-modal-title" id="dostupModalLabel">Для получения доступа к услугам заполните форму:</h2>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="373" title="Форма получить доступ"]'); ?></div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</header>

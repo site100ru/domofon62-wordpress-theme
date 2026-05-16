@@ -1805,3 +1805,62 @@ input.wpcf7-form-control.wpcf7-tel {
 .hero .h2-title {
 	font-size: 28px;
 }
+
+/* === Мобильная шапка: синяя полоса с логотипом и бургером === */
+
+@media (max-width: 991.98px) {
+
+	/* Убираем фиксированную высоту навбара, чтобы flex-строка с лого влезла */
+	.for-mobile {
+		height: auto;
+	}
+
+	/* Мобильный блок лого+бургер — разносим по краям */
+	.mobile-nav-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 8px 16px;
+	}
+
+	/* Бургер внутри нашего flex-блока не тянется влево */
+	.mobile-nav-top .menu-button {
+		display: block;
+		margin-right: 0;
+	}
+
+	/* Логотип в синей полосе */
+	.mobile-nav-top .custom-logo {
+		max-width: 150px;
+		height: auto;
+	}
+}
+
+/* Скрываем мобильный блок на ПК */
+@media (min-width: 992px) {
+	.mobile-nav-top {
+		display: none;
+	}
+}
+
+.social-links p.bot-text {
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 15px;
+	padding-top: 20px;
+	line-height: 1;
+}
+
+@media (min-width: 768px) {
+	.social-links:hover {
+		background-color: transparent !important;
+	}
+
+	.social-links p.bot-text {
+		margin: 0;
+		padding: 0;
+		color: #fff;
+		font-weight: 500;
+	}
+}
