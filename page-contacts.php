@@ -75,14 +75,14 @@
 					<div class="tel-email row mt-4 mb-4">
 						<small>Социальные сети:</small>
 						<div class="col-md-12 col-lg-6">
-							<a href="https://vk.com/domofon62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3">
+							<a href="https://vk.com/domofon62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3" target="_blank">
 								<img src="https://domofon62.ru/wp-content/uploads/2026/05/vkontakte-ico.svg" alt="Соцсеть ВКонтакте" />
 								<p class="chasy fw-bold p-0 m-0">vk.com/domofon62</p>
 							</a>
 						</div>
 
 						<div class="col-md-12 col-lg-6">
-							<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3">
+							<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" target="_blank" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3">
 								<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="Соцсеть Max" />
 								<p class="chasy fw-bold p-0 m-0">8 (952) 123-66-12</p>
 							</a>
