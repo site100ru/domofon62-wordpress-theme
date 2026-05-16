@@ -89,7 +89,7 @@
 		<nav class="navbar py-0 navbar-expand-lg navbar-dark for-mobile">
 			<div class="container-xxl d-flex flex-column flex-lg-row align-items-start" style="background-color: #002977;">
 
-				<div class="mobile-nav-top">
+				<div class="mobile-nav-top pe-0">
 					<a href="https://domofon62.ru/">
 						<img width="150" height="48" src="https://domofon62.ru/wp-content/uploads/2026/05/logo-header-light.svg" class="custom-logo" alt="Логотип" decoding="async" />
 					</a>
@@ -166,8 +166,8 @@
 		</nav>
 
 		<!-- Белая полоса под синей — только мобильные -->
-		<div class="d-block d-lg-none" style="background-color:#fff; padding: 6px 16px;">
-			<p class="mb-0" style="font-size:14px; color:#002977; font-weight:500;">Рязанская домофонная компания</p>
+		<div class="d-block d-lg-none" style="background-color:#fff;">
+			<p class="mb-0 text-logo">Рязанская домофонная компания</p>
 		</div>
 
 		<!-- ПК шапка с логотипом и контактами -->

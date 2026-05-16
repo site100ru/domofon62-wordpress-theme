@@ -1864,3 +1864,11 @@ input.wpcf7-form-control.wpcf7-tel {
 		font-weight: 500;
 	}
 }
+
+.text-logo {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 126%;
+	text-align: center;
+	padding-block: 16px;
+}
