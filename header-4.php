@@ -91,7 +91,7 @@
 
 				<div class="mobile-nav-top pe-0">
 					<a href="https://domofon62.ru/">
-						<img width="150" height="48" src="https://domofon62.ru/wp-content/uploads/2026/05/logo-header-light.svg" class="custom-logo" alt="Логотип" decoding="async" />
+						<img width="85" height="26" src="https://domofon62.ru/wp-content/uploads/2026/05/logo-header-light.svg" class="custom-logo" alt="Логотип" decoding="async" />
 					</a>
 					<label class="menu-button" aria-hidden="true" data-bs-toggle="collapse" data-bs-target="#new-main-menu">
 						<span class="bread bread-top"><span class="ham ham-top"></span></span>
