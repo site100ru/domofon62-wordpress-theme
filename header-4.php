@@ -87,7 +87,7 @@
 
 	<header>
 		<nav class="navbar py-0 navbar-expand-lg navbar-dark for-mobile">
-			<div class="container-xxl d-flex flex-column flex-lg-row align-items-start" style="background-color: #002977;">
+			<div class="container d-flex flex-column flex-lg-row align-items-start" style="background-color: #002977;">
 
 				<div class="mobile-nav-top pe-0">
 					<a href="https://domofon62.ru/">
@@ -137,21 +137,10 @@
 									<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal" class="mt-2 d-inline-block">
                                         <div class="action-btn">Доступ к услугам</div>
                                     </a>
-                                    <a href="https://max.ru/id6234057300_bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0 mt-3">
-                                        <img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" width="40px" height="40px">
-                                        <p class="bot-text" style="text-transform:none;">Доступ к услугам<br> через бот</p>
-                                    </a>
                                 </li>
 								<li class="d-none d-lg-inline-block">
 									<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
 										<div class="action-btn" style="border-radius: 0;">Доступ к услугам</div>
-									</a>
-								</li>
-
-								<li class="d-none d-lg-inline-block">
-									<a href="https://max.ru/id6234057300_bot" target="_blank" class="d-flex align-items-center gap-2 social-links p-0">
-										<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="" width="40px" height="40px">
-										<p class="bot-text" style="text-transform: none;">Доступ к услугам<br>через бот</p>
 									</a>
 								</li>
                             </ul>',
