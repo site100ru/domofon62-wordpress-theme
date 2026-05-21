@@ -1890,12 +1890,8 @@ a.social-links:hover p.bot-text {
 	line-height: 137%;
 	letter-spacing: 0.02em;
 	color: #212121;
-	margin-bottom: 15px;
-	text-align: start;
-}
-
-.dostup-section-title-top {
 	margin-bottom: 12px;
+	text-align: start;
 }
 
 .dostup-bots-buttons p {
@@ -1913,7 +1909,7 @@ a.social-links:hover p.bot-text {
 	display: flex !important;
 	flex-wrap: wrap;
 	gap: 10px;
-	margin-bottom: 25px;
+	margin-bottom: 12px;
 	justify-content: space-between;
 }
 
