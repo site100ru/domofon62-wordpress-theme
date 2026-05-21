@@ -1908,6 +1908,7 @@ a.social-links:hover p.bot-text {
 	display: inline-flex !important;
 	flex-wrap: wrap;
 	gap: 10px;
+	margin-bottom: 25px;
 }
 
 .dostup-form-wrap .radio-dostup .wpcf7-list-item {
