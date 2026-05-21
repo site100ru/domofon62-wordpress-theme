@@ -44,8 +44,7 @@
 			
 		// Get current product cat id
 		$obj = get_queried_object();
-
-		$cat_id = $obj->term_id;
+		$cat_id = isset($obj->term_id) ? $obj->term_id : 0;
 
 		// Использование
 		$child_category_id = $cat_id; // ID вашей дочерней категории

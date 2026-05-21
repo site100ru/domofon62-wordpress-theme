@@ -33,24 +33,24 @@ get_header( '4' );
 
 
 <section class="second-section-home">
-	<div class="container pb-2"> 
+	<div class="container pb-2">
 		<div class="row">
 			<div class="col">
-				
+
 				<?php do_action( 'woocommerce_before_main_content' ); ?>
-					
+
 				<h1 class="catalog-goods-h1-second">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-						<?php woocommerce_page_title(); ?> 
+					<?php woocommerce_page_title(); ?>
 					<?php endif; ?>
 				</h1>
-					
+
 				<p class="catalog-goods-text-under maxw-849 mb-30">Наши специалисты оказывают квалифицированную помощь в решении вопросов выбора систем видеонаблюдения на объектах различного характера, а также при проектировании.</p>
-					
+
 				<div class="row mb-3 mb-md-5">
 					<!--div class="col-md-6">
 						<div class="row align-items-center"-->
-							<?php
+					<?php
 								/**
 								 * Hook: woocommerce_before_shop_loop.
 								 *
@@ -60,19 +60,20 @@ get_header( '4' );
 								 */
 								do_action( 'woocommerce_before_shop_loop' );		
 							?>
-						<!--/div>
+					<!--/div>
 					</div-->
 				</div>
-				
+
 				<?php if ( is_search() ) { ?>
 
-					<div class="row">
-						<div class="col">
-							<h2 class="section-subtitle">Товары</h2>
-							<hr style="background: rgb(125,125,125);">
-							<div class="for-load-more-btn"><!--Конец внизу файла archive-product.php - div -->
-								<div class="row pb-5 translate-top-products-cat product-cat-row"> 
-									<?php
+				<div class="row">
+					<div class="col">
+						<h2 class="section-subtitle">Товары</h2>
+						<hr style="background: rgb(125,125,125);">
+						<div class="for-load-more-btn">
+							<!--Конец внизу файла archive-product.php - div -->
+							<div class="row pb-5 translate-top-products-cat product-cat-row">
+								<?php
 										if ( woocommerce_product_loop() ) {
 											
 											woocommerce_product_loop_start();
@@ -108,20 +109,21 @@ get_header( '4' );
 											do_action( 'woocommerce_no_products_found' );
 										}
 									?>
-								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
 				<?php } else { ?>
-				   
-					<div class="row">
-						<div class="col">
-							<?php
+
+				<div class="row">
+					<div class="col">
+						<?php
 								
 								//if ( is_product_category() ) {
+
 									$obj = get_queried_object();
-									$parent = $obj->term_id;
+									$parent = isset($obj->term_id) ? $obj->term_id : 0;
 									
 									$categories = get_categories( [
 										'taxonomy'     => 'product_cat',
@@ -147,32 +149,33 @@ get_header( '4' );
 											echo '</div>';
 											foreach( $categories as $cat ) {
 												if ( $cat->count > 0 ) { ?>
-													<div class="col-6 col-md-3">
-														<a href="<?php echo get_category_link( $cat->term_id ); ?>">
-															<div class="product-cat-card text-center mb-3">
-																<?php
+						<div class="col-6 col-md-3">
+							<a href="<?php echo get_category_link( $cat->term_id ); ?>">
+								<div class="product-cat-card text-center mb-3">
+									<?php
 																	woocommerce_subcategory_thumbnail( $cat ); ?>
-																<h2 class="woocommerce-loop-category__title">
-																	<?php echo $cat->name; ?>
-																	<mark class="count">(<?php echo $cat->count; ?>)</mark>
-																</h2>
-															</div>
-														</a>
-													</div>
-												<?php }
+									<h2 class="woocommerce-loop-category__title">
+										<?php echo $cat->name; ?>
+										<mark class="count">(<?php echo $cat->count; ?>)</mark>
+									</h2>
+								</div>
+							</a>
+						</div>
+						<?php }
 											}
 										echo '</div>';
 									}
 								//}
 								
 							?>
-							
-							<?php if ( is_product_category() ) { ?>
-								<h2 class="section-subtitle">Товары</h2>
-								<hr style="background: rgb(125,125,125);">
-								<div class="for-load-more-btn"><!--Конец внизу файла archive-product.php - div -->
-									<div class="row pb-5 translate-top-products-cat product-cat-row"> 
-										<?php
+
+						<?php if ( is_product_category() ) { ?>
+						<h2 class="section-subtitle">Товары</h2>
+						<hr style="background: rgb(125,125,125);">
+						<div class="for-load-more-btn">
+							<!--Конец внизу файла archive-product.php - div -->
+							<div class="row pb-5 translate-top-products-cat product-cat-row">
+								<?php
 											if ( woocommerce_product_loop() ) {
 												
 												woocommerce_product_loop_start();
@@ -208,11 +211,11 @@ get_header( '4' );
 												do_action( 'woocommerce_no_products_found' );
 											}
 										?>
-									</div>
-								</div>
-							<?php } ?>
+							</div>
 						</div>
+						<?php } ?>
 					</div>
+				</div>
 				<?php } ?>
 			</div>
 		</div>
