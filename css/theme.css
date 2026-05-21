@@ -1890,13 +1890,18 @@ a.social-links:hover p.bot-text {
 	line-height: 137%;
 	letter-spacing: 0.02em;
 	color: #212121;
-	margin-bottom: 12px;
+	margin-bottom: 25px;
 	text-align: start;
+}
+
+.dostup-section-title-top {
+	margin-bottom: 12px;
 }
 
 .dostup-bots-buttons p {
 	display: flex;
 	gap: 15px;
+	margin-bottom: 25px;
 }
 
 .dostup-bots-buttons img {
@@ -1905,10 +1910,11 @@ a.social-links:hover p.bot-text {
 }
 
 .dostup-form-wrap .radio-dostup {
-	display: inline-flex !important;
+	display: flex !important;
 	flex-wrap: wrap;
 	gap: 10px;
 	margin-bottom: 25px;
+	justify-content: space-between;
 }
 
 .dostup-form-wrap .radio-dostup .wpcf7-list-item {
