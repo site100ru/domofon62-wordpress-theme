@@ -44,6 +44,9 @@
 			
 		// Get current product cat id
 		$obj = get_queried_object();
+
+		if ( !isset($obj->term_id) ) return;
+
 		$cat_id = $obj->term_id;
 
 		// Использование
