@@ -1958,10 +1958,16 @@ a.social-links:hover p.bot-text {
 	text-decoration: none
 }
 
-.conf-modal span {
+#dostupModal .conf-modal span {
 	font-size: 13px;
+	line-height: 150%;
 }
 
 .dostup-text.fz-15 {
 	font-size: 13px;
+	line-height: 150%;
+}
+
+p:has([name="textarea-737"]) {
+	padding-bottom: 0;
 }
