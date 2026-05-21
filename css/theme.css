@@ -1908,21 +1908,21 @@ a.social-links:hover p.bot-text {
 	height: 40px;
 }
 
-#wpcf7-f21172-p21170-o2 .radio-dostup {
+.dostup-form-wrap .radio-dostup {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
 }
 
-#wpcf7-f21172-p21170-o2 .radio-dostup .wpcf7-list-item {
+.dostup-form-wrap .radio-dostup .wpcf7-list-item {
 	margin-left: 0;
 }
 
-#wpcf7-f21172-p21170-o2 .wpcf7-list-item input[type="radio"] {
+.dostup-form-wrap .wpcf7-list-item input[type="radio"] {
 	margin-right: 10px;
 }
 
-#wpcf7-f21172-p21170-o2 .wpcf7-list-item-label {
+.dostup-form-wrap .wpcf7-list-item-label {
 	font-family: 'Gilroy';
 	font-weight: 600;
 	font-size: 16px;
