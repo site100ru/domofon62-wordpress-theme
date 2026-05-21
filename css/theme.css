@@ -1926,3 +1926,27 @@ a.social-links:hover p.bot-text {
 	text-align: center;
 	color: #000;
 }
+
+#dostupModal .modal-header,
+#dostupModal .modal-body {
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+@media (max-width: 768px) {
+
+	#dostupModal .modal-header,
+	#dostupModal .modal-body {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+#dostupModal .dostup-file {
+	margin-top: 16px;
+}
+
+#dostupModal input.wpcf7-form-control.wpcf7-file::before {
+	color: #000000;
+	text-decoration: none
+}

@@ -216,8 +216,11 @@
 		<div class="modal fade" id="dostupModal" tabindex="-1" aria-labelledby="dostupModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h2 class="product-modal-title" id="dostupModalLabel">Для получения доступа к услугам заполните форму:</h2>
+					<div class="modal-header border-bottom-0">
+						<div class="">
+							<h2 class="product-modal-title" id="dostupModalLabel">Получить доступ к услугам:</h2>
+							<p class="dostup-subtitle mb-0">Для получения доступа к услугам воспользуйтесь ботом или заполните форму:</p>
+						</div>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
