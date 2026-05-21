@@ -1883,8 +1883,7 @@ a.social-links:hover p.bot-text {
 	padding-block: 16px;
 }
 
-.dostup-form-title,
-.dostup-bots-title {
+.dostup-section-title {
 	font-family: 'ALSSchlangeSansBold';
 	font-weight: 700;
 	font-size: 22px;
@@ -1909,7 +1908,7 @@ a.social-links:hover p.bot-text {
 }
 
 .dostup-form-wrap .radio-dostup {
-	display: flex;
+	display: inline-flex !important;
 	flex-wrap: wrap;
 	gap: 10px;
 }
