@@ -1957,3 +1957,11 @@ a.social-links:hover p.bot-text {
 	color: #000000;
 	text-decoration: none
 }
+
+.conf-modal span {
+	font-size: 13px;
+}
+
+.dostup-text .fz-15 {
+	font-size: 13px;
+}
