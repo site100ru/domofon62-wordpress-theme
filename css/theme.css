@@ -1882,3 +1882,51 @@ a.social-links:hover p.bot-text {
 	text-align: center;
 	padding-block: 16px;
 }
+
+.dostup-form-title,
+.dostup-bots-title {
+	font-family: 'ALSSchlangeSansBold';
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 137%;
+	letter-spacing: 0.02em;
+	color: #212121;
+	margin-bottom: 12px;
+}
+
+.dostup-bots {
+	margin-bottom: 24px;
+}
+
+.dostup-bots-buttons p {
+	display: flex;
+	gap: 15px;
+}
+
+.dostup-bots-buttons img {
+	width: 40px;
+	height: 40px;
+}
+
+#wpcf7-f21172-p21170-o2 .radio-dostup {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+#wpcf7-f21172-p21170-o2 .radio-dostup .wpcf7-list-item {
+	margin-left: 0;
+}
+
+#wpcf7-f21172-p21170-o2 .wpcf7-list-item input[type="radio"] {
+	margin-right: 10px;
+}
+
+#wpcf7-f21172-p21170-o2 .wpcf7-list-item-label {
+	font-family: 'Gilroy';
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #000;
+}
