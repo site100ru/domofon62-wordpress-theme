@@ -8,7 +8,7 @@
 	
  ?>
 
-<main class="light-grey-bg">
+<main class="light-grey-bg form-page">
 	<div class="form-on-the-page">
 		<div class="popups modal-dialog modal-dialog-centered">
 			<div class="modal-content px-3">

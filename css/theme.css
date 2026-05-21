@@ -1968,3 +1968,7 @@ p:has([name="textarea-737"]) {
 	padding-bottom: 0;
 	margin-bottom: 6px;
 }
+
+.form-page input.wpcf7-form-control.wpcf7-file::before {
+	background-color: var(--light-grey);
+}
