@@ -1890,7 +1890,7 @@ a.social-links:hover p.bot-text {
 	line-height: 137%;
 	letter-spacing: 0.02em;
 	color: #212121;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	text-align: start;
 }
 
@@ -1970,5 +1970,5 @@ a.social-links:hover p.bot-text {
 
 p:has([name="textarea-737"]) {
 	padding-bottom: 0;
-	margin-bottom: 0;
+	margin-bottom: 6px;
 }

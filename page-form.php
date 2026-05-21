@@ -15,7 +15,7 @@
 				<div class="modal-header">
 					<h2 class="product-modal-title" id="dostupModalLabel">Получить доступ к услугам:</h2>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body pt-0">
 					<p class="dostup-subtitle">Для получения доступа к услугам воспользуйтесь ботом или заполните форму:</p>
 					<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="373" title="Форма получить доступ"]'); ?></div>
 				</div>
