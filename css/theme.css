@@ -1891,10 +1891,7 @@ a.social-links:hover p.bot-text {
 	letter-spacing: 0.02em;
 	color: #212121;
 	margin-bottom: 12px;
-}
-
-.dostup-bots {
-	margin-bottom: 24px;
+	text-align: start;
 }
 
 .dostup-bots-buttons p {
