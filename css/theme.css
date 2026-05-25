@@ -1976,3 +1976,7 @@ p:has([name="textarea-737"]) {
 span.wpcf7-list-item input.form-check-input[type=checkbox] {
 	margin-top: 0;
 }
+
+.dostup-form-wrap .conf-modal .wpcf7-list-item-label {
+	font-weight: 400;
+}
