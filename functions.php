@@ -1393,19 +1393,19 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 					$email = isset( $posted_data['email-988'] ) ? $posted_data['email-988'] : '';
 					
 					// Получаем данные выбранного радиобаттона и записываем в переменную.
-					$service = $posted_data['radio-678'][0];
+					$service = $posted_data['radio-678'][0] ?? '—';
 					
 					// Получаем остальные данные
-					$comments  = 'Город '.$posted_data['text-700'].', ';
-					$comments .= 'ул. '.$posted_data['text-701'].', ';
-					$comments .= 'д. '.$posted_data['text-702'].', ';
-					$comments .= 'кв. '.$posted_data['text-703'].'.<br>';
-					$comments .= 'ФИО собственнника: '.$posted_data['text-710'].'.<br>';
-					$comments .= 'Комментарий: '.$posted_data['textarea-737'].'.';
+					$comments  = 'Город ' . ($posted_data['text-700'] ?? '—') . ', ';
+					$comments .= 'ул. ' . ($posted_data['text-701'] ?? '—') . ', ';
+					$comments .= 'д. ' . ($posted_data['text-702'] ?? '—') . ', ';
+					$comments .= 'кв. ' . ($posted_data['text-703'] ?? '—') . '.<br>';
+					$comments .= 'ФИО собственника: ' . ($posted_data['text-710'] ?? '—') . '.<br>';
+					$comments .= 'Комментарий: ' . ($posted_data['textarea-737'] ?? '—') . '.';
 					
 					// Получаем файл
 					$uploaded_files = $submission->uploaded_files();
-					$file_path = $uploaded_files['file-706'][0]; // Путь к файлу
+					$file_path = $uploaded_files['file-706'][0] ?? null; // ← добавить ?? null
 					
 					/* Подготовка данных для отправки в Битрикс с помощью вебхука */
 					$webhook_data = array(
