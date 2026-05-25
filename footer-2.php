@@ -6,7 +6,7 @@
 		<div class="row footer align-items-start">
 			<div class="col col-md-6 col-lg-3 d-flex flex-column">
 				<a href="<?php echo home_url( '/' ); $footer_logo = get_field('footer_logo', 5); ?>">
-					   <img src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>" />
+					<img src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>" />
 				</a>
 				<p class="string-ryazan-footer mt-2 mb-1">
 					<?php $header_desc = get_field('header_desc', 5); 
@@ -25,7 +25,7 @@
 					) );
 				?>
 			</div>
-  
+
 			<div class="col col-md-6 col-lg-3">
 				<?php
 					wp_nav_menu( array(
@@ -34,7 +34,7 @@
 					) );
 				?>
 			</div>
-			
+
 			<div class="col-12 col-md-6 col-lg-3 text-start text-lg-end footer-end">
 				<div class="">
 					<p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
@@ -42,15 +42,8 @@
 					<p class="tel-header pt-1 mb-0">
 						<a href="tel:84912202526">8 (4912) 20-25-26</a>
 					</p>
-					<a
-					   href="tg://resolve?domain=RDK62"
-					   class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links"
-					   >
-						<img
-							 src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg"
-							 alt=""
-							 class=""
-							 />
+					<a href="tg://resolve?domain=RDK62" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
+						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
 						<p class="chasy fw-bold p-0 m-0">@RDK62</p>
 					</a>
 				</div>
@@ -61,25 +54,18 @@
 					<p class="tel-header pt-1 mb-0">
 						<a href="tel:84912255046">8 (4912) 25-50-46</a>
 					</p>
-					<a
-					   href="tg://resolve?domain=RDK62bot"
-					   class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links"
-					   >
-						<img
-							 src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg"
-							 alt=""
-							 class=""
-							 />
+					<a href="tg://resolve?domain=RDK62bot" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
+						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
 						<p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
 					</a>
 				</div>
 
-				<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal"
-				   ><div class="action-btn">Получить доступ</div></a
-					>
+				<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
+					<div class="action-btn">Получить доступ</div>
+				</a>
 			</div>
 
-<!-- 			<div class="col-12 col-md-6 col-lg-3">
+			<!-- 			<div class="col-12 col-md-6 col-lg-3">
 				<div class="d-flex flex-column">
 					<div class="me-lg-3 mt-3 mt-md-auto">
 						<p class="chasy-footer"><?php $header_hours = get_field('header_hours', 5); echo $header_hours; ?></p>
@@ -98,7 +84,7 @@
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
-                        <h2 class="product-modal-title" id="productModalLabel">Заказ товара</h2>
+						<h2 class="product-modal-title" id="productModalLabel">Заказ товара</h2>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -124,20 +110,20 @@
 								}
 							</script>
 						</p>
-						<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="372" title="Форма заказ товара"]'); ?></div>  
+						<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="372" title="Форма заказ товара"]'); ?></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- End order product -->
 
-		
+
 		<!-- Service Modal -->
 		<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
-                        <h2 class="product-modal-title" id="serviceModalLabel">Заказ услуги</h2>
+						<h2 class="product-modal-title" id="serviceModalLabel">Заказ услуги</h2>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -150,38 +136,38 @@
 		</div>
 		<!-- Service Modal -->
 
-        <!-- Check Connection Modal -->
-        <div class="modal fade" id="checkConnectionModal" tabindex="-1" aria-labelledby="checkConnectionModalLabel" aria-hidden="true">
-            <div class="popups modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+		<!-- Check Connection Modal -->
+		<div class="modal fade" id="checkConnectionModal" tabindex="-1" aria-labelledby="checkConnectionModalLabel" aria-hidden="true">
+			<div class="popups modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
 						<?php echo do_shortcode('[contact-form-7 id="14bc33d" title="Форма проверить подключение"]'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Check Connection Modal -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Check Connection Modal -->
 
 	</div>
 </footer>
 
 <!-- Check Connection Banner -->
 <div class="check-connection-banner">
-    <div class="container ">
-        <div class="row align-items-center">
-            <div class="col-7 col-md-7">
-                <p class="check-connection-banner-text mb-0">Проверить возможность подключения</p>
-            </div>
-            <div class="col-5 col-md-3 offset-md-2 d-flex justify-content-end">
-                <button class="btn check-connection-banner-btn w-100" data-bs-toggle="modal" data-bs-target="#checkConnectionModal">
-                    Проверить
-                </button>
-            </div>
-        </div>
-    </div>
+	<div class="container ">
+		<div class="row align-items-center">
+			<div class="col-7 col-md-7">
+				<p class="check-connection-banner-text mb-0">Проверить возможность подключения</p>
+			</div>
+			<div class="col-5 col-md-3 offset-md-2 d-flex justify-content-end">
+				<button class="btn check-connection-banner-btn w-100" data-bs-toggle="modal" data-bs-target="#checkConnectionModal">
+					Проверить
+				</button>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- /Check Connection Banner -->
 
@@ -191,13 +177,17 @@
 	<div id="callbackBtn" class="callback-button" onclick="callbackButtonClick();">
 		<div id="btnIco" class="callback-button-ico"></div>
 	</div>
-	
+
 	<div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
-		<a href="tel:+74912202526"><div class="callback-phone-button-ico"></div></a>
+		<a href="tel:+74912202526">
+			<div class="callback-phone-button-ico"></div>
+		</a>
 	</div>
 
 	<div id="telegramBtn" class="callback-telegram-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Telegram">
-		<a href="tg://resolve?domain=RDK62" target="_blank"><div class="callback-telegram-button-ico"></div></a>
+		<a href="tg://resolve?domain=RDK62" target="_blank">
+			<div class="callback-telegram-button-ico"></div>
+		</a>
 	</div>
 
 	<div id="maxBtn" class="callback-max-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Max">
@@ -228,21 +218,29 @@
 	im.mask(telMask);
 </script>
 
+<script>
+	document.getElementById('dostupModal').addEventListener('show.bs.modal', function () {
+    var formEl = document.querySelector('#wpcf7-f373-o1 form');
+    if (formEl && typeof wpcf7 !== 'undefined') {
+        wpcf7.init(formEl);
+    }
+});
+</script>
 
 <!-- Всплывающая форма Политики конфиденциальности -->
 <div class="popup-form form-content py-3" id="popupForm">
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-9">
-                <p class="mb-md-0">
-                    Пользуясь сайтом вы соглашаетесь с <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">политикой конфиденциальности</a> и <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработкой персональных данных</a>.
-                </p>
-            </div>
-            <div class="col-md-3 text-md-center">
-                <button id="closeBtn" class="btn action-btn">Согласен</button>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-md-9">
+				<p class="mb-md-0">
+					Пользуясь сайтом вы соглашаетесь с <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">политикой конфиденциальности</a> и <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработкой персональных данных</a>.
+				</p>
+			</div>
+			<div class="col-md-3 text-md-center">
+				<button id="closeBtn" class="btn action-btn">Согласен</button>
+			</div>
+		</div>
+	</div>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -273,7 +271,7 @@
 <!-- /Всплывающая форма Политики конфиденциальности -->
 
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
+<script type="text/javascript">
 	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 	m[i].l=1*new Date();
 	for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -287,7 +285,9 @@
         webvisor:true
 	});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/45523608" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/45523608" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
 
 
@@ -305,8 +305,9 @@
 	}, false );
 </script>
 <!-- End send YM target -->
-  
+
 <!-- <?php include get_template_directory() . '/inc/snowflake/snowflake.php'; ?> -->
 
 </body>
+
 </html>
