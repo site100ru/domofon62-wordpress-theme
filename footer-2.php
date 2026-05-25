@@ -218,14 +218,6 @@
 	im.mask(telMask);
 </script>
 
-<script>
-	document.getElementById('dostupModal').addEventListener('show.bs.modal', function () {
-    var formEl = document.querySelector('#wpcf7-f373-o1 form');
-    if (formEl && typeof wpcf7 !== 'undefined') {
-        wpcf7.init(formEl);
-    }
-});
-</script>
 
 <!-- Всплывающая форма Политики конфиденциальности -->
 <div class="popup-form form-content py-3" id="popupForm">
