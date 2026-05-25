@@ -1849,6 +1849,178 @@ jQuery(document).ready(function($) {
 
 
 
+/* СЕКЦИЯ "ДРУГИЕ УСЛУГИ" */
+
+add_action('add_meta_boxes', 'add_section_dop_metabox');
+function add_section_dop_metabox() {
+	add_meta_box(
+		'section-dop',
+		'Другие услуги для отображения',
+		'section_dop_metabox_callback',
+		'uslugi',
+		'normal',
+		'high'
+	);
+}
+
+function section_dop_metabox_callback($post) {
+	wp_nonce_field('save_section_dop', 'section_dop_nonce');
+
+	$selected_uslugi = get_post_meta($post->ID, '_section_dop_ids', true);
+	if (!is_array($selected_uslugi)) {
+		$selected_uslugi = array();
+	}
+
+	$all_uslugi = get_posts(array(
+		'post_type'      => 'uslugi',
+		'posts_per_page' => -1,
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+		'post_status'    => 'publish',
+		'exclude'        => array($post->ID),
+	));
+
+	echo '<table class="form-table">';
+
+	echo '<tr>';
+	echo '<th scope="row">Выберите услуги</th>';
+	echo '<td>';
+
+	if (!empty($all_uslugi)) {
+		echo '<div class="select-all-controls" style="margin-bottom: 10px; padding: 10px; background: #fff; border: 1px solid #ddd; border-radius: 3px;">';
+		echo '<button type="button" class="button" id="select-all-dop">Выбрать все</button> ';
+		echo '<button type="button" class="button" id="deselect-all-dop">Снять все</button>';
+		echo '<span style="margin-left: 20px; font-style: italic; color: #666;">Всего услуг: ' . count($all_uslugi) . ', выбрано: <span id="dop-selected-count">' . count($selected_uslugi) . '</span></span>';
+		echo '</div>';
+
+		echo '<div style="max-height: 250px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; background: #f9f9f9; border-radius: 3px;">';
+		foreach ($all_uslugi as $usluga) {
+			$checked = in_array($usluga->ID, $selected_uslugi) ? 'checked' : '';
+			echo '<div style="display: flex; align-items: center; margin-bottom: 8px; padding: 5px;">';
+			echo '<label style="display: flex; align-items: center; cursor: pointer;">';
+			echo '<input type="checkbox" name="section_dop_ids[]" value="' . $usluga->ID . '" ' . $checked . ' class="dop-checkbox" style="margin-right: 8px;"> ';
+			echo esc_html($usluga->post_title);
+			echo '</label>';
+			echo '</div>';
+		}
+		echo '</div>';
+		echo '<p class="description">Выберите услуги для отображения в секции «Другие услуги». Доступны через шорткод <code>[section_dop]</code>.</p>';
+	} else {
+		echo '<p>Других услуг не найдено.</p>';
+	}
+
+	echo '</td>';
+	echo '</tr>';
+
+	echo '</table>';
+	?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  function updateDopCount() {
+    var count = $('.dop-checkbox:checked').length;
+    $('#dop-selected-count').text(count);
+  }
+
+  $('#select-all-dop').click(function() {
+    $('.dop-checkbox').prop('checked', true);
+    updateDopCount();
+  });
+
+  $('#deselect-all-dop').click(function() {
+    $('.dop-checkbox').prop('checked', false);
+    updateDopCount();
+  });
+
+  $('.dop-checkbox').change(function() {
+    updateDopCount();
+  });
+
+  updateDopCount();
+});
+</script>
+<?php
+}
+
+add_action('save_post', 'save_section_dop_metabox');
+function save_section_dop_metabox($post_id) {
+	if (!isset($_POST['section_dop_nonce']) || !wp_verify_nonce($_POST['section_dop_nonce'], 'save_section_dop')) {
+		return;
+	}
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
+	if (get_post_type($post_id) !== 'uslugi') {
+		return;
+	}
+
+	$selected_uslugi = isset($_POST['section_dop_ids']) ? array_map('intval', $_POST['section_dop_ids']) : array();
+	update_post_meta($post_id, '_section_dop_ids', $selected_uslugi);
+}
+
+add_shortcode('section_dop', 'section_dop_shortcode');
+function section_dop_shortcode() {
+	global $post;
+
+	if (!$post || $post->post_type !== 'uslugi') {
+		return '';
+	}
+
+	$selected_uslugi = get_post_meta($post->ID, '_section_dop_ids', true);
+	if (!is_array($selected_uslugi) || empty($selected_uslugi)) {
+		return '';
+	}
+
+	$uslugi = get_posts(array(
+		'post_type'      => 'uslugi',
+		'posts_per_page' => -1,
+		'post__in'       => $selected_uslugi,
+		'orderby'        => 'post__in',
+		'post_status'    => 'publish',
+	));
+
+	if (empty($uslugi)) {
+		return '';
+	}
+
+	ob_start();
+	?>
+<section class="light-grey-bg py-5 section-dop">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 class="h2-title" style="margin-bottom: 40px;">Другие услуги которые мы оказываем</h2>
+				<div class="row">
+					<?php foreach ($uslugi as $usluga) : ?>
+					<div class="col-md-4 mb-4 mb-md-0 cardddd">
+						<a class="card" href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
+							<?php if (has_post_thumbnail($usluga->ID)) : ?>
+							<img decoding="async" class="img-fluid" src="<?php echo esc_url(get_the_post_thumbnail_url($usluga->ID, 'large')); ?>" alt="<?php echo esc_attr($usluga->post_title); ?>">
+							<?php endif; ?>
+						</a>
+						<div class="card-body text-center">
+							<a href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
+								<p class="card-description mb-3 mx-auto" style="max-width: 240px;">
+									<strong><?php echo esc_html($usluga->post_title); ?></strong>
+								</p>
+								<div class="action-btn action-btn_w100">Узнать подробнее</div>
+							</a>
+						</div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<?php
+	return ob_get_clean();
+}
+
+
+
 /* ПРИНУДИТЕЛЬНАЯ ГЕНЕРАЦИЯ ЛАТИНСКИХ URL ДЛЯ ТОВРОВ ПРИ СОХРАНЕНИИ */
 // Решение для плагина "Обмен Данными Электронной Коммерции"
 // Агрессивный метод перехвата ЛЮБОГО обновления товаров
