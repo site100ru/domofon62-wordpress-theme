@@ -64,17 +64,16 @@ function price_new_wrap() {
 	$price = $product->get_price();
 	?>
 <div class="row align-items-center">
-  <div class="col-6 col-md-12">
-    <p class="product-price mb-0 mb-md-3"><?php echo $price; ?> руб</p>
-  </div>
-  <div class="col-6 col-md-12">
-    <!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
-    <?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-    <object>
-      <a href="#" onclick="getName( '<?php echo $product->name; ?>' );" class="buy-btn" data-bs-toggle="modal"
-        data-bs-target="#productModal">Заказать</a>
-    </object>
-  </div>
+	<div class="col-6 col-md-12">
+		<p class="product-price mb-0 mb-md-3"><?php echo $price; ?> руб</p>
+	</div>
+	<div class="col-6 col-md-12">
+		<!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
+		<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
+		<object>
+			<a href="#" onclick="getName( '<?php echo $product->name; ?>' );" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</a>
+		</object>
+	</div>
 </div>
 <?php
 }
@@ -127,10 +126,7 @@ add_action( 'woocommerce_simple_add_to_cart', 'add_action_button_single', 30 );
 /* Single product */
 function add_action_button_single() {
    $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-<div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span
-    class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><a href="#"
-    class="single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal"
-    onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a></div>
+<div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><a href="#" class="single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a></div>
 <?php
 }
 
@@ -1174,12 +1170,12 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 
 			//Событие наступило! Делаем то, что нам нужно!
 			// Например, перехватываем введенные данные в полях Contact Form 7:
-			$f7City  = $posted_data['text-700'];
-			$f7Street = $posted_data['text-701'];
-			$f7House = $posted_data['text-702'];
-			$f7Apartment = $posted_data['text-703'];
-			$f7Phone = $posted_data['text-690'];
-			$f7Email = $posted_data['email-988'];
+			$f7City      = isset($posted_data['text-700']) && !empty($posted_data['text-700']) ? mysqli_real_escape_string($connection, $posted_data['text-700']) : '—';
+			$f7Street    = isset($posted_data['text-701']) && !empty($posted_data['text-701']) ? mysqli_real_escape_string($connection, $posted_data['text-701']) : '—';
+			$f7House     = isset($posted_data['text-702']) && !empty($posted_data['text-702']) ? mysqli_real_escape_string($connection, $posted_data['text-702']) : '—';
+			$f7Apartment = isset($posted_data['text-703']) && !empty($posted_data['text-703']) ? mysqli_real_escape_string($connection, $posted_data['text-703']) : '—';
+			$f7Phone     = isset($posted_data['text-690']) && !empty($posted_data['text-690']) ? mysqli_real_escape_string($connection, $posted_data['text-690']) : '—';
+			$f7Email     = isset($posted_data['email-988']) && !empty($posted_data['email-988']) ? mysqli_real_escape_string($connection, $posted_data['email-988']) : '—';
 			
 			// Настройки БД
 			$db_host = 'localhost';
@@ -1771,41 +1767,40 @@ jQuery(document).ready(function($) {
 			ob_start();
 			?>
 <div class="uslugi-objects-section">
-  <div class="light-grey-bg py-5">
-    <div class="container">
-      <h2 class="h2-title mb-4"><?php echo esc_html($title); ?></h2>
-      <?php foreach ($objects as $object) : ?>
-      <div
-        class="padding-row row justify-content-center justify-content-lg-evenly align-items-center p-2 mt-4 bg-white">
-        <div class="col-12 col-md-6 col-lg-4 obj-thumbnail text-center">
-          <?php 
+	<div class="light-grey-bg py-5">
+		<div class="container">
+			<h2 class="h2-title mb-4"><?php echo esc_html($title); ?></h2>
+			<?php foreach ($objects as $object) : ?>
+			<div class="padding-row row justify-content-center justify-content-lg-evenly align-items-center p-2 mt-4 bg-white">
+				<div class="col-12 col-md-6 col-lg-4 obj-thumbnail text-center">
+					<?php 
 																$thumbnail_id = get_post_thumbnail_id($object->ID);
 																if ($thumbnail_id) : 
 																		$bgtnl = get_the_post_thumbnail_url($object->ID, 'full');
 																		$img_alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 																?>
-          <img src="<?php echo esc_url($bgtnl); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="img-fluid" />
-          <?php endif; ?>
-        </div>
-        <div class="col-12 col-md-6 col-lg-8 ps-5">
-          <a href="<?php echo get_permalink($object->ID); ?>">
-            <div class="obj-title pb-2 pt-4 pt-md-0"><?php echo esc_html($object->post_title); ?></div>
-          </a>
-          <div class="pt-2"><?php echo apply_filters('the_content', $object->post_content); ?></div>
-          <div class="pt-3">
-            <a href="<?php echo get_permalink($object->ID); ?>" class="oneu-white-area-btn mb-3">Смотреть фото</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
+					<img src="<?php echo esc_url($bgtnl); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="img-fluid" />
+					<?php endif; ?>
+				</div>
+				<div class="col-12 col-md-6 col-lg-8 ps-5">
+					<a href="<?php echo get_permalink($object->ID); ?>">
+						<div class="obj-title pb-2 pt-4 pt-md-0"><?php echo esc_html($object->post_title); ?></div>
+					</a>
+					<div class="pt-2"><?php echo apply_filters('the_content', $object->post_content); ?></div>
+					<div class="pt-3">
+						<a href="<?php echo get_permalink($object->ID); ?>" class="oneu-white-area-btn mb-3">Смотреть фото</a>
+					</div>
+				</div>
+			</div>
+			<?php endforeach; ?>
 
-      <?php if ($show_button) : ?>
-      <div class="text-center mt-4">
-        <a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть все работы</a>
-      </div>
-      <?php endif; ?>
-    </div>
-  </div>
+			<?php if ($show_button) : ?>
+			<div class="text-center mt-4">
+				<a href="/objekty" class="oneu-white-area-btn" style="max-width: 280px; width: 100%;">Смотреть все работы</a>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
 </div>
 <?php
 			return ob_get_clean();
@@ -2039,11 +2034,6 @@ function send_cf7_to_max($contact_form) {
             $message .= "Услуга: " . (isset($data['radio-678']) ? implode(', ', (array)$data['radio-678']) : '—') . "\n";
             $message .= "Телефон: " . ($data['text-690'] ?? '—') . "\n";
             $message .= "Email: " . ($data['email-988'] ?? '—') . "\n";
-            $message .= "Город: " . ($data['text-700'] ?? '—') . "\n";
-            $message .= "Улица: " . ($data['text-701'] ?? '—') . "\n";
-            $message .= "№ дома: " . ($data['text-702'] ?? '—') . "\n";
-            $message .= "№ квартиры: " . ($data['text-703'] ?? '—') . "\n";
-            $message .= "ФИО собственника: " . ($data['text-710'] ?? '—') . "\n";
             $message .= "Комментарий: " . ($data['textarea-737'] ?? '—');
 
             $file_token = null;
