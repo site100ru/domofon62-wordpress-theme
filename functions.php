@@ -1851,6 +1851,111 @@ jQuery(document).ready(function($) {
 
 /* СЕКЦИЯ "ДРУГИЕ УСЛУГИ" */
 
+// Метабокс: изображение и заголовок карточки для конкретной услуги
+add_action('add_meta_boxes', 'add_dop_card_metabox');
+function add_dop_card_metabox() {
+	add_meta_box(
+		'dop-card-fields',
+		'Карточка в секции «Другие услуги»',
+		'dop_card_metabox_callback',
+		'uslugi',
+		'normal',
+		'high'
+	);
+}
+
+function dop_card_metabox_callback($post) {
+	wp_nonce_field('save_dop_card_fields', 'dop_card_nonce');
+
+	$card_title = get_post_meta($post->ID, '_dop_card_title', true);
+	$card_image = get_post_meta($post->ID, '_dop_card_image', true);
+	?>
+	<table class="form-table">
+		<tr>
+			<th scope="row"><label for="dop_card_title">Заголовок карточки</label></th>
+			<td>
+				<input type="text" id="dop_card_title" name="dop_card_title"
+					value="<?php echo esc_attr($card_title); ?>" class="regular-text">
+				<p class="description">Если не указан — используется заголовок записи.</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">Изображение карточки</th>
+			<td>
+				<div id="dop-card-image-wrap">
+					<?php if ($card_image) : ?>
+					<img src="<?php echo esc_url(wp_get_attachment_image_url($card_image, 'medium')); ?>"
+						id="dop-card-image-preview"
+						style="max-width:200px; display:block; margin-bottom:8px; border-radius:4px;">
+					<?php else : ?>
+					<img id="dop-card-image-preview" src="" style="max-width:200px; display:none; margin-bottom:8px; border-radius:4px;">
+					<?php endif; ?>
+				</div>
+				<input type="hidden" id="dop_card_image" name="dop_card_image"
+					value="<?php echo esc_attr($card_image); ?>">
+				<button type="button" class="button" id="dop-card-upload-btn">Выбрать изображение</button>
+				<?php if ($card_image) : ?>
+				<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px;">Удалить</button>
+				<?php else : ?>
+				<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px; display:none;">Удалить</button>
+				<?php endif; ?>
+				<p class="description">Если не выбрано — используется изображение записи (миниатюра).</p>
+			</td>
+		</tr>
+	</table>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	var mediaUploader;
+
+	$('#dop-card-upload-btn').click(function(e) {
+		e.preventDefault();
+		if (mediaUploader) { mediaUploader.open(); return; }
+		mediaUploader = wp.media({
+			title: 'Выбрать изображение для карточки',
+			button: { text: 'Выбрать' },
+			multiple: false
+		});
+		mediaUploader.on('select', function() {
+			var attachment = mediaUploader.state().get('selection').first().toJSON();
+			$('#dop_card_image').val(attachment.id);
+			$('#dop-card-image-preview').attr('src', attachment.url).show();
+			$('#dop-card-remove-btn').show();
+		});
+		mediaUploader.open();
+	});
+
+	$('#dop-card-remove-btn').click(function() {
+		$('#dop_card_image').val('');
+		$('#dop-card-image-preview').attr('src', '').hide();
+		$(this).hide();
+	});
+});
+</script>
+	<?php
+}
+
+add_action('save_post', 'save_dop_card_metabox');
+function save_dop_card_metabox($post_id) {
+	if (!isset($_POST['dop_card_nonce']) || !wp_verify_nonce($_POST['dop_card_nonce'], 'save_dop_card_fields')) {
+		return;
+	}
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
+	if (get_post_type($post_id) !== 'uslugi') {
+		return;
+	}
+
+	$title = isset($_POST['dop_card_title']) ? sanitize_text_field($_POST['dop_card_title']) : '';
+	update_post_meta($post_id, '_dop_card_title', $title);
+
+	$image = isset($_POST['dop_card_image']) ? intval($_POST['dop_card_image']) : 0;
+	update_post_meta($post_id, '_dop_card_image', $image);
+}
+
 add_action('add_meta_boxes', 'add_section_dop_metabox');
 function add_section_dop_metabox() {
 	add_meta_box(
@@ -1993,17 +2098,29 @@ function section_dop_shortcode() {
 			<div class="col">
 				<h2 class="h2-title" style="margin-bottom: 40px;">Другие услуги которые мы оказываем</h2>
 				<div class="row">
-					<?php foreach ($uslugi as $usluga) : ?>
+					<?php foreach ($uslugi as $usluga) :
+						$card_title = get_post_meta($usluga->ID, '_dop_card_title', true);
+						if (empty($card_title)) $card_title = $usluga->post_title;
+
+						$card_image_id = get_post_meta($usluga->ID, '_dop_card_image', true);
+						if ($card_image_id) {
+							$card_img_url = wp_get_attachment_image_url($card_image_id, 'large');
+						} elseif (has_post_thumbnail($usluga->ID)) {
+							$card_img_url = get_the_post_thumbnail_url($usluga->ID, 'large');
+						} else {
+							$card_img_url = '';
+						}
+					?>
 					<div class="col-md-4 mb-4 mb-md-0 cardddd">
 						<a class="card" href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
-							<?php if (has_post_thumbnail($usluga->ID)) : ?>
-							<img decoding="async" class="img-fluid" src="<?php echo esc_url(get_the_post_thumbnail_url($usluga->ID, 'large')); ?>" alt="<?php echo esc_attr($usluga->post_title); ?>">
+							<?php if ($card_img_url) : ?>
+							<img decoding="async" class="img-fluid" src="<?php echo esc_url($card_img_url); ?>" alt="<?php echo esc_attr($card_title); ?>">
 							<?php endif; ?>
 						</a>
 						<div class="card-body text-center">
 							<a href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
 								<p class="card-description mb-3 mx-auto" style="max-width: 240px;">
-									<strong><?php echo esc_html($usluga->post_title); ?></strong>
+									<strong><?php echo esc_html($card_title); ?></strong>
 								</p>
 								<div class="action-btn action-btn_w100">Узнать подробнее</div>
 							</a>
