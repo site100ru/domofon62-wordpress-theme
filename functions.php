@@ -1168,15 +1168,6 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			$submission = WPCF7_Submission::get_instance();
 			$posted_data = $submission->get_posted_data();
 
-			//Событие наступило! Делаем то, что нам нужно!
-			// Например, перехватываем введенные данные в полях Contact Form 7:
-			$f7City      = isset($posted_data['text-700']) && !empty($posted_data['text-700']) ? mysqli_real_escape_string($connection, $posted_data['text-700']) : '—';
-			$f7Street    = isset($posted_data['text-701']) && !empty($posted_data['text-701']) ? mysqli_real_escape_string($connection, $posted_data['text-701']) : '—';
-			$f7House     = isset($posted_data['text-702']) && !empty($posted_data['text-702']) ? mysqli_real_escape_string($connection, $posted_data['text-702']) : '—';
-			$f7Apartment = isset($posted_data['text-703']) && !empty($posted_data['text-703']) ? mysqli_real_escape_string($connection, $posted_data['text-703']) : '—';
-			$f7Phone     = isset($posted_data['text-690']) && !empty($posted_data['text-690']) ? mysqli_real_escape_string($connection, $posted_data['text-690']) : '—';
-			$f7Email     = isset($posted_data['email-988']) && !empty($posted_data['email-988']) ? mysqli_real_escape_string($connection, $posted_data['email-988']) : '—';
-			
 			// Настройки БД
 			$db_host = 'localhost';
 			$db_name = 'orion6sa_newd';
@@ -1185,6 +1176,16 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			
 			// Подключение к БД
 			$connection = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+
+
+			//Событие наступило! Делаем то, что нам нужно!
+			// Например, перехватываем введенные данные в полях Contact Form 7:
+			$f7City      = isset($posted_data['text-700']) && !empty($posted_data['text-700']) ? mysqli_real_escape_string($connection, $posted_data['text-700']) : '—';
+			$f7Street    = isset($posted_data['text-701']) && !empty($posted_data['text-701']) ? mysqli_real_escape_string($connection, $posted_data['text-701']) : '—';
+			$f7House     = isset($posted_data['text-702']) && !empty($posted_data['text-702']) ? mysqli_real_escape_string($connection, $posted_data['text-702']) : '—';
+			$f7Apartment = isset($posted_data['text-703']) && !empty($posted_data['text-703']) ? mysqli_real_escape_string($connection, $posted_data['text-703']) : '—';
+			$f7Phone     = isset($posted_data['text-690']) && !empty($posted_data['text-690']) ? mysqli_real_escape_string($connection, $posted_data['text-690']) : '—';
+			$f7Email     = isset($posted_data['email-988']) && !empty($posted_data['email-988']) ? mysqli_real_escape_string($connection, $posted_data['email-988']) : '—';
 			
 			$result = mysqli_query( $connection, "INSERT INTO `clients` (`id`, `city`, `street`, `house`, `apartment`, `phone`, `email`) VALUES (NULL, '$f7City', '$f7Street', '$f7House', '$f7Apartment', '$f7Phone', '$f7Email');");
 		}
