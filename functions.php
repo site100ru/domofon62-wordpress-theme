@@ -1396,11 +1396,6 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 					$service = $posted_data['radio-678'][0] ?? '—';
 					
 					// Получаем остальные данные
-					$comments  = 'Город ' . ($posted_data['text-700'] ?? '—') . ', ';
-					$comments .= 'ул. ' . ($posted_data['text-701'] ?? '—') . ', ';
-					$comments .= 'д. ' . ($posted_data['text-702'] ?? '—') . ', ';
-					$comments .= 'кв. ' . ($posted_data['text-703'] ?? '—') . '.<br>';
-					$comments .= 'ФИО собственника: ' . ($posted_data['text-710'] ?? '—') . '.<br>';
 					$comments .= 'Комментарий: ' . ($posted_data['textarea-737'] ?? '—') . '.';
 					
 					// Получаем файл
