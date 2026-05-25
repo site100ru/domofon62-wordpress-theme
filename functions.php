@@ -1396,6 +1396,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 					$service = $posted_data['radio-678'][0] ?? '—';
 					
 					// Получаем остальные данные
+					$comments  = '';
 					$comments .= 'Комментарий: ' . ($posted_data['textarea-737'] ?? '—') . '.';
 					
 					// Получаем файл
