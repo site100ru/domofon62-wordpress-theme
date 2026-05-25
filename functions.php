@@ -1870,39 +1870,35 @@ function dop_card_metabox_callback($post) {
 	$card_title = get_post_meta($post->ID, '_dop_card_title', true);
 	$card_image = get_post_meta($post->ID, '_dop_card_image', true);
 	?>
-	<table class="form-table">
-		<tr>
-			<th scope="row"><label for="dop_card_title">Заголовок карточки</label></th>
-			<td>
-				<input type="text" id="dop_card_title" name="dop_card_title"
-					value="<?php echo esc_attr($card_title); ?>" class="regular-text">
-				<p class="description">Если не указан — используется заголовок записи.</p>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">Изображение карточки</th>
-			<td>
-				<div id="dop-card-image-wrap">
-					<?php if ($card_image) : ?>
-					<img src="<?php echo esc_url(wp_get_attachment_image_url($card_image, 'medium')); ?>"
-						id="dop-card-image-preview"
-						style="max-width:200px; display:block; margin-bottom:8px; border-radius:4px;">
-					<?php else : ?>
-					<img id="dop-card-image-preview" src="" style="max-width:200px; display:none; margin-bottom:8px; border-radius:4px;">
-					<?php endif; ?>
-				</div>
-				<input type="hidden" id="dop_card_image" name="dop_card_image"
-					value="<?php echo esc_attr($card_image); ?>">
-				<button type="button" class="button" id="dop-card-upload-btn">Выбрать изображение</button>
+<table class="form-table">
+	<tr>
+		<th scope="row"><label for="dop_card_title">Заголовок карточки</label></th>
+		<td>
+			<input type="text" id="dop_card_title" name="dop_card_title" value="<?php echo esc_attr($card_title); ?>" class="regular-text">
+			<p class="description">Если не указан — используется заголовок записи.</p>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">Изображение карточки</th>
+		<td>
+			<div id="dop-card-image-wrap">
 				<?php if ($card_image) : ?>
-				<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px;">Удалить</button>
+				<img src="<?php echo esc_url(wp_get_attachment_image_url($card_image, 'medium')); ?>" id="dop-card-image-preview" style="max-width:200px; display:block; margin-bottom:8px; border-radius:4px;">
 				<?php else : ?>
-				<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px; display:none;">Удалить</button>
+				<img id="dop-card-image-preview" src="" style="max-width:200px; display:none; margin-bottom:8px; border-radius:4px;">
 				<?php endif; ?>
-				<p class="description">Если не выбрано — используется изображение записи (миниатюра).</p>
-			</td>
-		</tr>
-	</table>
+			</div>
+			<input type="hidden" id="dop_card_image" name="dop_card_image" value="<?php echo esc_attr($card_image); ?>">
+			<button type="button" class="button" id="dop-card-upload-btn">Выбрать изображение</button>
+			<?php if ($card_image) : ?>
+			<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px;">Удалить</button>
+			<?php else : ?>
+			<button type="button" class="button" id="dop-card-remove-btn" style="margin-left:5px; display:none;">Удалить</button>
+			<?php endif; ?>
+			<p class="description">Если не выбрано — используется изображение записи (миниатюра).</p>
+		</td>
+	</tr>
+</table>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 	var mediaUploader;
@@ -1931,7 +1927,7 @@ jQuery(document).ready(function($) {
 	});
 });
 </script>
-	<?php
+<?php
 }
 
 add_action('save_post', 'save_dop_card_metabox');
@@ -2119,7 +2115,7 @@ function section_dop_shortcode() {
 						</a>
 						<div class="card-body text-center">
 							<a href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
-								<p class="card-description mb-3 mx-auto" style="max-width: 240px;">
+								<p class="card-description mb-3 mx-auto" style="max-width: 280px;">
 									<strong><?php echo esc_html($card_title); ?></strong>
 								</p>
 								<div class="action-btn action-btn_w100">Узнать подробнее</div>
@@ -2132,7 +2128,7 @@ function section_dop_shortcode() {
 		</div>
 	</div>
 </section>
-	<?php
+<?php
 	return ob_get_clean();
 }
 
