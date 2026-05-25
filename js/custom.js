@@ -1,24 +1,24 @@
 
 
-jQuery(document).ready(function($){
-$( ".menu-item-has-children" ).prepend( "<span class='plus'>+</span><span class='minus'>-</span>" );
-$( ".plus" ).click(function() {
-  $( ".menu-item-has-children" ).removeClass( "open" );
-  $( this ).parent().addClass( "open" );
-});
-$( ".minus" ).click(function() {
-  $( this ).parent().removeClass( "open" );
-});
-$( ".menu-button" ).click(function() {
-  $( ".menu-item-has-children" ).removeClass( "open" );
-  $( this ).parent().toggleClass( "tadaa" );
-});
+jQuery(document).ready(function ($) {
+  $(".menu-item-has-children").prepend("<span class='plus'>+</span><span class='minus'>-</span>");
+  $(".plus").click(function () {
+    $(".menu-item-has-children").removeClass("open");
+    $(this).parent().addClass("open");
+  });
+  $(".minus").click(function () {
+    $(this).parent().removeClass("open");
+  });
+  $(".menu-button").click(function () {
+    $(".menu-item-has-children").removeClass("open");
+    $(this).parent().toggleClass("tadaa");
+  });
 
- 
 
-    
-// Карусель woo категорий на главной slick slider
- 
+
+
+  // Карусель woo категорий на главной slick slider
+
 
   $('.category-carousel-home').slick({
     vertical: true,
@@ -35,7 +35,7 @@ $( ".menu-button" ).click(function() {
       }
     }]
   });
- 
+
 
   // const parent = document.getElementsByClassName('.ps-show');
   // const child = document.getElementsByClassName('.lmp_load_more_button');
@@ -43,7 +43,7 @@ $( ".menu-button" ).click(function() {
 
 });
 
- 
+
 // Галерея изображений начало
 
 
@@ -118,3 +118,10 @@ function createCaption(caption) {
 }
 
 // Галерея изображений конец
+
+document.getElementById('dostupModal').addEventListener('show.bs.modal', function () {
+  var formEl = document.querySelector('#wpcf7-f373-o1 form');
+  if (formEl && typeof wpcf7 !== 'undefined') {
+    wpcf7.init(formEl);
+  }
+});
