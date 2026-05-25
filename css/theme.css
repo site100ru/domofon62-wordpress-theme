@@ -1972,3 +1972,7 @@ p:has([name="textarea-737"]) {
 .form-page input.wpcf7-form-control.wpcf7-file::before {
 	background-color: var(--light-grey);
 }
+
+span.wpcf7-list-item input.form-check-input[type=checkbox] {
+	margin-top: 0;
+}
