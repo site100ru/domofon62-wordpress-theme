@@ -2124,3 +2124,19 @@ function send_cf7_to_max($contact_form) {
         ]
     );
 }
+
+add_filter('wpcf7_spam', function($spam, $submission) {
+    if ($spam) {
+        $data = $submission->get_posted_data();
+        $hash = $data['_wpcf7_posted_data_hash'] ?? 'EMPTY';
+        $recaptcha = !empty($data['_wpcf7_recaptcha_response']) ? 'ЕСТЬ (длина: ' . strlen($data['_wpcf7_recaptcha_response']) . ')' : 'EMPTY';
+        
+        add_filter('wpcf7_feedback_response', function($response) use ($hash, $recaptcha) {
+            $response['debug_hash'] = $hash;
+            $response['debug_recaptcha'] = $recaptcha;
+            $response['debug_spam'] = 'YES';
+            return $response;
+        });
+    }
+    return $spam;
+}, 10, 2);
