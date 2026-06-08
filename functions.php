@@ -2124,7 +2124,7 @@ function section_dop_shortcode() {
 						</a>
 						<div class="card-body text-center">
 							<a href="<?php echo esc_url(get_permalink($usluga->ID)); ?>">
-								<p class="card-description mb-3 mx-auto" style="max-width: 280px;">
+								<p class="card-description mb-3 mx-auto">
 									<strong><?php echo esc_html($card_title); ?></strong>
 								</p>
 								<div class="action-btn action-btn_w100">Узнать подробнее</div>
