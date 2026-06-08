@@ -23,6 +23,9 @@ a {
 	--font-family: 'Gilroy', 'Gilroy-Regular', sans-serif;
 	--dark-color: #212121;
 	--placeholder: #787878;
+	--color-light: #f3f3f3;
+	--corporate-color-1: #002977;
+	--corporate-color-2: #216dff;
 }
 
 body {
@@ -1886,6 +1889,11 @@ a.social-links:hover p.bot-text {
 	text-align: start;
 }
 
+/* заголовок над ботами — без отступа снизу */
+.dostup-section-title-top {
+	margin-bottom: 0;
+}
+
 .dostup-bots-buttons {
 	display: flex;
 	gap: 16px;
@@ -1916,8 +1924,31 @@ a.social-links:hover p.bot-text {
 	margin-left: 0;
 }
 
-.dostup-form-wrap .wpcf7-list-item input[type="radio"] {
-	margin-right: 10px;
+/* кастомная радио-кнопка: 22px круг, серая рамка; активная — синяя точка 12px */
+.dostup-form-wrap .radio-dostup input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	flex: 0 0 22px;
+	width: 22px;
+	height: 22px;
+	margin: 0 10px 0 0;
+	border: 2px solid #d6d6d6;
+	border-radius: 50%;
+	background: var(--color-light);
+	cursor: pointer;
+	position: relative;
+	vertical-align: middle;
+}
+
+.dostup-form-wrap .radio-dostup input[type="radio"]:checked::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--corporate-color-2);
 }
 
 .dostup-form-wrap .wpcf7-list-item-label {
@@ -1967,9 +1998,19 @@ a.social-links:hover p.bot-text {
 	line-height: 150%;
 }
 
+/* текст-описание под файлом — слева, тёмно-серый */
+.dostup-text-wrap {
+	justify-content: flex-start;
+}
+
+.dostup-text,
 .dostup-text.fz-15 {
+	font-family: var(--font-family);
+	font-weight: 400;
 	font-size: 13px;
 	line-height: 150%;
+	text-align: left;
+	color: var(--dark-color);
 }
 
 p:has([name="textarea-737"]) {
@@ -2108,9 +2149,11 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 	margin: 0 auto;
 }
 
+/* отступ под подзаголовком-текстом (описание/значение) — единый 30px */
 .popups #modalProduct,
-.popups .product-modal-name+p {
-	margin-bottom: 20px;
+.popups .product-modal-name+p,
+.popups .dostup-subtitle {
+	margin-bottom: 30px;
 }
 
 /* --- Поля ввода (wpautop отключён → раскладываем сами) --- */
