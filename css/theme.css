@@ -18,6 +18,11 @@ a {
 	--font-gilroy-regular: 'Gilroy-Regular', sans-serif;
 	--font-TT: 'TTNorms', sans-serif;
 	--second-family: "ALSSchlangeSansBold", sans-serif;
+
+	/* переменные из основного дизайн-токена (есть в live-теме, дублируем для локалки) */
+	--font-family: 'Gilroy', 'Gilroy-Regular', sans-serif;
+	--dark-color: #212121;
+	--placeholder: #787878;
 }
 
 body {
@@ -1294,27 +1299,14 @@ textarea.wpcf7-textarea {
 	padding: 20px 0;
 }
 
-#popupForm a,
-#conf-modal a {
+#popupForm a {
 	transition: all 0.3s ease;
 	color: var(--secondary-pale-blue);
 	text-decoration: underline;
 }
 
-#popupForm a:hover,
-#conf-modal a:hover {
+#popupForm a:hover {
 	opacity: 0.8;
-}
-
-#conf-modal {
-	width: 90%;
-	margin: 0 auto;
-	margin-bottom: 1rem;
-}
-
-#conf-modal label {
-	display: flex;
-	gap: 12px;
 }
 
 
@@ -1894,15 +1886,22 @@ a.social-links:hover p.bot-text {
 	text-align: start;
 }
 
-.dostup-bots-buttons p {
+.dostup-bots-buttons {
 	display: flex;
-	gap: 15px;
-	margin-bottom: 25px;
+	gap: 16px;
+	margin-bottom: 30px;
 }
 
 .dostup-bots-buttons img {
 	width: 40px;
 	height: 40px;
+}
+
+/* радио: вся строка (кружок + текст) — кликабельный label */
+.dostup-form-wrap .radio-dostup label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
 }
 
 .dostup-form-wrap .radio-dostup {
@@ -1951,6 +1950,11 @@ a.social-links:hover p.bot-text {
 
 #dostupModal .dostup-file {
 	margin-top: 16px;
+}
+
+/* 30px над блоком согласия (чекбоксом) в форме «Получить доступ» */
+#dostupModal .conf-modal {
+	margin-top: 30px;
 }
 
 #dostupModal input.wpcf7-form-control.wpcf7-file::before {

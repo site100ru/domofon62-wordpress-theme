@@ -1038,9 +1038,9 @@ input.wpcf7-form-control.wpcf7-file:active::before {
   border: 1px dashed #D6D6D6;
   border-radius: 5px;
   width: 100%;
-  height: auto;
+  height: 60px;
+  align-content: center;
   margin: 0 auto;
-  padding-top: 10px;
 }
 
 span.wpcf7-form-control.wpcf7-radio.radio-dostup {
