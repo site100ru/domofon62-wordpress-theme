@@ -2017,3 +2017,276 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 	justify-content: space-between;
 	height: 100%;
 }
+
+
+/* ==========================================================================
+   ЕДИНЫЙ СТИЛЬ МОДАЛЬНЫХ ОКОН
+   Эталон — модалка «Заказ товара». Приводим к одному виду все 4 окна:
+   #dostupModal (Получить доступ), #productModal (Заказ товара),
+   #serviceModal (Заказ услуги), #checkConnectionModal (Проверить подключение).
+   ========================================================================== */
+
+/* --- Контейнер --- */
+.popups .modal-content {
+	position: relative;
+	border: 0;
+	border-radius: 5px;
+}
+
+/* --- Шапка: заголовок по центру --- */
+.popups .modal-header {
+	display: block;
+	border-bottom: 0;
+	padding: 26px 50px 8px;
+	text-align: center;
+}
+
+/* Крестик — absolute, по правому краю контента (50px), на линии заголовка */
+.popups .modal-header .btn-close {
+	position: absolute;
+	top: 36px;
+	right: 50px;
+	z-index: 2;
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	padding: 0;
+	opacity: 0.6;
+}
+
+.popups .modal-header .btn-close:hover {
+	opacity: 1;
+}
+
+/* --- Заголовок (единый для всех модалок) --- */
+.popups .product-modal-title,
+.popups .title-modal,
+#checkConnectionModal .title-modal {
+	font-family: 'ALSSchlangeSansBold', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 38px;
+	letter-spacing: 0.02em;
+	text-align: center;
+	color: var(--black-color);
+	margin: 0;
+}
+
+/* --- Тело модалки --- */
+.popups .modal-body {
+	padding: 8px 50px 30px;
+}
+
+/* --- Подзаголовок-метка («Наименование продукта:») --- */
+.popups .product-modal-name,
+.popups .dostup-subtitle.is-label {
+	font-family: var(--font-family);
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #000;
+	margin: 0 0 4px;
+}
+
+/* --- Значение/описание/инфо-текст (серый, по центру) --- */
+.popups #modalProduct,
+.popups .product-modal-name+p,
+.popups .dostup-subtitle,
+.popups .check-connection-info,
+.popups .wpcf7 p.fz-15:not(.conf-modal) {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: var(--dark-color);
+	margin: 0 auto;
+}
+
+.popups #modalProduct,
+.popups .product-modal-name+p {
+	margin-bottom: 20px;
+}
+
+/* --- Поля ввода (wpautop отключён → раскладываем сами) --- */
+.popups .wpcf7 br {
+	display: none;
+	/* подстраховка от случайных переносов */
+}
+
+/* поля — блочные, на всю ширину */
+.popups .wpcf7 .wpcf7-form-control-wrap {
+	display: block;
+}
+
+.popups .wpcf7 input.wpcf7-text,
+.popups .wpcf7 input.wpcf7-tel,
+.popups .wpcf7 input.wpcf7-email,
+.popups .wpcf7 textarea.wpcf7-textarea {
+	width: 100%;
+	margin: 0;
+}
+
+/* скрытые/служебные поля не дают отступа */
+.popups .wpcf7 .hidden-fields-container,
+.popups .wpcf7 .wpcf7-form-control-wrap.product-title {
+	display: none;
+}
+
+/* отступы между полями в «плоских» формах (товар/услуга/подключение) */
+#productModal .wpcf7 .wpcf7-form-control-wrap,
+#serviceModal .wpcf7 .wpcf7-form-control-wrap,
+#checkConnectionModal .wpcf7 .wpcf7-form-control-wrap {
+	margin-bottom: 16px;
+}
+
+/* инфо-текст и согласие — равные отступы сверху */
+.popups .wpcf7 p.fz-15:not(.conf-modal),
+.popups .check-connection-info {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+/* --- Кнопка отправки (единая для всех модалок) --- */
+.popups .wpcf7 input.wpcf7-submit,
+.popups .wpcf7 input.wpcf7-form-control.wpcf7-submit {
+	display: block;
+	margin: 8px auto 0;
+	min-width: 185px;
+	height: 60px;
+	padding: 0 30px;
+	border: 0;
+	border-radius: 5px;
+	background: var(--secondary-pale-blue);
+	font-family: var(--font-family);
+	font-weight: 800;
+	font-size: 13px;
+	line-height: 60px;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	transition: background 0.25s;
+}
+
+.popups .wpcf7 input.wpcf7-submit:hover {
+	background: #1d4fd8;
+}
+
+.popups .btn-product-modal,
+.popups .btn-check-connection {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+/* --- Блок согласия: чекбокс слева + мелкий серый текст --- */
+.popups .conf-modal {
+	margin-top: 16px;
+}
+
+.popups .conf-modal,
+.popups .conf-modal .wpcf7-list-item-label {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 150%;
+	color: var(--placeholder);
+}
+
+/* текст согласия без чекбокса (Проверить подключение) — по центру */
+.popups .conf-modal {
+	text-align: center;
+}
+
+.popups .conf-modal a {
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	color: var(--secondary-pale-blue);
+}
+
+.popups .conf-modal .wpcf7-list-item {
+	display: block;
+	margin: 0;
+}
+
+.popups .conf-modal .wpcf7-list-item label {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+/* чекбокс прижат влево, текст занимает остаток строки и центрируется */
+.popups .conf-modal .wpcf7-list-item-label {
+	flex: 1;
+	text-align: center;
+}
+
+/* --- Кастомный чекбокс 20×20 --- */
+.popups .conf-modal input[type="checkbox"],
+.popups .conf-modal input.form-check-input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	flex: 0 0 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	border: 1px solid #d6d6d6;
+	border-radius: 2px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.popups .conf-modal input[type="checkbox"]:checked,
+.popups .conf-modal input.form-check-input[type="checkbox"]:checked {
+	border-color: var(--secondary-pale-blue);
+	background-color: var(--secondary-pale-blue);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 14px;
+}
+
+/* --- Частные правки модалок под общий вид --- */
+
+/* Получить доступ: заголовок и подзаголовок — по левому краю */
+#dostupModal .product-modal-title,
+#dostupModal .dostup-subtitle {
+	text-align: left;
+}
+
+/* Проверить подключение: заголовок лежит в теле формы — поджимаем шапку */
+#checkConnectionModal .modal-header {
+	padding: 16px 24px 0;
+}
+
+#checkConnectionModal .modal-body {
+	padding-top: 0;
+}
+
+#checkConnectionModal .title-modal {
+	margin-bottom: 20px;
+}
+
+/* Мобильная адаптация заголовков и отступов */
+@media (max-width: 768px) {
+
+	.popups .modal-header {
+		padding: 22px 20px 8px;
+	}
+
+	.popups .modal-body {
+		padding: 8px 20px 24px;
+	}
+
+	.popups .product-modal-title,
+	.popups .title-modal {
+		font-size: 26px;
+		line-height: 30px;
+	}
+
+	.popups .modal-header .btn-close {
+		top: 28px;
+		right: 20px;
+	}
+}

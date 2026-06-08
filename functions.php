@@ -1191,9 +1191,18 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 		}
 	}
 	add_action('wpcf7_mail_sent', 'your_wpcf7_mail_sent_function');
-	
-	
-	
+
+
+	/**
+	 * Отключаем авто-форматирование Contact Form 7 (wpautop).
+	 * CF7 перестаёт сам оборачивать поля в <p> и вставлять <br> —
+	 * разметку форм контролируем вручную, отступы задаём в CSS.
+	 * ВНИМАНИЕ: действует на ВСЕ формы сайта.
+	 */
+	add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+
+
 	/*** ОТПРАВКА ДАННЫХ В BITRIX
 	// Для этого используем функцию, которая ловит данные после успешной отправки и отправляет на вебхук.
 	add_action('wpcf7_mail_sent', 'send_cf7_data_to_webhook', 10, 1);
