@@ -2177,7 +2177,7 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 
 /* скрытые/служебные поля не дают отступа */
 .popups .wpcf7 .hidden-fields-container,
-.popups .wpcf7 .wpcf7-form-control-wrap.product-title {
+.popups .wpcf7 .wpcf7-form-control-wrap:has(input[type="hidden"]) {
 	display: none;
 }
 

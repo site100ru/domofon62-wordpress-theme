@@ -1236,7 +1236,7 @@ img.custom-logo {
 /*  Страница Услуги */
 
 .serv-height {
-  height: 470px;
+  height: 568px;
   position: relative;
 }
 
@@ -1288,10 +1288,40 @@ width: 100%;
  
  @media (max-width: 1224px) {
   .serv-page-btn {
-    height: 50px; 
-    width: 210px; 
+    height: 50px;
+    width: 210px;
   }
   }
+
+ /* Десктоп: выравнивание контента карточек по единой сетке
+    (иконки на одном уровне, заголовки начинаются на одной высоте,
+    кнопка прижата к низу карточки) */
+ @media (min-width: 768px) {
+  .serv-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 200px 24px 30px 48px;
+  }
+
+  .serv-content > img {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-bottom: 24px;
+  }
+
+  /* кнопка всегда прижата к низу карточки */
+  .serv-content > div:last-child {
+    margin-top: auto;
+  }
+ }
 
  @media (max-width: 768px) {
 
@@ -1315,7 +1345,7 @@ width: 100%;
 
   @media (min-width: 1830px) {
     .serv-height {
-      height: 530px;
+      height: 568px;
       position: relative;
     }
     }
