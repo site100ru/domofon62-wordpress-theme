@@ -2156,12 +2156,6 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 	margin-bottom: 30px;
 }
 
-/* --- Поля ввода (wpautop отключён → раскладываем сами) --- */
-.popups .wpcf7 br {
-	display: none;
-	/* подстраховка от случайных переносов */
-}
-
 /* поля — блочные, на всю ширину */
 .popups .wpcf7 .wpcf7-form-control-wrap {
 	display: block;
@@ -2221,10 +2215,18 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 	background: #1d4fd8;
 }
 
-.popups .btn-product-modal,
-.popups .btn-check-connection {
-	text-align: center;
+/* обёртка кнопки: сама кнопка + спиннер CF7 — в одну строку по центру */
+.popups .wpcf7 p:has(> input.wpcf7-submit) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
 	margin-bottom: 0;
+}
+
+/* во флекс-обёртке у кнопки убираем авто-центрирование, иначе спиннер «отлетает» */
+.popups .wpcf7 p:has(> input.wpcf7-submit) input.wpcf7-submit {
+	margin: 0;
 }
 
 /* --- Блок согласия: чекбокс слева + мелкий серый текст --- */
@@ -2300,19 +2302,6 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 #dostupModal .product-modal-title,
 #dostupModal .dostup-subtitle {
 	text-align: left;
-}
-
-/* Проверить подключение: заголовок лежит в теле формы — поджимаем шапку */
-#checkConnectionModal .modal-header {
-	padding: 16px 24px 0;
-}
-
-#checkConnectionModal .modal-body {
-	padding-top: 0;
-}
-
-#checkConnectionModal .title-modal {
-	margin-bottom: 20px;
 }
 
 /* Мобильная адаптация заголовков и отступов */
