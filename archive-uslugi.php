@@ -36,9 +36,9 @@
 						<a href="https://domofon62.ru/uslugi/umny-domofon/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 					<!-- ПК -->
-					<img src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg" alt="Системы контроля доступа и учета рабочего времени" class="ps-5 pb-2 d-none d-md-block" />
+					<img src="https://domofon62.ru/wp-content/uploads/2023/02/intercom-1.svg" alt="Умные домофоны" class="ps-5 pb-2 d-none d-md-block" />
 					<a href="https://domofon62.ru/uslugi/umny-domofon/" class="d-none d-md-block">
-						<div class="serv-title ps-5 pe-3 mb-3">Системы контроля доступа и учета рабочего времени</div>
+						<div class="serv-title ps-5 pe-3 mb-3">Умные домофоны</div>
 					</a>
 					<div class="ps-5 d-none d-md-block">
 						<a href="https://domofon62.ru/uslugi/umny-domofon/" class="serv-page-btn">Узнать подробнее</a>
@@ -50,16 +50,16 @@
 				<div class="serv-content">
 					<!-- МОБИЛКА -->
 					<div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
-						<img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg" alt="Видеонаблюдение c установкой за 0 руб!" />
-						<div class="serv-title">Видеонаблюдение c установкой за 0 руб!</div>
+						<img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg" alt="Системы контроля доступа и учета рабочего времени" />
+						<div class="serv-title">Системы контроля доступа и учета рабочего времени</div>
 					</div>
 					<div class="ps-3 d-block d-md-none">
 						<a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/" class="serv-page-btn">Узнать подробнее</a>
 					</div>
 					<!-- ПК -->
-					<img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg" alt="Шлагбаумы и ворота с распознаванием номера авто" class="ps-5 pb-2 d-none d-md-block" />
+					<img src="https://domofon62.ru/wp-content/uploads/2023/02/nfc-card-1.svg" alt="Системы контроля доступа и учета рабочего времени" class="ps-5 pb-2 d-none d-md-block" />
 					<a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/" class="d-none d-md-block">
-						<div class="serv-title ps-5 pe-3 mb-3">Шлагбаумы и ворота с распознаванием номера авто</div>
+						<div class="serv-title ps-5 pe-3 mb-3">Системы контроля доступа и учета рабочего времени</div>
 					</a>
 					<div class="ps-5 d-none d-md-block">
 						<a href="https://domofon62.ru/uslugi/ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni/" class="serv-page-btn">Узнать подробнее</a>
@@ -71,17 +71,17 @@
 				<div class="serv-content">
 					<!-- МОБИЛКА -->
 					<div class="d-flex d-md-none align-items-center gap-3 ps-0 ps-md-3 pe-3 mb-3">
-						<img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg" alt="Услуги по установке видеонаблюдения" />
-						<div class="serv-title">Услуги по установке видеонаблюдения</div>
+						<img class="img-mobile" src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg" alt="Видеонаблюдение c установкой за 0 руб!" />
+						<div class="serv-title">Видеонаблюдение c установкой за 0 руб!</div>
 					</div>
 					<div class="ps-3 d-block d-md-none">
 						<a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="serv-page-btn">Узнать
 							подробнее</a>
 					</div>
 					<!-- ПК -->
-					<img src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg" alt="Услуги по установке видеонаблюдения" class="ps-5 pb-2 d-none d-md-block" />
+					<img src="https://domofon62.ru/wp-content/uploads/2023/02/cctv-1.svg" alt="Видеонаблюдение c установкой за 0 руб!" class="ps-5 pb-2 d-none d-md-block" />
 					<a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="d-none d-md-block">
-						<div class="serv-title ps-5 pe-3 mb-3">Услуги по установке видеонаблюдения</div>
+						<div class="serv-title ps-5 pe-3 mb-3">Видеонаблюдение c установкой за 0 руб!</div>
 					</a>
 					<div class="ps-5 d-none d-md-block">
 						<a href="https://domofon62.ru/uslugi/ustanovku-videonablyudeniya/" class="serv-page-btn">Узнать
