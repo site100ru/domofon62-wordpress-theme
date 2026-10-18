@@ -2339,3 +2339,420 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 		right: 20px;
 	}
 }
+
+/* ==========================================================================
+   АРХИВ УСЛУГ /uslugi/ (archive-uslugi.php)
+   ========================================================================== */
+.srv-page {
+	padding-bottom: 60px;
+}
+
+.srv-breadcrumbs {
+	padding-top: 20px;
+	font-size: 15px;
+	line-height: 1.2;
+}
+
+.srv-h1 {
+	margin: 34px 0 16px;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 45px;
+	line-height: 1.2;
+	color: var(--black-color);
+}
+
+.srv-lead {
+	max-width: 820px;
+	margin-bottom: 30px;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.srv-list {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.srv-card {
+	display: flex;
+	gap: 24px;
+	padding: 10px;
+	background: #ffffff;
+	border-radius: 20px;
+}
+
+.srv-card-img {
+	flex: 0 0 346px;
+	min-height: 276px;
+	border-radius: 10px;
+	overflow: hidden;
+	background: var(--light-grey);
+}
+
+.srv-card-img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.srv-card-body {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: 24px 22px 22px 0;
+}
+
+.srv-card-head {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.srv-card-icon {
+	flex: 0 0 44px;
+	width: 44px;
+	height: 44px;
+}
+
+.srv-card-title {
+	margin: 0;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 22px;
+	line-height: 1.3;
+	color: var(--black-color);
+}
+
+.srv-card-title a:hover {
+	color: var(--secondary-pale-blue);
+}
+
+.srv-card-text {
+	margin: 15px 0 14px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.srv-card-features {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 30px;
+	margin: 0 0 24px;
+	padding: 0;
+	list-style: none;
+}
+
+.srv-card-features li {
+	display: flex;
+	align-items: center;
+	min-height: 32px;
+	padding: 6px 12px 6px 36px;
+	font-size: 14px;
+	line-height: 18px;
+	border-radius: 5px;
+	background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' fill='none'%3E%3Cpath d='M1 5l4 4 8-8' stroke='%23206DFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 11px center;
+}
+
+.srv-card-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: auto;
+}
+
+.srv-card-price {
+	font-size: 16px;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.srv-card-price span {
+	margin-left: 4px;
+	font-family: 'Gilroy-Meduim', sans-serif;
+	font-size: 22px;
+	color: var(--secondary-pale-blue);
+}
+
+.srv-card-btns {
+	display: flex;
+	gap: 22px;
+}
+
+.srv-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	padding: 0 20px;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 13px;
+	line-height: 1;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-align: center;
+	border: 2px solid var(--secondary-pale-blue);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.srv-btn-fill {
+	min-width: 189px;
+	color: #ffffff;
+	background: var(--secondary-pale-blue);
+}
+
+.srv-btn-fill:hover {
+	color: #ffffff;
+	background: var(--primary-blue);
+	border-color: var(--primary-blue);
+}
+
+.srv-btn-outline {
+	min-width: 219px;
+	color: var(--secondary-pale-blue);
+	background: #ffffff;
+}
+
+.srv-btn-outline:hover {
+	color: #ffffff;
+	background: var(--secondary-pale-blue);
+}
+
+/* CTA «Не знаете с чего начать?» */
+.srv-cta {
+	display: flex;
+	margin-top: 80px;
+	overflow: hidden;
+	border-radius: 10px;
+	background: #0c2a79;
+}
+
+.srv-cta-content {
+	flex: 0 0 475px;
+	align-self: center;
+	padding: 50px 40px 50px 60px;
+}
+
+.srv-cta-title {
+	margin: 0 0 14px;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 26px;
+	line-height: 1.2;
+	color: #ffffff;
+}
+
+.srv-cta-text {
+	margin-bottom: 18px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #d9e5ff;
+}
+
+.srv-cta-accent {
+	margin-bottom: 20px;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 15px;
+	line-height: 1.2;
+	color: #f3f3f3;
+}
+
+.srv-cta-btn {
+	min-width: 200px;
+}
+
+.srv-cta-img {
+	flex: 1 1 auto;
+	min-height: 332px;
+}
+
+.srv-cta-img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 991px) {
+	.srv-card-footer {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.srv-cta-content {
+		flex-basis: 50%;
+		padding: 40px 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.srv-h1 {
+		margin: 30px 0 12px;
+		font-size: 28px;
+	}
+
+	.srv-lead {
+		margin-bottom: 30px;
+		line-height: 21px;
+	}
+
+	.srv-card {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.srv-card-img {
+		flex: 0 0 auto;
+		height: 200px;
+		min-height: 0;
+	}
+
+	.srv-card-body {
+		padding: 0 12px 12px;
+	}
+
+	.srv-card-title {
+		font-size: 18px;
+	}
+
+	.srv-card-text {
+		margin: 12px 0;
+	}
+
+	.srv-card-features {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 18px;
+	}
+
+	.srv-card-footer {
+		align-items: stretch;
+		gap: 18px;
+	}
+
+	.srv-card-btns {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.srv-btn {
+		width: 100%;
+		min-width: 0;
+		height: 44px;
+		font-size: 11px;
+	}
+
+	.srv-cta {
+		flex-direction: column;
+		margin-top: 60px;
+		text-align: center;
+	}
+
+	.srv-cta-content {
+		flex-basis: auto;
+		padding: 50px 16px 40px;
+	}
+
+	.srv-cta-btn {
+		width: auto;
+		min-width: 200px;
+		height: 50px;
+		font-size: 13px;
+	}
+
+	.srv-cta-img {
+		min-height: 0;
+		height: 310px;
+	}
+}
+
+/* ==========================================================================
+   БЛОК «НАШИ ПРЕИМУЩЕСТВА» (template-parts/advantages.php)
+   ========================================================================== */
+.benefits-title {
+	margin: 50px 0 34px;
+	font-family: 'Gilroy-Semibold', sans-serif;
+	font-size: 28px;
+	line-height: 1.2;
+	color: var(--black-color);
+}
+
+/* крайние колонки «растекаются» до краёв экрана */
+.benefits-band {
+	background: linear-gradient(to right, #5a93ff 50%, #1057de 50%);
+}
+
+.benefits-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 272px;
+	padding: 30px 12px;
+	color: #ffffff;
+	text-align: center;
+	background: #5a93ff;
+}
+
+.benefits-item:nth-child(2) {
+	background: var(--secondary-pale-blue);
+}
+
+.benefits-item:nth-child(3) {
+	background: #1057de;
+}
+
+.benefits-item-prefix {
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.benefits-item-value {
+	font-size: 90px;
+	line-height: 1.2;
+}
+
+.benefits-item-label {
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+.benefits-text {
+	margin: 35px 0 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+@media (max-width: 767px) {
+	.benefits-title {
+		margin: 30px 0 34px;
+	}
+
+	.benefits-band {
+		background: none;
+	}
+
+	.benefits-band .container {
+		max-width: none;
+		padding: 0;
+	}
+
+	.benefits-band .row {
+		margin: 0;
+	}
+
+	.benefits-item {
+		min-height: 153px;
+		padding: 20px 12px;
+	}
+
+	.benefits-item-value {
+		font-size: 60px;
+	}
+
+	.benefits-text {
+		line-height: 24px;
+	}
+}

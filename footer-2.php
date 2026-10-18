@@ -139,7 +139,7 @@
 					</div>
 					<div class="modal-body">
 						<h5 class="text-center product-modal-name">Наименование услуги:</h5>
-						<p class="text-center"><?php echo the_title(); ?></p>
+						<p class="text-center" id="serviceModalName"><?php echo the_title(); ?></p>
 						<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="3628" title="Форма заказа услуги"]'); ?></div>
 					</div>
 				</div>
