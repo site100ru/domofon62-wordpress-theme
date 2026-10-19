@@ -2180,6 +2180,7 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 /* отступы между полями в «плоских» формах (товар/услуга/подключение) */
 #productModal .wpcf7 .wpcf7-form-control-wrap,
 #serviceModal .wpcf7 .wpcf7-form-control-wrap,
+#questionModal .wpcf7 .wpcf7-form-control-wrap,
 #checkConnectionModal .wpcf7 .wpcf7-form-control-wrap {
 	margin-bottom: 16px;
 }

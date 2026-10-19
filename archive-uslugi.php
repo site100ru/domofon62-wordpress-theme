@@ -81,7 +81,7 @@
 						<div class="srv-card-footer">
 							<div class="srv-card-price">Цена: <span><?php echo esc_html( $service['price'] ); ?></span></div>
 							<div class="srv-card-btns">
-								<a href="#" class="srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</a>
+								<a href="#" class="srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</a>
 								<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-btn srv-btn-outline">Узнать подробнее</a>
 							</div>
 						</div>
@@ -99,7 +99,7 @@
 				<h2 class="srv-cta-title">Не знаете с чего начать?</h2>
 				<p class="srv-cta-text">Оставьте заявку прямо сейчас! Наши менеджеры свяжутся с Вами и подробно ответят на имеющиеся вопросы.</p>
 				<p class="srv-cta-accent">Инициативным людям особые условия!</p>
-				<a href="#" class="srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="Консультация по услугам">Оставить заявку</a>
+				<a href="#" class="srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="Общий вопрос">Оставить заявку</a>
 			</div>
 			<div class="srv-cta-img">
 				<img src="<?php echo esc_url( $img_dir . 'cta.webp' ); ?>" alt="" loading="lazy" />
@@ -109,12 +109,34 @@
 
 </div>
 
+<!-- Question Modal -->
+<div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
+	<div class="popups modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="product-modal-title" id="questionModalLabel">Задать вопрос</h2>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<h5 class="text-center product-modal-name">Наименование услуги:</h5>
+				<p class="text-center" id="questionModalName">Общий вопрос</p>
+				<div class="text-center"><?php echo do_shortcode( '[contact-form-7 title="Форма задать вопрос"]' ); ?></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Question Modal -->
+
 <script>
-	// Подставляем название услуги в модалку «Заказ услуги»
+	// Подставляем название услуги в модалку «Задать вопрос» (текст + скрытое поле формы)
 	document.addEventListener( 'click', function ( e ) {
 		const btn = e.target.closest( '[data-service]' );
-		const name = document.getElementById( 'serviceModalName' );
-		if ( btn && name ) name.textContent = btn.dataset.service;
+		if ( ! btn ) return;
+		const service = btn.dataset.service || 'Общий вопрос';
+		const name = document.getElementById( 'questionModalName' );
+		const field = document.getElementById( 'service-title' );
+		if ( name ) name.textContent = service;
+		if ( field ) field.value = service;
 	} );
 </script>
 
