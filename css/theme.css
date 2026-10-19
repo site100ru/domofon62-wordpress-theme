@@ -26,6 +26,7 @@ a {
 	--color-light: #f3f3f3;
 	--corporate-color-1: #002977;
 	--corporate-color-2: #216dff;
+	--corporate-color-hover-2: #1d63e8;
 }
 
 body {
@@ -134,6 +135,7 @@ h2.wp-block-heading {
 
 .buy-btn:hover {
 	color: #ffffff;
+	background-color: var(--corporate-color-hover-2);
 }
 
 .action-btn {
@@ -171,6 +173,7 @@ h2.wp-block-heading {
 
 .action-btn:hover {
 	color: #ffffff;
+	background-color: var(--corporate-color-hover-2);
 }
 
 .top-btn {
@@ -1347,7 +1350,7 @@ textarea.wpcf7-textarea {
 }
 
 #closeBtn.action-btn:hover {
-	background: var(--secondary-pale-blue);
+	background: var(--corporate-color-hover-2);
 }
 
 /* @media (max-width: 768px) {
@@ -2215,7 +2218,7 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 }
 
 .popups .wpcf7 input.wpcf7-submit:hover {
-	background: #1d4fd8;
+	background: var(--corporate-color-hover-2);
 }
 
 /* обёртка кнопки: сама кнопка + спиннер CF7 — в одну строку по центру */
@@ -2507,8 +2510,8 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 
 .srv-btn-fill:hover {
 	color: #ffffff;
-	background: var(--primary-blue);
-	border-color: var(--primary-blue);
+	background: var(--corporate-color-hover-2);
+	border-color: var(--corporate-color-hover-2);
 }
 
 .srv-btn-outline {
@@ -2519,7 +2522,8 @@ span.wpcf7-list-item input.form-check-input[type=checkbox] {
 
 .srv-btn-outline:hover {
 	color: #ffffff;
-	background: var(--secondary-pale-blue);
+	background: var(--corporate-color-hover-2);
+	border-color: var(--corporate-color-hover-2);
 }
 
 /* CTA «Не знаете с чего начать?» */
