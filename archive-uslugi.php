@@ -57,36 +57,36 @@
 
 		<div class="srv-list">
 			<?php foreach ( $services as $service ) : ?>
-				<article class="srv-card">
-					<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-card-img">
-						<img src="<?php echo esc_url( $img_dir . $service['img'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy" />
-					</a>
+			<article class="srv-card">
+				<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-card-img">
+					<img src="<?php echo esc_url( $img_dir . $service['img'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy" />
+				</a>
 
-					<div class="srv-card-body">
-						<div class="srv-card-head">
-							<img src="<?php echo esc_url( $img_dir . $service['icon'] ); ?>" alt="" class="srv-card-icon" width="44" height="44" />
-							<h2 class="srv-card-title">
-								<a href="<?php echo esc_url( $service['link'] ); ?>"><?php echo esc_html( $service['title'] ); ?></a>
-							</h2>
-						</div>
+				<div class="srv-card-body">
+					<div class="srv-card-head">
+						<img src="<?php echo esc_url( $img_dir . $service['icon'] ); ?>" alt="" class="srv-card-icon" width="44" height="44" />
+						<h2 class="srv-card-title">
+							<a href="<?php echo esc_url( $service['link'] ); ?>"><?php echo esc_html( $service['title'] ); ?></a>
+						</h2>
+					</div>
 
-						<p class="srv-card-text"><?php echo esc_html( $service['text'] ); ?></p>
+					<p class="srv-card-text"><?php echo esc_html( $service['text'] ); ?></p>
 
-						<ul class="srv-card-features">
-							<?php foreach ( $service['features'] as $feature ) : ?>
-								<li><?php echo esc_html( $feature ); ?></li>
-							<?php endforeach; ?>
-						</ul>
+					<ul class="srv-card-features">
+						<?php foreach ( $service['features'] as $feature ) : ?>
+						<li><?php echo esc_html( $feature ); ?></li>
+						<?php endforeach; ?>
+					</ul>
 
-						<div class="srv-card-footer">
-							<div class="srv-card-price">Цена: <span><?php echo esc_html( $service['price'] ); ?></span></div>
-							<div class="srv-card-btns">
-								<a href="#" class="srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</a>
-								<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-btn srv-btn-outline">Узнать подробнее</a>
-							</div>
+					<div class="srv-card-footer">
+						<div class="srv-card-price">Цена: <span><?php echo esc_html( $service['price'] ); ?></span></div>
+						<div class="srv-card-btns">
+							<a href="#" class="srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</a>
+							<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-btn srv-btn-outline">Узнать подробнее</a>
 						</div>
 					</div>
-				</article>
+				</div>
+			</article>
 			<?php endforeach; ?>
 		</div>
 	</section>
@@ -99,7 +99,7 @@
 				<h2 class="srv-cta-title">Не знаете с чего начать?</h2>
 				<p class="srv-cta-text">Оставьте заявку прямо сейчас! Наши менеджеры свяжутся с Вами и подробно ответят на имеющиеся вопросы.</p>
 				<p class="srv-cta-accent">Инициативным людям особые условия!</p>
-				<a href="#" class="srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="Общий вопрос">Оставить заявку</a>
+				<a href="#" class="srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="Общий вопрос">Задать вопрос</a>
 			</div>
 			<div class="srv-cta-img">
 				<img src="<?php echo esc_url( $img_dir . 'cta.webp' ); ?>" alt="" loading="lazy" />
