@@ -136,15 +136,25 @@ JS;
 	wp_add_inline_script( 'google-recaptcha', sprintf( $js, wp_json_encode( $src ) ) );
 }
 
-// URL картинки из uploads → её WebP-копия рядом (bg.jpg → bg.webp), если такой файл есть
+// URL картинки из uploads → её WebP-копия: рядом в uploads (bg.jpg → bg.webp) или в теме img/webp/bg.webp
 function domofon62_webp_url( $url ) {
 	if ( ! $url || ! preg_match( '/\.(jpe?g|png)$/i', $url ) ) {
 		return $url;
 	}
 	$uploads = wp_get_upload_dir();
 	$path    = str_replace( $uploads['baseurl'], $uploads['basedir'], $url );
-	$webp    = preg_replace( '/\.(jpe?g|png)$/i', '.webp', $path );
-	return ( $path !== $url && file_exists( $webp ) ) ? preg_replace( '/\.(jpe?g|png)$/i', '.webp', $url ) : $url;
+	if ( $path === $url ) {
+		return $url;
+	}
+	$webp = preg_replace( '/\.(jpe?g|png)$/i', '.webp', $path );
+	if ( file_exists( $webp ) ) {
+		return preg_replace( '/\.(jpe?g|png)$/i', '.webp', $url );
+	}
+	$name = basename( $webp );
+	if ( file_exists( get_template_directory() . '/img/webp/' . $name ) ) {
+		return get_template_directory_uri() . '/img/webp/' . $name;
+	}
+	return $url;
 }
 
 // Иконка MAX в форме CF7 вшита растром (uploads/2026/05/max-icon.svg, 248 КБ) — подменяем на векторную из темы
@@ -155,6 +165,12 @@ function domofon62_cf7_light_max_icon( $html ) {
 		'<img src="' . esc_url( get_template_directory_uri() . '/img/max.svg' ) . '" width="40" height="40" loading="lazy"',
 		$html
 	);
+}
+
+// CF7 DTX ставит aria-invalid скрытым полям — по HTML так нельзя (ошибка W3C)
+add_filter( 'wpcf7_form_elements', 'domofon62_cf7_hidden_no_aria' );
+function domofon62_cf7_hidden_no_aria( $html ) {
+	return preg_replace( '#(<input type="hidden"[^>]*?) aria-invalid="false"#', '$1', $html );
 }
 
 // Фон первого слайда главной — сразу, без ожидания jQuery
