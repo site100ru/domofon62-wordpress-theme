@@ -41,16 +41,19 @@ body {
 @font-face {
 	font-family: Gilroy-Regular;
 	src: url(../fonts/Gilroy-Regular.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: Gilroy-Meduim;
 	src: url(../fonts/Gilroy-Medium.ttf);
+	font-display: swap;
 }
 
 @font-face {
 	font-family: Gilroy-Semibold;
 	src: url(../fonts/Gilroy-Semibold.ttf);
+	font-display: swap;
 }
 
 @font-face {
@@ -1365,6 +1368,16 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 	height: 100%;
 }
 
+.product-price-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.product-card .buy-btn {
+	position: relative;
+	z-index: 2;
+}
+
 .woocommerce-loop-product__link-row {
 	display: flex;
 	flex-direction: column;
@@ -1617,6 +1630,7 @@ body.b-new-year:before {
 @font-face {
 	font-family: Gilroy-Semibold;
 	src: url(../fonts/Gilroy-Semibold.ttf);
+	font-display: swap;
 }
 
 .check-connection-banner {

@@ -26,7 +26,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 
 
-<div class="col-12 col-md-3">
+<div class="col-12 col-md-3 d-flex">
 	<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop_item.

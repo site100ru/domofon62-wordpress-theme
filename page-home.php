@@ -36,6 +36,13 @@
 
 	$img_mobile_slajda = get_field('img_mobile_slajda');
 
+	// Фоны слайдов — WebP-копии, если они загружены рядом с оригиналом (inc/seo-speed.php)
+	foreach ( array( 'img_pervogo_slajda', 'img_vtorogo_slajda', 'img_tretyego_slajda', 'img_chetvertogo_slajda' ) as $slide ) {
+		if ( ! empty( ${$slide}['url'] ) ) {
+			${$slide}['url'] = domofon62_webp_url( ${$slide}['url'] );
+		}
+	}
+
 
 	$title_catalog = get_field('title_catalog');
 	$text_cataloga = get_field('text_cataloga');
@@ -79,10 +86,14 @@
 
 		if ($(window).width() > 992) {
 
-			function bgLoading() {
-				$('#services-home').css({'background-image': 'url(<?php echo esc_url($img_pervogo_slajda['url']); ?>), url(<?php echo esc_url($img_vtorogo_slajda['url']); ?>), url(<?php echo esc_url($img_tretyego_slajda['url']); ?>), url(<?php echo esc_url($img_chetvertogo_slajda['url']); ?>)'});
-			}
-			window.onload = bgLoading();
+			// Первый фон задан в CSS, остальные подгружаем после загрузки страницы, чтобы переключение было без мигания
+			$(window).on('load', function() {
+				setTimeout(function() {
+					['<?php echo esc_url($img_vtorogo_slajda['url']); ?>', '<?php echo esc_url($img_tretyego_slajda['url']); ?>', '<?php echo esc_url($img_chetvertogo_slajda['url']); ?>'].forEach(function(src) {
+						new Image().src = src;
+					});
+				}, 2000);
+			});
 
 			$('#card-intercome').on('click', function() {
 			  let descr = document.querySelector('#card-wrapper-home');
@@ -97,7 +108,7 @@
 			  setTimeout(function(){ 
 				
 
-			  descr.innerHTML = '<h2 class="h2-service"><?php echo $title_pervogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
+			  descr.innerHTML = '<h1 class="h2-service"><?php echo $title_pervogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
 			  
 			  
 				descr.style.opacity = 1;
@@ -117,7 +128,7 @@
 			  
 			  setTimeout(function(){
 
-			  descr2.innerHTML = '<h2 class="h2-service"><?php echo $title_vtorogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
+			  descr2.innerHTML = '<h1 class="h2-service"><?php echo $title_vtorogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
 
 			   
 				descr2.style.opacity = 1;
@@ -136,7 +147,7 @@ $('#card-cctv').on('click', function() {
 
   setTimeout(function(){ 
 
-    descr3.innerHTML = '<h2 class="h2-service"><?php echo $title_tretyego_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
+    descr3.innerHTML = '<h1 class="h2-service"><?php echo $title_tretyego_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
     
     
       descr3.style.opacity = 1;
@@ -155,7 +166,7 @@ $('#card-doors').on('click', function() {
 
   setTimeout(function(){ 
 
-    descr4.innerHTML = '<h2 class="h2-service"><?php echo $title_chetvertogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
+    descr4.innerHTML = '<h1 class="h2-service"><?php echo $title_chetvertogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
     
     
       descr4.style.opacity = 1;
@@ -164,11 +175,6 @@ $('#card-doors').on('click', function() {
 
 } else {
 
-  function bgLoading() {
-    $('#services-home').css({'background-color': '#002977', 'background-image': 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(<?php echo esc_url($img_mobile_slajda['url']); ?>)'});
-  }
-  window.onload = bgLoading();
-  
     $('#card-intercome').on('click', function() {
     let descr = document.querySelector('#card-wrapper-home');
     descr.style.opacity = 0;
@@ -180,7 +186,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-    descr.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
+    descr.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
     
     
       descr.style.opacity = 1;
@@ -200,7 +206,7 @@ $('#card-doors').on('click', function() {
     
     setTimeout(function(){
   
-    descr2.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_vtorogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
+    descr2.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_vtorogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
   
      
       descr2.style.opacity = 1;
@@ -219,7 +225,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-      descr3.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_tretyego_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
+      descr3.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_tretyego_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
       
       
         descr3.style.opacity = 1;
@@ -238,7 +244,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-      descr4.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_chetvertogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
+      descr4.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_chetvertogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
       
       
         descr4.style.opacity = 1;
@@ -250,13 +256,15 @@ $('#card-doors').on('click', function() {
 </script>
 
 
+<?php /* Фон первого слайда выводится в <head>: inc/seo-speed.php, domofon62_preload_home_banner() */ ?>
+
 <section id="services-home" class="d-flex justify-content-center" style="left: 0px; background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; transition: background-image 0.5s ease-out; -webkit-transition: background-image 0.5s ease-out; -moz-transition: background-image 0.5s ease-out; -ms-transition: background-image 0.5s ease-out; -o-transition: background-image 0.5s ease-out; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; z-index: 1;">
         
     <div class="container pt-5 pb-4 py-md-4">
         <div class="row d-flex align-items-center">
         
 			<div id="card-wrapper-home" class="col-12 col-md-6 px-4 px-md-2">
-				<h2 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h2>
+				<h1 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h1>
 				<p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p>
 				<div class="d-flex justify-content-center justify-content-md-start">
 					<a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a>
@@ -295,188 +303,6 @@ $('#card-doors').on('click', function() {
     </div>
 </section>
 
-<!-- 
-<section class="second-section-home">
-    <div class="container pb-2 pb-md-5"> -->
-		<!-- <div class="row">
-			<div class="col happy-ny-container" style="padding-top: 80px;">
-				<div class="bg-white rounded" style="overflow: hidden;">
-					<div class="row">
-						<div class="col-md-8 order-md-2">
-							<div class="row justify-content-center align-items-center h-100">
-								<div class="col-md-10">
-									<div class="px-3 px-md-0 py-5 py-md-0">
-										<h3 class="mb-4">Уважаемые абоненты, поздравляем вас с&nbsp;Новым годом!</h3>
-										<p class="mb-0">Обратите внимание на график работы в праздничные дни: заявки будут приниматься <span>4 и 8 января</span>, а выполнение — <span>5 и 9 января.</span></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 order-md-1">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/happy-ny-section-img.jpg" class="w-100 rouned">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- <div class="row">
-			<div class="col">
-				
-				<h1 class="catalog-goods-h1 text-center text-md-start"><?php echo $title_catalog; ?></h1>
-				
-				<div class="row">
-					<div class="col"> -->
-						<!--p class="catalog-goods-text-under maxw-849 mb-30 col-12 col-md-8 col-lg-9 text-center 	text-md-start"><?php echo $text_cataloga; ?></p-->
-						<!-- <p class="catalog-goods-text-under maxw-849 mb-30"><?php echo $text_cataloga; ?></p>
-					</div>
-				</div> -->
-				
-<!-- 			   
-				<?php
-							
-					//if ( is_product_category() ) {
-					//$obj = get_queried_object();
-					//$parent = $obj->term_id;
-					
-					$categories = get_categories( [
-						'taxonomy'     => 'product_cat',
-						'type'         => 'product',
-						//'child_of'     => 0,
-						'parent'       => 0,
-						'orderby'      => 'name',
-						'order'        => 'ASC',
-						//'hide_empty'   => 1,
-						//'hierarchical' => 1,
-						'exclude'      => '',
-						'include'      => '',
-						'number'       => 0,
-						'pad_counts'   => false,
-						// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
-					] );
-
-					if( $categories != null ) {
-						echo '<div class="row mb-3 mb-md-5">';
-							//echo '<div class="col-12 mb-1">';
-								//echo '<h2 class="section-subtitle">Категории товаров</h2>';
-								//echo '<hr style="background: rgb(125,125,125);">';
-							//echo '</div>';
-							foreach( $categories as $cat ) {
-								if ( $cat->count > 0 ) { ?>
-									<div class="col-6 col-md-3 mb-3">
-										<a href="<?php echo get_category_link( $cat->term_id ); ?>">
-											<div class="product-cat-card text-center">
-												<?php
-													woocommerce_subcategory_thumbnail( $cat ); ?>
-												<h2 class="woocommerce-loop-category__title">
-													<?php echo $cat->name; ?>
-													<mark class="count">(<?php echo $cat->count; ?>)</mark>
-												</h2>
-											</div>
-										</a>
-									</div>
-								<?php }
-							}
-						echo '</div>';
-					}
-				//}
-				
-			?> -->
-				
-				
-				
-				
-				<!--div class="row">
-					<div class="col-md-3">
-						<div class="d-flex justify-content-center d-md-block"> 
-							<div class="category-carousel-home">
-								<?php /*
-									$taxonomy     = 'product_cat';
-									$orderby      = 'name';
-									$show_count   = 0;      // 1 for yes, 0 for no
-									$pad_counts   = 0;      // 1 for yes, 0 for no
-									$hierarchical = 1;      // 1 for yes, 0 for no
-									$title        = '';
-									$empty        = 1;
-									$args = array(
-										'taxonomy'     => $taxonomy,
-										'orderby'      => $orderby,
-										'show_count'   => $show_count,
-										'pad_counts'   => $pad_counts,
-										'hierarchical' => $hierarchical,
-										'title_li'     => $title,
-										'hide_empty'   => $empty
-									);
-									$all_categories = get_categories( $args );
-									foreach ( $all_categories as $cat ) {
-										if( $cat->category_parent == 0 ) {
-											$category_id = $cat->term_id;
-											echo '<a class="category-carousel-home-item" href="'. get_term_link( $cat->slug, 'product_cat' ) .'">'. $cat->name .'</a>';
-										}
-									}
-								?>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-9">
-						<div class="row translate-top-products product-cat-row"><!-- translate-top-products --
-							<?php 
-								$home_category = get_field( 'home_category' );
-								$product_categories = array( $home_category );
-								// Setup your custom query
-								$args = array( 'post_type' => 'product',
-									'tax_query' => array( array(
-										'taxonomy' => 'product_cat',
-										'field'    => 'slug',
-										'terms'    => $product_categories,
-										'operator' => 'IN',
-									) ) 
-								); // Swap to Product
-								$loop = new WP_Query( $args );
-					 
-								while ( $loop->have_posts() ) : $loop->the_post(); ?>
-								
-								<div class="col-md-4">
-									<a href="<?php echo get_permalink(); ?>">
-										<div class="card mb-3">
-											<div class="row gx-3">
-												<div class="col-4 col-md-12 mb-0 mb-md-3">
-													<?php the_post_thumbnail('medium'); ?>
-												</div>
-												<div class="col-8 col-md-12">
-													<p class="product-price-title"><?php echo get_the_title() ?></p>
-													<?php $product = wc_get_product( get_the_ID() ); ?>
-													<div class="row align-items-center">
-														<div class="col-6 col-md-12">
-															<p class="product-price mb-0 mb-md-3"><?php echo $product->get_price(); ?> руб</p>
-														</div>
-														<div class="col-6 col-md-12">
-															<object>
-																<a href="#" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a>
-															</object>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-							<?php 
-								endwhile; 
-								wp_reset_query();  */
-							?>
-						</div>
-						<div class="row translate-top-products">
-							<div class="col pt-md-4 pb-3 pb-md-4">
-								<a href="<?php $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) ); echo $shop_page_url; ?>" class="all-catalog-btn mb-4 mt-1 mb-md-0 mt-md-0" style="margin: auto;">Весь каталог</a>
-							</div>
-						</div>
-					</div>
-				</div><!-- /.row -->
-				
-			<!-- </div>
-		</div>
-    </div>
-</section> -->
     
 	
 <section>
@@ -532,17 +358,17 @@ $('#card-doors').on('click', function() {
 
 				<div class="row justify-content-center text-center text-md-start" style="padding-top: 65px;">
 					<div class="offset-md-2 col-md-3 mb-5 mb-md-0">
-						<p class="mb-3"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/yandex-logo.svg" alt="Yandex"></p>
+						<p class="mb-3"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/yandex-logo.svg" alt="Yandex" width="120" height="35" loading="lazy"></p>
 						<p class="mb-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-yandex.svg" alt="Рейтинг РДК в Яндекс">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-yandex.svg" alt="Рейтинг РДК в Яндекс" width="168" height="24" loading="lazy">
 							<span style="position: relative; top: 3px; margin-left: 10px;">4,9 из 5</span>
 						</p>
 						<p class="mb-0"><a href="https://yandex.ru/profile/1026973892" class="text-decoration-underline" target="blank">Читать...</a></p>
 					</div>
 					<div class="offset-md-2 col-md-3">
-						<p class="mb-3"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/2gis-logo.svg" alt="Рейтинг РДК в 2Gis"></p>
+						<p class="mb-3"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/2gis-logo.svg" alt="2GIS" width="120" height="35" loading="lazy"></p>
 						<p class="mb-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-2gis.svg" alt="Stars">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-2gis.svg" alt="Рейтинг РДК в 2Gis" width="168" height="24" loading="lazy">
 							<span style="position: relative; top: 3px; margin-left: 10px;">4,2 из 5</span>
 						</p>
 						<p class="mb-0"><a href="https://2gis.ru/ryazan/firm/6192977768630020/tab/reviews" class="text-decoration-underline" target="blank">Читать...</a></p>

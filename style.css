@@ -24,6 +24,7 @@
    font-style: normal;
    font-weight: normal;
    src: local('ALSSchlangeSansBold'), url('fonts/ALSSchlangesans-Bold.ttf') format('TrueType');
+   font-display: swap;
  }
 
  * {
@@ -1955,21 +1956,25 @@ width: 100%;
  @font-face {
    font-family: TTNorms-Regular;
    src: url(fonts/TTNorms-Regular.ttf);
+   font-display: swap;
  }
 
  @font-face {
    font-family: TTNorms-Medium;
    src: url(fonts/TTNorms-Medium.ttf);
+   font-display: swap;
  }
 
  @font-face {
    font-family: TTNorms-Bold;
    src: url(fonts/TTNorms-Bold.ttf);
+   font-display: swap;
  }
 
  @font-face {
    font-family: ALSSchlangesans-Bold;
    src: url(fonts/ALSSchlangesans-Bold.ttf);
+   font-display: swap;
  }
 
  .row-2 {

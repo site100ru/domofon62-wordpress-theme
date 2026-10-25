@@ -37,7 +37,12 @@ get_header( '4' );
 		<div class="row">
 			<div class="col">
 
-				<?php do_action( 'woocommerce_before_main_content' ); ?>
+				<?php
+				// Обёртка WooCommerce (div#primary + main) внутри section даёт невалидный HTML — отключаем
+				remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+				remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+				do_action( 'woocommerce_before_main_content' );
+				?>
 
 				<h1 class="catalog-goods-h1-second">
 					<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -153,9 +158,11 @@ get_header( '4' );
 							<a href="<?php echo get_category_link( $cat->term_id ); ?>">
 								<div class="product-cat-card text-center mb-3">
 									<?php
-																	woocommerce_subcategory_thumbnail( $cat ); ?>
+																	ob_start();
+																	woocommerce_subcategory_thumbnail( $cat );
+																	echo str_replace( '<img ', '<img loading="lazy" decoding="async" ', ob_get_clean() ); ?>
 									<h2 class="woocommerce-loop-category__title">
-										<?php echo $cat->name; ?>
+										<?php echo esc_html( $cat->name ); ?>
 										<mark class="count">(<?php echo $cat->count; ?>)</mark>
 									</h2>
 								</div>
@@ -217,6 +224,16 @@ get_header( '4' );
 					</div>
 				</div>
 				<?php } ?>
+
+				<?php
+				/**
+				 * Hook: woocommerce_after_main_content.
+				 * Вызывается здесь, а не после </section>: обёртка открыта внутри .col.
+				 *
+				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+				 */
+				do_action( 'woocommerce_after_main_content' );
+				?>
 			</div>
 		</div>
 	</div>
@@ -224,12 +241,5 @@ get_header( '4' );
 
 
 <?php
-	/**
-	 * Hook: woocommerce_after_main_content.
-	 *
-	 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-	 */
-	do_action( 'woocommerce_after_main_content' );
-	
 	get_footer( '2' ); // There were 'shop' here
 ?>

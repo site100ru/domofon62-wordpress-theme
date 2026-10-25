@@ -9,7 +9,7 @@
     echo home_url("/");
     $footer_logo = get_field("footer_logo", 5);
     ?>">
-					<img src="<?php echo esc_url($footer_logo["url"]); ?>" alt="<?php echo esc_attr($footer_logo["alt"]); ?>" />
+					<img src="<?php echo esc_url($footer_logo["url"]); ?>" alt="<?php echo esc_attr($footer_logo["alt"]); ?>" loading="lazy" decoding="async" />
 				</a>
 				<p class="string-ryazan-footer mt-2 mb-1">
 					<?php
@@ -19,7 +19,7 @@
 				</p>
 				<p class="copyright text-start mb-1">ИНН 6234057300</p>
 				<p class="copyright text-start">©РДК, <?php echo date("Y"); ?></p>
-				<div class="mt-1"><iframe src="https://yandex.ru/sprav/widget/rating-badge/1026973892?type=rating" width="150" height="50" frameborder="0"></iframe></div>
+				<div class="mt-1"><iframe src="https://yandex.ru/sprav/widget/rating-badge/1026973892?type=rating" width="150" height="50" style="border:0" loading="lazy" title="Рейтинг в Яндекс Справочнике"></iframe></div>
 			</div>
 
 			<div class="col-12 col-md-6 col-lg-3">
@@ -44,7 +44,7 @@
 						<a href="tel:84912202526">8 (4912) 20-25-26</a>
 					</p>
 					<a href="tg://resolve?domain=RDK62" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
-						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
+						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43" loading="lazy" />
 						<p class="chasy fw-bold p-0 m-0">@RDK62</p>
 					</a>
 				</div>
@@ -56,7 +56,7 @@
 						<a href="tel:84912255046">8 (4912) 25-50-46</a>
 					</p>
 					<a href="tg://resolve?domain=RDK62bot" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
-						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
+						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43" loading="lazy" />
 						<p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
 					</a>
 				</div>
@@ -91,7 +91,7 @@
 
 
 		<!-- Order product -->
-		<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+		<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="productModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -99,7 +99,7 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<h5 class="text-center product-modal-name">Наименование продукта</h5>
+						<p class="h5 text-center product-modal-name">Наименование продукта</p>
 						<p id="modalProduct" class="text-center">
 							<?php
 /* 
@@ -130,7 +130,7 @@
 
 
 		<!-- Service Modal -->
-		<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+		<div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="serviceModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -138,7 +138,7 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<h5 class="text-center product-modal-name">Наименование услуги:</h5>
+						<p class="h5 text-center product-modal-name">Наименование услуги:</p>
 						<p class="text-center" id="serviceModalName"><?php echo the_title(); ?></p>
 						<div class="text-center"><?php echo do_shortcode('[contact-form-7 id="3628" title="Форма заказа услуги"]'); ?></div>
 					</div>
@@ -148,7 +148,7 @@
 		<!-- Service Modal -->
 
 		<!-- Check Connection Modal -->
-		<div class="modal fade" id="checkConnectionModal" tabindex="-1" aria-labelledby="checkConnectionModalLabel" aria-hidden="true">
+		<div class="modal fade" id="checkConnectionModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="checkConnectionModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -191,19 +191,19 @@
 	</div>
 
 	<div id="phoneBtn" class="callback-phone-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Позвонить">
-		<a href="tel:+74912202526">
+		<a href="tel:+74912202526" aria-label="Позвонить">
 			<div class="callback-phone-button-ico"></div>
 		</a>
 	</div>
 
 	<div id="telegramBtn" class="callback-telegram-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Telegram">
-		<a href="tg://resolve?domain=RDK62" target="_blank">
+		<a href="tg://resolve?domain=RDK62" target="_blank" aria-label="Написать в Telegram">
 			<div class="callback-telegram-button-ico"></div>
 		</a>
 	</div>
 
 	<div id="maxBtn" class="callback-max-button" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Max">
-		<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" target="_blank">
+		<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" target="_blank" rel="noopener" aria-label="Написать в MAX">
 			<div class="callback-max-button-ico"></div>
 		</a>
 	</div>
@@ -276,11 +276,25 @@
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-	m[i].l=1*new Date();
-	for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-	k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	// Очередь ym доступна сразу, сам tag.js грузится при первом действии пользователя или через 5 с
+	window.ym = window.ym || function(){(window.ym.a = window.ym.a || []).push(arguments)};
+	window.ym.l = 1 * new Date();
+
+	(function () {
+		var loaded = false;
+		var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+		function loadMetrika() {
+			if (loaded) return;
+			loaded = true;
+			events.forEach(function (e) { window.removeEventListener(e, loadMetrika); });
+			var s = document.createElement('script');
+			s.async = true;
+			s.src = 'https://mc.yandex.ru/metrika/tag.js';
+			document.head.appendChild(s);
+		}
+		events.forEach(function (e) { window.addEventListener(e, loadMetrika, { passive: true, once: true }); });
+		setTimeout(loadMetrika, 5000);
+	})();
 
 	ym(45523608, "init", {
         clickmap:true,

@@ -8,10 +8,14 @@
  */
   
 
+// Скорость загрузки, schema.org, OpenGraph
+require_once get_template_directory() . '/inc/seo-speed.php';
+
 add_action( 'wp_enqueue_scripts', 'domofontwo_scripts' );
 function domofontwo_scripts() {
 	//wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap-5.0.2-dist/js/bootstrap.min.js', array( 'jquery' ), '5.0.2', true );
-	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap-5.0.2-dist/css/bootstrap.min.css', array(), '5.0.2', 'all' ); 
+	// Bootstrap 5.3.2 подключается в header-4.php, локальный 5.0.2 дублировал его
+	//wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap-5.0.2-dist/css/bootstrap.min.css', array(), '5.0.2', 'all' );
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '0.8.1', true );
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/slick/slick.css', array(), '0.8.1', 'all' ); 
 	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), '0.0.1', true );
@@ -29,6 +33,8 @@ function domofontwo_config() {
 		   'domofontwo_footer_menu_products' => 'Меню в Футере справа'
 		)
 	);
+	// <title> выводит WordPress/Yoast
+	add_theme_support( 'title-tag' );
 }
 
 
@@ -70,9 +76,7 @@ function price_new_wrap() {
 	<div class="col-6 col-md-12">
 		<!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
 		<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-		<object>
-			<a href="#" onclick="getName( '<?php echo $product->name; ?>' );" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</a>
-		</object>
+			<a href="#" role="button" onclick="getName( '<?php echo esc_js( $product->get_name() ); ?>' );" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</a>
 	</div>
 </div>
 <?php
@@ -85,12 +89,13 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 
 function woocommerce_template_loop_product_title() {
     ?>
-<p class="product-price-title"><?php echo get_the_title(); ?></p>
+<p class="product-price-title"><a href="<?php the_permalink(); ?>" class="stretched-link"><?php echo get_the_title(); ?></a></p>
 <?php
 }
 
-	//remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-	//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+	// Ссылка на всю карточку — через stretched-link в заголовке, иначе кнопка «Заказать» оказывается вложенной <a>.
+	remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 
    /**
  * Change several of the breadcrumb defaults

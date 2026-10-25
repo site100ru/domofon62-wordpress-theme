@@ -5,71 +5,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="yandex-verification" content="eba6e1ca90104fe8" />
-	<meta property="og:locale" content="ru_RU" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
-
-	<?php /* Output title Делаем правильные заголовки */?>
-	<?php if ( 'uslugi' == get_post_type() ): ?>
-	<title>Наши услуги | <?php bloginfo('name'); ?></title>
-	<meta property="og:title" content="Наши услуги | <?php bloginfo('name'); ?>" />
-	<meta name="description" content="Наши услуги | <?php bloginfo('name'); ?>" />
-	<meta property="og:description" content="Наши услуги | <?php bloginfo('name'); ?>" />
-	<?php elseif ( 'objekty' == get_post_type() ): ?>
-	<title>Наши объекты | <?php echo wp_get_document_title(); ?></title>
-	<meta property="og:title" content="Наши объекты | <?php echo wp_get_document_title(); ?>" />
-	<meta name="description" content="Наши объекты | <?php echo wp_get_document_title(); ?>" />
-	<meta property="og:description" content="Наши объекты | <?php echo wp_get_document_title(); ?>" />
-	<?php
-		elseif ( 'product' == get_post_type() ):
-		// Get parent product category
-		function get_category_hierarchy($category_id, $taxonomy = 'product_cat', $exclude_current = true) {
-			$hierarchy = array();
-			$current_category = get_term($category_id, $taxonomy);
-			
-			if ($current_category && !is_wp_error($current_category)) {
-				/* Добавляем текущую категорию только если не нужно исключать $exclude_current = true */
-				if (!$exclude_current) {
-					$hierarchy[] = $current_category;
-				}
-				
-				if ($current_category->parent != 0) {
-					$parent_hierarchy = get_category_hierarchy($current_category->parent, $taxonomy, false);
-					$hierarchy = array_merge($parent_hierarchy, $hierarchy);
-				}
-			}
-			
-			return $hierarchy;
-		}
-			
-		// Get current product cat id
-		$obj = get_queried_object();
-		$cat_id = isset($obj->term_id) ? $obj->term_id : 0;
-
-		// Использование
-		$child_category_id = $cat_id; // ID вашей дочерней категории
-		$full_hierarchy = get_category_hierarchy($child_category_id);
-
-		// Вывод результата
-		$title_and_description = '';
-		foreach ( $full_hierarchy as $category ) {
-			//echo $category->name . ' | ';
-			$title_and_description .= $category->name . ' | ';
-		}
-	?>
-	<title><?php echo $title_and_description . wp_get_document_title(); ?></title>
-	<meta property="og:title" content="<?php echo $title_and_description . wp_get_document_title(); ?>" />
-	<meta name="description" content="<?php echo $title_and_description . wp_get_document_title(); ?>" />
-	<meta property="og:description" content="<?php echo $title_and_description . wp_get_document_title(); ?>" />
-	<?php else: ?>
-	<title><?php wp_title(' | ', true, 'right'); ?></title>
-	<meta property="og:title" content="<?php wp_title(' | ', true, 'right'); ?>" />
-	<meta name="description" content="<?php wp_title(' | ', true, 'right'); ?>" />
-	<meta property="og:description" content="<?php wp_title(' | ', true, 'right'); ?>" />
-	<?php endif; ?>
-
-	<meta name="keywords" content="РДК, Рязанская домофонная компания, домофоны, установка домофонов, видеонаблюдение, установка видеонаблюдения, системы контроля доступа, установка систем контроля доступа, СКУД, установка СКУД, шлагбаумы, установка шлагбаумов, автоматические ворота, установка автоматических ворот" />
-
 	<?php wp_head(); ?>
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -120,7 +55,7 @@
                                         <a href="tel:84912202526" class="p-0">8 (4912) 20-25-26</a>
                                     </p>
                                     <a href="tg://resolve?domain=RDK62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
-                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40px" height="40px">
+                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40" height="40">
                                         <p class="chasy fw-bold p-0 m-0">@RDK62</p>
                                     </a>
                                 </li>
@@ -131,7 +66,7 @@
                                         <a href="tel:84912255046" class="p-0">8 (4912) 25-50-46</a>
                                     </p>
                                     <a href="tg://resolve?domain=RDK62bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links p-0">
-                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40px" height="40px">
+                                        <img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="40" height="40">
                                         <p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
                                     </a>
 									<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal" class="mt-2 d-inline-block">
@@ -179,7 +114,7 @@
 								<a href="tel:84912202526">8 (4912) 20-25-26</a>
 							</p>
 							<a href="tg://resolve?domain=RDK62" target="_blank" class="d-flex justify-content-end align-items-center gap-2 lh-1 mb-2 social-links">
-								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="">
+								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43">
 								<p class="chasy fw-bold p-0 m-0">@RDK62</p>
 							</a>
 						</div>
@@ -191,7 +126,7 @@
 							</p>
 							<div class="header-social">
 								<a href="tg://resolve?domain=RDK62bot" target="_blank" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links">
-									<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" />
+									<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43" />
 									<p class="chasy fw-bold p-0 m-0">@RDK62bot</p>
 								</a>
 							</div>
@@ -202,7 +137,7 @@
 		</div>
 
 		<!-- Modal -->
-		<div class="modal fade" id="dostupModal" tabindex="-1" aria-labelledby="dostupModalLabel" aria-hidden="true">
+		<div class="modal fade" id="dostupModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="dostupModalLabel" aria-hidden="true">
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header border-bottom-0">

@@ -76,14 +76,14 @@
 						<small>Социальные сети:</small>
 						<div class="col-md-12 col-lg-6">
 							<a href="https://vk.com/domofon62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3" target="_blank">
-								<img src="https://domofon62.ru/wp-content/uploads/2026/05/vkontakte-ico.svg" alt="Соцсеть ВКонтакте" />
+								<img src="https://domofon62.ru/wp-content/uploads/2026/05/vkontakte-ico.svg" alt="Соцсеть ВКонтакте" width="40" height="40" />
 								<p class="chasy fw-bold p-0 m-0">vk.com/domofon62</p>
 							</a>
 						</div>
 
 						<div class="col-md-12 col-lg-6">
 							<a href="https://max.ru/u/f9LHodD0cOLZZyzCRSgC20bcwhS53ABn_XtE6wNl4P3U8QdlFcBWkzm-O-w" target="_blank" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links pt-3">
-								<img src="https://domofon62.ru/wp-content/uploads/2026/05/max-icon.svg" alt="Соцсеть Max" />
+								<img src="<?php echo get_template_directory_uri(); ?>/img/max.svg" alt="Соцсеть Max" width="40" height="40" />
 								<p class="chasy fw-bold p-0 m-0">8 (952) 123-66-12</p>
 							</a>
 						</div>
@@ -91,7 +91,7 @@
 				</div>
 				<div class="col-12 col-md-6">
 					<p>
-						<iframe src="https://yandex.ru/map-widget/v1/?z=12&amp;ol=biz&amp;oid=1026973892" width="100%" height="400" frameborder="0"></iframe>
+						<iframe src="https://yandex.ru/map-widget/v1/?z=12&amp;ol=biz&amp;oid=1026973892" width="600" height="400" style="width:100%;border:0" title="Карта: офис на Яндекс Картах" loading="lazy"></iframe>
 					</p>
 				</div>
 			</div>
