@@ -108,7 +108,7 @@
 			  setTimeout(function(){ 
 				
 
-			  descr.innerHTML = '<h1 class="h2-service"><?php echo $title_pervogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
+			  descr.innerHTML = '<h2 class="h2-service"><?php echo $title_pervogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
 			  
 			  
 				descr.style.opacity = 1;
@@ -128,7 +128,7 @@
 			  
 			  setTimeout(function(){
 
-			  descr2.innerHTML = '<h1 class="h2-service"><?php echo $title_vtorogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
+			  descr2.innerHTML = '<h2 class="h2-service"><?php echo $title_vtorogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
 
 			   
 				descr2.style.opacity = 1;
@@ -147,7 +147,7 @@ $('#card-cctv').on('click', function() {
 
   setTimeout(function(){ 
 
-    descr3.innerHTML = '<h1 class="h2-service"><?php echo $title_tretyego_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
+    descr3.innerHTML = '<h2 class="h2-service"><?php echo $title_tretyego_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
     
     
       descr3.style.opacity = 1;
@@ -166,7 +166,7 @@ $('#card-doors').on('click', function() {
 
   setTimeout(function(){ 
 
-    descr4.innerHTML = '<h1 class="h2-service"><?php echo $title_chetvertogo_slajda; ?></h1> <p class="text-under-h2"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
+    descr4.innerHTML = '<h2 class="h2-service"><?php echo $title_chetvertogo_slajda; ?></h2> <p class="text-under-h2"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
     
     
       descr4.style.opacity = 1;
@@ -186,7 +186,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-    descr.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
+    descr.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a></div>';
     
     
       descr.style.opacity = 1;
@@ -206,7 +206,7 @@ $('#card-doors').on('click', function() {
     
     setTimeout(function(){
   
-    descr2.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_vtorogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
+    descr2.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_vtorogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_vtorogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_vtorogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_vtorogo_slajda; ?></a></div>';
   
      
       descr2.style.opacity = 1;
@@ -225,7 +225,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-      descr3.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_tretyego_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
+      descr3.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_tretyego_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_tretyego_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_tretyego_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_tretyego_slajda; ?></a></div>';
       
       
         descr3.style.opacity = 1;
@@ -244,7 +244,7 @@ $('#card-doors').on('click', function() {
   
     setTimeout(function(){ 
   
-      descr4.innerHTML = '<h1 class="h2-service text-center text-md-start"><?php echo $title_chetvertogo_slajda; ?></h1> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
+      descr4.innerHTML = '<h2 class="h2-service text-center text-md-start"><?php echo $title_chetvertogo_slajda; ?></h2> <p class="text-under-h2 text-center text-md-start"><?php echo $tekst_chetvertogo_slajda; ?></p><div class="d-flex justify-content-center justify-content-md-start"><a href="<?php echo esc_url($link_chetvertogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_chetvertogo_slajda; ?></a></div>';
       
       
         descr4.style.opacity = 1;
