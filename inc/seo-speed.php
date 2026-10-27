@@ -467,49 +467,73 @@ function domofon62_og_images( $container ) {
 	}
 }
 
-// meta description и og:description по умолчанию, если в Yoast не заполнены
-add_filter( 'wpseo_metadesc', 'domofon62_default_metadesc' );
-add_filter( 'wpseo_opengraph_desc', 'domofon62_default_metadesc' );
+// meta description и og:description по умолчанию, если в Yoast не заполнены.
+// Yoast перед выводом тега пропускает текст описания через эти фильтры,
+// функция получает его в $desc и возвращает то, что попадёт в тег.
+add_filter( 'wpseo_metadesc', 'domofon62_default_metadesc' );        // <meta name="description">
+add_filter( 'wpseo_opengraph_desc', 'domofon62_default_metadesc' );  // <meta property="og:description">
 function domofon62_default_metadesc( $desc ) {
+	// Описание заполнено в Yoast (поле «Мета-описание» у страницы) — оно главнее, отдаём как есть
 	if ( '' !== trim( (string) $desc ) ) {
 		return $desc;
 	}
+	// Название компании — подставляется в конец описаний ниже
 	$company = 'Рязанская домофонная компания';
 
+	// Главная: один фиксированный текст — чем занимается компания, город и телефон
 	if ( is_front_page() ) {
 		return $company . ': установка и обслуживание домофонов, видеонаблюдения, СКУД, шлагбаумов и автоматических ворот в Рязани. Тел. +7 (4912) 20-25-26.';
 	}
+	// Карточка товара WooCommerce (function_exists — на случай, если WooCommerce выключен)
 	if ( function_exists( 'is_product' ) && is_product() ) {
+		// Объект товара по ID текущей страницы
 		$product = wc_get_product( get_queried_object_id() );
 		if ( $product ) {
+			// «Видеорегистратор … — купить в Рязани.»
 			$text = $product->get_name() . ' — купить в Рязани.';
+			// Цену добавляем, только если она указана (у товаров «под заказ» её нет)
 			if ( $product->get_price() ) {
 				$text .= ' Цена ' . $product->get_price() . ' руб.';
 			}
+			// «… Продажа и установка — Рязанская домофонная компания.»
 			return $text . ' Продажа и установка — ' . $company . '.';
 		}
 	}
+	// Категория товаров (/product-category/…)
 	if ( is_tax( 'product_cat' ) ) {
+		// Текущая категория
 		$term = get_queried_object();
+		// Описание категории из админки (Товары → Категории), очищенное от тегов и обрезанное до 160 символов
 		$text = domofon62_plain_text( $term->description );
+		// Описание есть — берём его, нет — «Bolid — купить в Рязани с установкой. Каталог: …»
 		return $text ? $text : $term->name . ' — купить в Рязани с установкой. Каталог: ' . $company . '.';
 	}
+	// Любая отдельная страница, запись или услуга (контакты, «О компании», /uslugi/…)
 	if ( is_singular() ) {
+		// Текущая страница
 		$post = get_queried_object();
+		// Берём цитату (поле «Отрывок»), если её нет — сам текст страницы; чистим и обрезаем до 160 символов
 		$text = domofon62_plain_text( $post->post_excerpt ? $post->post_excerpt : $post->post_content );
+		// Текст есть — отдаём его, страница пустая — «Контакты — Рязанская домофонная компания.»
 		return $text ? $text : get_the_title( $post ) . ' — ' . $company . '.';
 	}
+	// Остальные страницы (например, /shop/ — архив товаров) не трогаем: остаётся пустое описание
 	return $desc;
 }
 
 // Текст без разметки, не длиннее 160 символов по границе слова
 function domofon62_plain_text( $html ) {
+	// Вырезаем блоки <style> и <script> целиком вместе с содержимым, иначе CSS/JS попадут в описание
 	$text = preg_replace( '#<(style|script)[^>]*>.*?</\1>#is', ' ', (string) $html );
+	// Убираем шорткоды [..], затем HTML-теги, все пробелы/переносы склеиваем в один пробел, обрезаем края
 	$text = trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( strip_shortcodes( $text ) ) ) );
+	// Короче 160 символов — возвращаем целиком (160 — примерно столько поисковик показывает в сниппете)
 	if ( mb_strlen( $text ) <= 160 ) {
 		return $text;
 	}
+	// Длиннее — берём первые 160 символов…
 	$text = mb_substr( $text, 0, 160 );
+	// …отрезаем по последнему пробелу, чтобы не рвать слово, и ставим многоточие
 	return mb_substr( $text, 0, mb_strrpos( $text, ' ' ) ) . '…';
 }
 

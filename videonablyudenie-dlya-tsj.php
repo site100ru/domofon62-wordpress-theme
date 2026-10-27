@@ -16,6 +16,7 @@
 
 
 
+<?php /* Старый блок от страницы ворот, не выводится (иначе второй H1 в коде страницы) */ if ( false ) : ?>
 <!--header class="light-grey-bg" style="overflow: hidden;">
 	<div class="container">
 		<div class="row">
@@ -50,6 +51,7 @@
 		</div>
 	</div>
 </header-->
+<?php endif; ?>
 
 
 <section class="section-home light-grey-bg">
