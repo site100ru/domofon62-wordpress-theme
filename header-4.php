@@ -10,11 +10,11 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<!-- Новые стили только для новых страниц -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/theme.css'>
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/bootstrap-5-multilevel-menu-2.css'>
+	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/theme.css?ver=<?php echo filemtime( get_template_directory() . '/css/theme.css' ); ?>'>
+	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/bootstrap-5-multilevel-menu-2.css?ver=<?php echo filemtime( get_template_directory() . '/css/bootstrap-5-multilevel-menu-2.css' ); ?>'>
 	<!--link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/bootstrap-5-multilevel-menu-2.css'-->
 	<!-- Messengers button CSS -->
-	<link href="<?php echo get_template_directory_uri(); ?>/css/messengers-button.css" rel="stylesheet">
+	<link href="<?php echo get_template_directory_uri(); ?>/css/messengers-button.css?ver=<?php echo filemtime( get_template_directory() . '/css/messengers-button.css' ); ?>" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/img/ico/favicon.svg" id="favicon">
 </head>
 

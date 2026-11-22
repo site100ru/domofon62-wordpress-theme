@@ -27,7 +27,7 @@
 
 	<?php wp_head(); ?>
 	<!-- Новые стили только для новых страниц -->
-	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/theme.css'>
+	<link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/theme.css?ver=<?php echo filemtime( get_template_directory() . '/css/theme.css' ); ?>'>
 </head>
 
 <body <?php body_class(); ?>>
