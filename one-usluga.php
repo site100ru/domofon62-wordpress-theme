@@ -185,11 +185,11 @@ endif;
   <div class="popups modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="product-modal-title" id="product2ModalLabel">Заказ товара</h2>
+        <p class="product-modal-title" id="product2ModalLabel">Заказ товара</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h5 class="text-center product-modal-name"><strong>Наименование продукта:</strong></h5>
+        <p class="text-center product-modal-name"><strong>Наименование продукта:</strong></p>
         <p class="text-center">
       <?php  echo get_the_title( get_the_ID() ); ?>
        </p>

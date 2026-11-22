@@ -114,11 +114,11 @@
 	<div class="popups modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="product-modal-title" id="questionModalLabel">Задать вопрос</h2>
+				<p class="product-modal-title" id="questionModalLabel">Задать вопрос</p>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<h5 class="text-center product-modal-name">Наименование услуги:</h5>
+				<p class="text-center product-modal-name">Наименование услуги:</p>
 				<p class="text-center" id="questionModalName">Общий вопрос</p>
 				<div class="text-center"><?php echo do_shortcode( '[contact-form-7 title="Форма задать вопрос"]' ); ?></div>
 			</div>

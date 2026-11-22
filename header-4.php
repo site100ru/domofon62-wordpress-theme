@@ -141,7 +141,7 @@
 			<div class="popups modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header border-bottom-0">
-						<h2 class="product-modal-title" id="dostupModalLabel">Получить доступ к услугам:</h2>
+						<p class="product-modal-title" id="dostupModalLabel">Получить доступ к услугам:</p>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body pt-0">
