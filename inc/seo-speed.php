@@ -250,8 +250,16 @@ function domofon62_org_data() {
 			'streetAddress'   => 'ул. Полевая, д. 1',
 			'addressLocality' => 'Рязань',
 			'addressRegion'   => 'Рязанская область',
+			'postalCode'      => '390046',
 			'addressCountry'  => 'RU',
 		),
+		'geo'       => array(
+			'@type'     => 'GeoCoordinates',
+			'latitude'  => 54.6162055,
+			'longitude' => 39.742697,
+		),
+		'hasMap'    => 'https://yandex.ru/maps/org/1026973892/',
+		'priceRange' => 'от 50 ₽',
 		'sameAs'    => array(
 			'https://vk.com/domofon62',
 			'https://t.me/RDK62',
@@ -273,7 +281,10 @@ function domofon62_schema_organization( $data ) {
 	$data['telephone'] = $org['phones'][0];
 	$data['taxID']     = $org['taxID'];
 	$data['address']   = $org['address'];
-	$data['areaServed'] = array( '@type' => 'City', 'name' => 'Рязань' );
+	$data['geo']        = $org['geo'];
+	$data['hasMap']     = $org['hasMap'];
+	$data['priceRange'] = $org['priceRange'];
+	$data['areaServed'] = domofon62_area_served();
 	$data['openingHoursSpecification'] = array(
 		array(
 			'@type'     => 'OpeningHoursSpecification',
@@ -330,7 +341,7 @@ function domofon62_schema_service( $graph, $context ) {
 		'serviceType' => get_the_title( $post_id ),
 		'url'         => $url,
 		'provider'    => array( '@id' => home_url( '/#organization' ) ),
-		'areaServed'  => array( '@type' => 'City', 'name' => 'Рязань' ),
+		'areaServed'  => domofon62_area_served(),
 		'mainEntityOfPage' => array( '@id' => $url ),
 	);
 	if ( $desc ) {
@@ -340,8 +351,96 @@ function domofon62_schema_service( $graph, $context ) {
 		$service['image'] = get_the_post_thumbnail_url( $post_id, 'full' );
 	}
 
+	// Цена «от» — те же цифры, что на карточках /uslugi/ (archive-uslugi.php)
+	$prices = domofon62_service_prices();
+	$slug   = get_post_field( 'post_name', $post_id );
+	if ( isset( $prices[ $slug ] ) ) {
+		$p    = $prices[ $slug ];
+		$spec = array(
+			'@type'         => 'UnitPriceSpecification',
+			'price'         => $p['price'],
+			'minPrice'      => $p['price'],
+			'priceCurrency' => 'RUB',
+		);
+		if ( ! empty( $p['monthly'] ) ) {
+			$spec['unitCode'] = 'MON';
+			$spec['unitText'] = 'месяц';
+		}
+		$service['offers'] = array(
+			'@type'              => 'Offer',
+			'price'              => $p['price'],
+			'priceCurrency'      => 'RUB',
+			'priceSpecification' => $spec,
+			'availability'       => 'https://schema.org/InStock',
+			'url'                => $url,
+		);
+	}
+
 	$graph[] = $service;
+
+	// FAQPage из блока вопросов (аккордеон в тексте услуги)
+	$faq = domofon62_faq_from_content( get_post_field( 'post_content', $post_id ) );
+	if ( $faq ) {
+		$graph[] = array(
+			'@type'      => 'FAQPage',
+			'@id'        => $url . '#faq',
+			'url'        => $url,
+			'isPartOf'   => array( '@id' => $url ),
+			'mainEntity' => $faq,
+		);
+	}
+
 	return $graph;
+}
+
+// Регион работы: Рязань и область
+function domofon62_area_served() {
+	return array(
+		array( '@type' => 'City', 'name' => 'Рязань' ),
+		array( '@type' => 'AdministrativeArea', 'name' => 'Рязанская область' ),
+	);
+}
+
+// Минимальные цены услуг (ключ — ярлык записи). Меняете цену на /uslugi/ — поменяйте и здесь
+function domofon62_service_prices() {
+	return array(
+		'umny-domofon'                => array( 'price' => 69, 'monthly' => true ),
+		'ustanovku-videonablyudeniya' => array( 'price' => 109, 'monthly' => true ),
+		'vorota-i-shlagbaumy'         => array( 'price' => 50, 'monthly' => true ),
+		'ustanovku-sistem-kontrolya-dostupa-i-ucheta-rabochego-vremeni' => array( 'price' => 15000 ),
+	);
+}
+
+// Вопросы и ответы из bootstrap-аккордеона: .accordion-button — вопрос, .accordion-body — ответ
+function domofon62_faq_from_content( $html ) {
+	if ( false === strpos( (string) $html, 'accordion-item' ) ) {
+		return array();
+	}
+	$doc = new DOMDocument();
+	libxml_use_internal_errors( true );
+	$doc->loadHTML( '<?xml encoding="utf-8"?><div>' . $html . '</div>' );
+	libxml_clear_errors();
+	$xp    = new DOMXPath( $doc );
+	$cls   = function ( $c ) {
+		return "contains(concat(' ', normalize-space(@class), ' '), ' $c ')";
+	};
+	$clean = function ( $node ) {
+		return $node ? trim( preg_replace( '/\s+/u', ' ', $node->textContent ) ) : '';
+	};
+
+	$out = array();
+	foreach ( $xp->query( '//*[' . $cls( 'accordion-item' ) . ']' ) as $item ) {
+		$q = $clean( $xp->query( './/*[' . $cls( 'accordion-button' ) . ']', $item )->item( 0 ) );
+		$a = $clean( $xp->query( './/*[' . $cls( 'accordion-body' ) . ']', $item )->item( 0 ) );
+		if ( $q && $a ) {
+			$out[] = array(
+				'@type'          => 'Question',
+				'name'           => $q,
+				'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $a ),
+			);
+		}
+	}
+	return $out;
 }
 
 // Product от WooCommerce: бренд, sku строкой, все фото
@@ -443,10 +542,66 @@ function domofon62_og_images( $container ) {
 		return;
 	}
 
+	$theme_img = get_template_directory_uri() . '/img/';
+
+	// Категория: своё фото → фото родительской категории → фото первого товара в ней
 	if ( is_tax( 'product_cat' ) ) {
-		$thumb_id = (int) get_term_meta( get_queried_object_id(), 'thumbnail_id', true );
-		if ( $thumb_id ) {
-			$container->add_image_by_id( $thumb_id );
+		$term_id = get_queried_object_id();
+		foreach ( array_merge( array( $term_id ), get_ancestors( $term_id, 'product_cat' ) ) as $id ) {
+			$thumb_id = (int) get_term_meta( $id, 'thumbnail_id', true );
+			if ( $thumb_id ) {
+				$container->add_image_by_id( $thumb_id );
+				return;
+			}
+		}
+		$products = get_posts( array(
+			'post_type'      => 'product',
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+			'meta_key'       => '_thumbnail_id',
+			'tax_query'      => array( array( 'taxonomy' => 'product_cat', 'terms' => $term_id ) ),
+		) );
+		if ( $products ) {
+			$container->add_image_by_id( (int) get_post_thumbnail_id( $products[0] ) );
+			return;
+		}
+	}
+
+	// Магазин: фото первой категории верхнего уровня
+	if ( function_exists( 'is_shop' ) && is_shop() ) {
+		$cats = get_terms( array( 'taxonomy' => 'product_cat', 'parent' => 0, 'hide_empty' => true, 'meta_key' => 'thumbnail_id', 'number' => 1 ) );
+		if ( ! is_wp_error( $cats ) && $cats ) {
+			$container->add_image_by_id( (int) get_term_meta( $cats[0]->term_id, 'thumbnail_id', true ) );
+			return;
+		}
+	}
+
+	// Архив услуг — первая карточка услуг
+	if ( is_post_type_archive( 'uslugi' ) ) {
+		$container->add_image( array( 'url' => $theme_img . 'uslugi/card-1.webp', 'width' => 670, 'height' => 530, 'type' => 'image/webp' ) );
+		return;
+	}
+
+	// Архив объектов — фото последнего объекта
+	if ( is_post_type_archive( 'objekty' ) ) {
+		$last = get_posts( array( 'post_type' => 'objekty', 'posts_per_page' => 1, 'fields' => 'ids', 'meta_key' => '_thumbnail_id' ) );
+		if ( $last ) {
+			$container->add_image_by_id( (int) get_post_thumbnail_id( $last[0] ) );
+			return;
+		}
+	}
+
+	// Контакты — картинка «связаться с нами» из блока CTA услуг
+	if ( is_page( 'kontakty' ) ) {
+		$container->add_image( array( 'url' => $theme_img . 'uslugi/cta.webp', 'width' => 1280, 'height' => 720, 'type' => 'image/webp' ) );
+		return;
+	}
+
+	// Остальные страницы: первая картинка из текста или из полей ACF страницы
+	if ( is_singular() && ! is_front_page() ) {
+		$img = domofon62_first_page_image( get_queried_object_id() );
+		if ( $img ) {
+			$container->add_image( $img );
 			return;
 		}
 	}
@@ -527,6 +682,53 @@ function domofon62_plain_text( $html ) {
 	return mb_substr( $text, 0, mb_strrpos( $text, ' ' ) ) . '…';
 }
 
+// Первая фотография страницы (jpg/png/webp, не иконка): сначала текст, потом поля ACF
+function domofon62_first_page_image( $post_id ) {
+	$is_photo = function ( $url ) {
+		return $url && preg_match( '/\.(jpe?g|png|webp)(\?|$)/i', $url ) && ! preg_match( '/(ico|icon|logo)[-_.]/i', basename( $url ) );
+	};
+
+	$from_html = function ( $html ) use ( $is_photo ) {
+		if ( is_string( $html ) && preg_match_all( '/<img[^>]+src=["\']([^"\']+)["\']/i', $html, $m ) ) {
+			foreach ( $m[1] as $url ) {
+				if ( $is_photo( $url ) ) {
+					return array( 'url' => $url );
+				}
+			}
+		}
+		return null;
+	};
+
+	$img = $from_html( get_post_field( 'post_content', $post_id ) );
+	if ( $img ) {
+		return $img;
+	}
+
+	if ( function_exists( 'get_fields' ) ) {
+		$stack = array( (array) get_fields( $post_id ) );
+		while ( $stack ) {
+			foreach ( array_pop( $stack ) as $value ) {
+				$img = $from_html( $value );
+				if ( $img ) {
+					return $img;
+				}
+				if ( is_array( $value ) && isset( $value['url'], $value['mime_type'] ) && 0 === strpos( $value['mime_type'], 'image/' ) && $is_photo( $value['url'] ) ) {
+					return array(
+						'url'    => $value['url'],
+						'width'  => isset( $value['width'] ) ? $value['width'] : null,
+						'height' => isset( $value['height'] ) ? $value['height'] : null,
+						'type'   => $value['mime_type'],
+					);
+				}
+				if ( is_array( $value ) ) {
+					$stack[] = $value;
+				}
+			}
+		}
+	}
+	return null;
+}
+
 function domofon62_og_default_image() {
 	$front_id = (int) get_option( 'page_on_front' );
 	if ( ! $front_id || ! function_exists( 'get_field' ) ) {
@@ -544,3 +746,30 @@ function domofon62_og_default_image() {
 		'alt'    => isset( $img['alt'] ) ? $img['alt'] : '',
 	);
 }
+
+/**
+ * Чистим <head>: без версий WordPress/WooCommerce и служебных ссылок,
+ * которые сайту не нужны (RSD, REST API, oEmbed, shortlink).
+ */
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'wp_head', 'rest_output_link_wp_head' );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
+add_filter( 'the_generator', '__return_empty_string' );
+add_action( 'get_header', function () {
+	remove_action( 'wp_head', 'wc_generator_tag' );
+} );
+
+// ?ver=<версия WordPress> у скриптов и стилей тоже выдаёт версию — убираем только её
+function domofon62_strip_wp_version( $src ) {
+	if ( $src && strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) !== false ) {
+		$src = remove_query_arg( 'ver', $src );
+	}
+	return $src;
+}
+add_filter( 'style_loader_src', 'domofon62_strip_wp_version', 9999 );
+add_filter( 'script_loader_src', 'domofon62_strip_wp_version', 9999 );

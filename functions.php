@@ -18,7 +18,7 @@ function domofontwo_scripts() {
 	//wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap-5.0.2-dist/css/bootstrap.min.css', array(), '5.0.2', 'all' );
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '0.8.1', true );
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/slick/slick.css', array(), '0.8.1', 'all' ); 
-	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), '0.0.1', true );
+	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/custom.js' ), true );
 	wp_enqueue_style( 'domofontwo-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css'), 'all' );
 }
 
@@ -76,7 +76,7 @@ function price_new_wrap() {
 	<div class="col-6 col-md-12">
 		<!--a href="<?php echo $url;  ?>" class="buy-btn">Заказать</a-->
 		<?php $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-			<a href="#" role="button" onclick="getName( '<?php echo esc_js( $product->get_name() ); ?>' );" class="buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</a>
+			<button type="button" onclick="getName( '<?php echo esc_js( $product->get_name() ); ?>' );" class="btn-reset buy-btn" data-bs-toggle="modal" data-bs-target="#productModal">Заказать</button>
 	</div>
 </div>
 <?php
@@ -131,7 +131,7 @@ add_action( 'woocommerce_simple_add_to_cart', 'add_action_button_single', 30 );
 /* Single product */
 function add_action_button_single() {
    $product = wc_get_product( get_the_ID() ); /* get the WC_Product Object */ ?>
-<div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><a href="#" class="single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="getName( '<?php echo $product->name; ?>' );">Заказать</a></div>
+<div class="single-price-bg d-inline-flex d-md-flex align-items-center"><span class="single-product-price pe-3 pe-md-auto"><?php echo $product->get_price(); ?> руб.</span><button type="button" class="btn-reset single-product-btn" data-bs-toggle="modal" data-bs-target="#productModal" onclick="getName( '<?php echo $product->name; ?>' );">Заказать</button></div>
 <?php
 }
 
@@ -372,7 +372,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 )
 			// 'markup' - микроразметка. Может быть: 'rdf.data-vocabulary.org', 'schema.org', '' - без микроразметки
 			// или можно указать свой массив разметки:
 			// array( 'wrappatt'=>'<div class="kama_breadcrumbs">%s</div>', 'linkpatt'=>'<a href="%s">%s</a>', 'sep_after'=>'', )
-			'markup'          => 'schema.org',
+			'markup'          => '', // без микроразметки: BreadcrumbList уже отдаёт Yoast
 			// приоритетные таксономии, нужно когда запись в нескольких таксах
 			'priority_tax'    => [ 'category' ],
 			// 'priority_terms' - приоритетные элементы таксономий, когда запись находится в нескольких элементах одной таксы одновременно.

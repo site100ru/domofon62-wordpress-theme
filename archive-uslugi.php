@@ -81,7 +81,7 @@
 					<div class="srv-card-footer">
 						<div class="srv-card-price">Цена: <span><?php echo esc_html( $service['price'] ); ?></span></div>
 						<div class="srv-card-btns">
-							<a href="#" class="srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</a>
+							<button type="button" class="btn-reset srv-btn srv-btn-fill" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="<?php echo esc_attr( $service['title'] ); ?>">Задать вопрос</button>
 							<a href="<?php echo esc_url( $service['link'] ); ?>" class="srv-btn srv-btn-outline">Узнать подробнее</a>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 				<h2 class="srv-cta-title">Не знаете с чего начать?</h2>
 				<p class="srv-cta-text">Оставьте заявку прямо сейчас! Наши менеджеры свяжутся с Вами и подробно ответят на имеющиеся вопросы.</p>
 				<p class="srv-cta-accent">Инициативным людям особые условия!</p>
-				<a href="#" class="srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="Общий вопрос">Задать вопрос</a>
+				<button type="button" class="btn-reset srv-btn srv-btn-fill srv-cta-btn" data-bs-toggle="modal" data-bs-target="#questionModal" data-service="Общий вопрос">Задать вопрос</button>
 			</div>
 			<div class="srv-cta-img">
 				<img src="<?php echo esc_url( $img_dir . 'cta.webp' ); ?>" alt="" loading="lazy" />

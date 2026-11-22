@@ -366,7 +366,7 @@ $('#card-doors').on('click', function() {
 							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-yandex.svg" alt="Рейтинг РДК в Яндекс" width="168" height="24" loading="lazy">
 							<span style="position: relative; top: 3px; margin-left: 10px;">4,9 из 5</span>
 						</p>
-						<p class="mb-0"><a href="https://yandex.ru/profile/1026973892" class="text-decoration-underline" target="blank">Читать...</a></p>
+						<p class="mb-0"><a href="https://yandex.ru/profile/1026973892" class="text-decoration-underline" target="_blank" rel="noopener">Читать...</a></p>
 					</div>
 					<div class="offset-md-2 col-md-3">
 						<p class="mb-3"><img src="<?php echo get_template_directory_uri(); ?>/img/ico/2gis-logo.svg" alt="2GIS" width="120" height="35" loading="lazy"></p>
@@ -374,7 +374,7 @@ $('#card-doors').on('click', function() {
 							<img src="<?php echo get_template_directory_uri(); ?>/img/ico/stars-2gis.svg" alt="Рейтинг РДК в 2Gis" width="168" height="24" loading="lazy">
 							<span style="position: relative; top: 3px; margin-left: 10px;">4,2 из 5</span>
 						</p>
-						<p class="mb-0"><a href="https://2gis.ru/ryazan/firm/6192977768630020/tab/reviews" class="text-decoration-underline" target="blank">Читать...</a></p>
+						<p class="mb-0"><a href="https://2gis.ru/ryazan/firm/6192977768630020/tab/reviews" class="text-decoration-underline" target="_blank" rel="noopener">Читать...</a></p>
 					</div>
 				</div>
 				

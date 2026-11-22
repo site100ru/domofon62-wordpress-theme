@@ -116,7 +116,7 @@ $wrapper_classes   = apply_filters(
 				<div class="carousel-item h-100 ${activeClass}" data-bs-interval="999999999">
 					<div class="row align-items-center h-100">
 						<div class="col text-center">
-							<img src="${img.src}" class="img-fluid" style="max-width: 75vw; max-height: 75vh;" alt="${img.alt}">
+							<img data-gallery-index="${index}" class="img-fluid" style="max-width: 75vw; max-height: 75vh;">
 						</div>
 					</div>
 				</div>
@@ -126,6 +126,11 @@ $wrapper_classes   = apply_filters(
             // Вставляем HTML
             $('#galleryIndicators').html(indicatorsHtml);
             $('#galleryCarouselInner').html(carouselHtml);
+            // src/alt ставим через attr: в HTML-коде страницы не должно быть src="${…}" — роботы и браузер принимают его за адрес картинки
+            $('#galleryCarouselInner img[data-gallery-index]').each(function() {
+                var img = galleryImages[ $(this).data('gallery-index') ];
+                $(this).attr({ src: img.src, alt: img.alt || '' });
+            });
 
             // Показываем/скрываем стрелки и индикаторы в зависимости от количества изображений
             if (galleryImages.length > 1) {

@@ -41,7 +41,7 @@
 					<p class="chasy pt-2 fw-bold mb-0 lh-1">Отдел продаж:</p>
 					<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
 					<p class="tel-header pt-1 mb-0">
-						<a href="tel:84912202526">8 (4912) 20-25-26</a>
+						<a href="tel:+74912202526">8 (4912) 20-25-26</a>
 					</p>
 					<a href="tg://resolve?domain=RDK62" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
 						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43" loading="lazy" />
@@ -53,7 +53,7 @@
 					<p class="chasy pt-2 fw-bold mb-0 lh-1">Служба поддержки:</p>
 					<p class="chasy pt-1 m-0">Пн-Пт: c 8-30 до 17-00</p>
 					<p class="tel-header pt-1 mb-0">
-						<a href="tel:84912255046">8 (4912) 25-50-46</a>
+						<a href="tel:+74912255046">8 (4912) 25-50-46</a>
 					</p>
 					<a href="tg://resolve?domain=RDK62bot" class="d-flex justify-content-start justify-content-lg-end align-items-center gap-2 lh-1 mb-3 social-links">
 						<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" width="43" height="43" loading="lazy" />
@@ -61,9 +61,9 @@
 					</a>
 				</div>
 
-				<a href="#" data-bs-toggle="modal" data-bs-target="#dostupModal">
-					<div class="action-btn">Получить доступ</div>
-				</a>
+				<button type="button" class="btn-reset" data-bs-toggle="modal" data-bs-target="#dostupModal">
+					<span class="action-btn">Получить доступ</span>
+				</button>
 			</div>
 
 			<!-- 			<div class="col-12 col-md-6 col-lg-3">
@@ -237,7 +237,7 @@
 		<div class="row justify-content-center align-items-center">
 			<div class="col-md-9">
 				<p class="mb-md-0">
-					Пользуясь сайтом вы соглашаетесь с <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="blank">политикой конфиденциальности</a> и <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="blank">обработкой персональных данных</a>.
+					Пользуясь сайтом вы соглашаетесь с <a href="https://domofon62.ru/docs/Privacy-Policy.pdf" target="_blank" rel="noopener">политикой конфиденциальности</a> и <a href="https://domofon62.ru/docs/Consent-to-the-processing-of-personal-data.pdf" target="_blank" rel="noopener">обработкой персональных данных</a>.
 				</p>
 			</div>
 			<div class="col-md-3 text-md-center">

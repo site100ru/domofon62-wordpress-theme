@@ -35,7 +35,7 @@
 
 							<div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
 								<figure>
-									<a class="d-block" href="#" onClick="galleryOn('gal-<?php echo get_the_ID(); ?>', 'img-<?php echo get_the_ID(); ?>-<?php echo $img_gallery_loop['id']; ?>');">
+									<a class="d-block" href="<?php echo esc_url( $img_gallery_loop['url'] ); ?>" onClick="galleryOn('gal-<?php echo get_the_ID(); ?>', 'img-<?php echo get_the_ID(); ?>-<?php echo $img_gallery_loop['id']; ?>');">
 										<?php  
 											if( !empty( $img_gallery_loop ) ): ?> 
 												<img width="1920" height="1280" src="<?php echo esc_url($img_gallery_loop['url']); ?>" alt="<?php echo esc_attr($img_gallery_loop['alt']); ?>" class="img-fluid" data-caption="<?php echo $img_data_caption; ?>" />

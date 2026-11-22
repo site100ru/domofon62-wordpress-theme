@@ -47,9 +47,11 @@ jQuery(document).ready(function ($) {
 // Галерея изображений начало
 
 
+// Bootstrap подключён в подвале ПОСЛЕ этого файла — запускаем галерею, когда загрузится весь HTML
+document.addEventListener("DOMContentLoaded", function () {
 const imageGrid = document.querySelector(".image-grid");
 
-if (imageGrid) {
+if (imageGrid && window.bootstrap) {
   const links = imageGrid.querySelectorAll("a");
   const imgs = imageGrid.querySelectorAll("img");
   const lightboxModal = document.getElementById("lightbox-modal");
@@ -104,7 +106,7 @@ if (imageGrid) {
 
       markup += `
     <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-      <img src=${imgSrc} alt=${imgAlt}>
+      <img src="${imgSrc}" alt="${imgAlt || ""}">
       ${imgCaption ? createCaption(imgCaption) : ""}
     </div>
     `;
@@ -120,5 +122,6 @@ if (imageGrid) {
   }
 
 }
+});
 
 // Галерея изображений конец
