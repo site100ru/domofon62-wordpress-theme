@@ -50,7 +50,9 @@ get_header( '4' );
 					<?php endif; ?>
 				</h1>
 
+				<?php if ( ! is_paged() ) : // Текст только на первой странице, на /page/2/ и дальше не повторяем ?>
 				<p class="catalog-goods-text-under maxw-849 mb-30">Наши специалисты оказывают квалифицированную помощь в решении вопросов выбора систем видеонаблюдения на объектах различного характера, а также при проектировании.</p>
+				<?php endif; ?>
 
 				<div class="row mb-3 mb-md-5">
 					<!--div class="col-md-6">
@@ -146,7 +148,8 @@ get_header( '4' );
 										// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
 									] );
 
-									if( $categories != null ) {
+									// Подкатегории только на первой странице, на /page/2/ и дальше не повторяем
+									if( $categories != null && ! is_paged() ) {
 										echo '<div class="row mb-3 mb-md-5">';
 											echo '<div class="col-12 mb-1">';
 												echo '<h2 class="section-subtitle">Категории товаров</h2>';
