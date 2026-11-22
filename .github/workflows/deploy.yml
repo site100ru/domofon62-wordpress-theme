@@ -19,6 +19,5 @@ jobs:
             #git clone https://github.com/site100ru/domofon62-wp.git .
             
             cd ~/domofon62/public_html/wp-content/themes/site100domofon
-            git stash
             git pull
 
