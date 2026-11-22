@@ -258,13 +258,16 @@ $('#card-doors').on('click', function() {
 
 <?php /* Фон первого слайда выводится в <head>: inc/seo-speed.php, domofon62_preload_home_banner() */ ?>
 
+<?php /* Постоянный h1 главной: виден поисковикам и экранным чтецам, визуально скрыт. Заголовки слайдов — h2. */ ?>
+<h1 class="visually-hidden">Установка домофонов, видеонаблюдения, СКУД и шлагбаумов в Рязани — Рязанская домофонная компания</h1>
+
 <section id="services-home" class="d-flex justify-content-center" style="left: 0px; background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; transition: background-image 0.5s ease-out; -webkit-transition: background-image 0.5s ease-out; -moz-transition: background-image 0.5s ease-out; -ms-transition: background-image 0.5s ease-out; -o-transition: background-image 0.5s ease-out; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; z-index: 1;">
         
     <div class="container pt-5 pb-4 py-md-4">
         <div class="row d-flex align-items-center">
         
 			<div id="card-wrapper-home" class="col-12 col-md-6 px-4 px-md-2">
-				<h1 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h1>
+				<h2 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h2>
 				<p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p>
 				<div class="d-flex justify-content-center justify-content-md-start">
 					<a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a>
