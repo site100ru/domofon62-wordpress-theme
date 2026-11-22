@@ -206,24 +206,14 @@ function domofon62_preload_home_banner() {
 
 /* ---------- ВАЛИДНОСТЬ КОНТЕНТА УСЛУГ ---------- */
 
-// <style> из контента услуги — в <head> (в <body> он невалиден)
-add_action( 'wp_head', 'domofon62_uslugi_content_styles', 20 );
-function domofon62_uslugi_content_styles() {
-	if ( ! is_singular( 'uslugi' ) ) {
-		return;
-	}
-	if ( preg_match_all( '#<style[^>]*>.*?</style>#is', get_post_field( 'post_content', get_queried_object_id() ), $m ) ) {
-		echo implode( "\n", $m[0] ) . "\n";
-	}
-}
+// <style> из контента услуги остаётся в контенте: в <head> он оказывается раньше Bootstrap
+// и theme.css (они подключены в header-4.php после wp_head) и проигрывает им в каскаде.
 
 add_filter( 'the_content', 'domofon62_uslugi_content_cleanup', 20 );
 function domofon62_uslugi_content_cleanup( $content ) {
 	if ( ! is_singular( 'uslugi' ) || ! in_the_loop() ) {
 		return $content;
 	}
-	$content = preg_replace( '#<style[^>]*>.*?</style>#is', '', $content );
-
 	// alt для картинок без него: фоновые — пустой, остальные — название услуги.
 	// loading="lazy" всем, кроме первых двух (фон первого экрана: десктоп + мобильный).
 	$title = esc_attr( get_the_title() );
