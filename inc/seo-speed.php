@@ -413,25 +413,17 @@ function domofon62_service_prices() {
 
 // Вопросы и ответы из bootstrap-аккордеона: .accordion-button — вопрос, .accordion-body — ответ
 function domofon62_faq_from_content( $html ) {
-	if ( false === strpos( (string) $html, 'accordion-item' ) ) {
-		return array();
-	}
-	$doc = new DOMDocument();
-	libxml_use_internal_errors( true );
-	$doc->loadHTML( '<?xml encoding="utf-8"?><div>' . $html . '</div>' );
-	libxml_clear_errors();
-	$xp    = new DOMXPath( $doc );
-	$cls   = function ( $c ) {
-		return "contains(concat(' ', normalize-space(@class), ' '), ' $c ')";
-	};
-	$clean = function ( $node ) {
-		return $node ? trim( preg_replace( '/\s+/u', ' ', $node->textContent ) ) : '';
+	// Разбираем регулярками, а не DOMDocument: в тексте услуг есть <header>, <svg> и т.п., на которых libxml теряет часть страницы
+	$items = preg_split( '/<[^>]+class="[^"]*\baccordion-item\b[^"]*"[^>]*>/i', (string) $html );
+	array_shift( $items ); // всё, что до первого вопроса
+	$clean = function ( $s ) {
+		return trim( preg_replace( '/\s+/u', ' ', html_entity_decode( wp_strip_all_tags( $s ), ENT_QUOTES, 'UTF-8' ) ) );
 	};
 
 	$out = array();
-	foreach ( $xp->query( '//*[' . $cls( 'accordion-item' ) . ']' ) as $item ) {
-		$q = $clean( $xp->query( './/*[' . $cls( 'accordion-button' ) . ']', $item )->item( 0 ) );
-		$a = $clean( $xp->query( './/*[' . $cls( 'accordion-body' ) . ']', $item )->item( 0 ) );
+	foreach ( $items as $item ) {
+		$q = preg_match( '#class="[^"]*\baccordion-button\b[^"]*"[^>]*>(.*?)</button>#is', $item, $m ) ? $clean( $m[1] ) : '';
+		$a = preg_match( '#class="[^"]*\baccordion-body\b[^"]*"[^>]*>(.*?)</div>\s*</div>#is', $item, $m ) ? $clean( $m[1] ) : '';
 		if ( $q && $a ) {
 			$out[] = array(
 				'@type'          => 'Question',

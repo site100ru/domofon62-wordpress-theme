@@ -51,6 +51,15 @@ jQuery(document).ready(function ($) {
 document.addEventListener("DOMContentLoaded", function () {
 const imageGrid = document.querySelector(".image-grid");
 
+// На объектах своя галерея в шаблоне (galleryOn / #galleryWrapper) — вторую не открываем,
+// только не даём ссылке на фото увести на файл картинки
+if (imageGrid && document.getElementById("galleryWrapper")) {
+  imageGrid.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); });
+  });
+  return;
+}
+
 if (imageGrid && window.bootstrap) {
   const links = imageGrid.querySelectorAll("a");
   const imgs = imageGrid.querySelectorAll("img");
