@@ -683,7 +683,16 @@ nav li>ul {
 	min-height: 65px;
 	font-size: 18px;
 	font-weight: 600;
+	line-height: 1.2;
 	margin-bottom: 0;
+}
+
+/* Счётчик товаров — вне h2, но в той же строке, что и название */
+.woocommerce-loop-category__title .cat-card-name {
+	display: inline;
+	font: inherit;
+	color: inherit;
+	margin: 0;
 }
 
 /* END ARCHIVE PRODUCTS */
@@ -1223,7 +1232,9 @@ a.social-links:hover p {
 }
 
 .section-contact h3,
-.section-contact h3 a {
+.section-contact h3 a,
+.section-contact .company-h3,
+.section-contact .company-h3 a {
 	font-size: 20px !important;
 }
 
@@ -1231,7 +1242,8 @@ a.social-links:hover p {
 	font-size: 20px !important;
 }
 
-.section-contact .tel-email-two h3 {
+.section-contact .tel-email-two h3,
+.section-contact .tel-email-two .company-h3 {
 	margin-top: 10px;
 }
 
@@ -1495,7 +1507,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
 }
 
 @media (max-width: 768px) {
-	h2.woocommerce-loop-category__title {
+	.woocommerce-loop-category__title {
 		hyphens: auto;
 		/* Включает автоматический перенос по слогам */
 		word-wrap: break-word;

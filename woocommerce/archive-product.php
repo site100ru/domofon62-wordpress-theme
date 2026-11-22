@@ -164,10 +164,10 @@ get_header( '4' );
 																	ob_start();
 																	woocommerce_subcategory_thumbnail( $cat );
 																	echo str_replace( '<img ', '<img loading="lazy" decoding="async" ', ob_get_clean() ); ?>
-									<h2 class="woocommerce-loop-category__title">
-										<?php echo esc_html( $cat->name ); ?>
+									<div class="woocommerce-loop-category__title">
+										<h2 class="cat-card-name"><?php echo esc_html( $cat->name ); ?></h2>
 										<mark class="count">(<?php echo $cat->count; ?>)</mark>
-									</h2>
+									</div>
 								</div>
 							</a>
 						</div>

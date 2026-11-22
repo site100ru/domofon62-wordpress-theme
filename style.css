@@ -1886,6 +1886,8 @@ width: 100%;
    font-weight: 700;
    font-size: 20px;
    line-height: 156.4%;
+   /* Телефоны и адрес — <p>, не заголовки: отступ как был у <h3> */
+   margin-bottom: .5rem;
  }
 
  .tel-email.row {

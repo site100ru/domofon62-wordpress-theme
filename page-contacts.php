@@ -25,34 +25,34 @@
 					<div class="tel-email row mt-4">
 						<div class="col-12 col-md-6">
 							<small>Телефон/факс:</small>
-							<h3 class="company-h3">
+							<p class="company-h3">
 								<a href="tel:+74912202526">+7 (4912) 20-25-26</a>
-							</h3>
+							</p>
 						</div>
 						<div class="col-12 col-md-6">
 							<small>Email:</small>
-							<h3 class="company-h3">
+							<p class="company-h3">
 								<a href="mailto:info@domofon62.ru">info@domofon62.ru</a>
-							</h3>
+							</p>
 						</div>
 					</div>
 					<div class="tel-email row mt-4">
 						<div class="col-12">
 							<small>Адрес:</small>
-							<h3 class="company-h3">390046, г. Рязань,ул. Полевая,д. 1</h3>
+							<p class="company-h3">390046, г. Рязань,ул. Полевая,д. 1</p>
 						</div>
 					</div>
 					<div class="mt-4">
 						<small>Время работы:</small>
-						<h3 class="company-h3">Пн-Пт с 8:30 - 17:00. Выходные: Сб-Вс</h3>
+						<p class="company-h3">Пн-Пт с 8:30 - 17:00. Выходные: Сб-Вс</p>
 					</div>
 
 					<div class="tel-email tel-email-two row mt-4">
 						<div class="col-12 col-md-6">
 							<small>Отдел продаж:</small>
-							<h3 class="company-h3">
+							<p class="company-h3">
 								<a href="tel:+74912202526">8 (4912) 20-25-26</a>
-							</h3>
+							</p>
 
 							<a href="tg://resolve?domain=RDK62" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links">
 								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
@@ -61,9 +61,9 @@
 						</div>
 						<div class="col-12 col-md-6">
 							<small>Служба поддержки</small>
-							<h3 class="company-h3">
+							<p class="company-h3">
 								<a href="tel:+74912255046">8 (4912) 25-50-46</a>
-							</h3>
+							</p>
 
 							<a href="tg://resolve?domain=RDK62bot" class="d-flex align-items-center gap-2 lh-1 mb-2 social-links">
 								<img src="https://domofon62.ru/wp-content/themes/domoftwo/img/ico/telegram-ico.svg" alt="" class="" />
