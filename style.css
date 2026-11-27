@@ -2424,3 +2424,56 @@ width: 100%;
    }
  }
 
+
+/* Баннер-слайдер на главной (page-home.php, js/custom.js) */
+.home-banner {
+  padding: 80px 0;
+}
+.home-banner__track {
+  position: relative;
+  max-width: 1116px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 1116 / 441;
+}
+.home-banner__track--mobile {
+  display: none;
+  max-width: 420px;
+  aspect-ratio: 336 / 441;
+}
+.home-banner__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .8s ease, visibility 0s linear .8s;
+}
+.home-banner__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .8s ease, visibility 0s;
+}
+.home-banner__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .home-banner {
+    padding: 40px 0;
+  }
+  .home-banner__track--desktop {
+    display: none;
+  }
+  .home-banner__track--mobile {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-banner__slide,
+  .home-banner__slide.is-active {
+    transition: none;
+  }
+}

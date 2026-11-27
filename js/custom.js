@@ -134,3 +134,15 @@ if (imageGrid && window.bootstrap) {
 });
 
 // Галерея изображений конец
+// Баннер на главной: смена слайдов каждые 6 с (без перелистывания)
+document.querySelectorAll('.home-banner__track').forEach(function (track) {
+  var slides = track.querySelectorAll('.home-banner__slide');
+  if (slides.length < 2) return;
+  var i = 0;
+  setInterval(function () {
+    if (document.hidden || !track.offsetParent) return;
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, 6000);
+});

@@ -262,10 +262,10 @@ $('#card-doors').on('click', function() {
 <h1 class="visually-hidden">Установка домофонов, видеонаблюдения, СКУД и шлагбаумов в Рязани — Рязанская домофонная компания</h1>
 
 <section id="services-home" class="d-flex justify-content-center" style="left: 0px; background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; transition: background-image 0.5s ease-out; -webkit-transition: background-image 0.5s ease-out; -moz-transition: background-image 0.5s ease-out; -ms-transition: background-image 0.5s ease-out; -o-transition: background-image 0.5s ease-out; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; z-index: 1;">
-        
-    <div class="container pt-5 pb-4 py-md-4">
-        <div class="row d-flex align-items-center">
-        
+
+	<div class="container pt-5 pb-4 py-md-4">
+		<div class="row d-flex align-items-center">
+
 			<div id="card-wrapper-home" class="col-12 col-md-6 px-4 px-md-2">
 				<h2 class="h2-service text-center text-md-start"><?php echo $title_pervogo_slajda; ?></h2>
 				<p class="text-under-h2 text-center text-md-start"><?php echo $tekst_pervogo_slajda; ?></p>
@@ -273,44 +273,85 @@ $('#card-doors').on('click', function() {
 					<a href="<?php echo esc_url($link_pervogo_slajda); ?>" class="action-btn mb-4 mb-md-0"><?php echo $text_btn_pervogo_slajda; ?></a>
 				</div>
 			</div>
-         
+
 			<div class="col-12 offset-md-1 col-md-5 d-flex justify-content-center justify-content-md-end translate-end">
 				<div class="row">
 					<div class="col-6">
 						<div id="card-intercome" class="services-first-card d-flex flex-column m-3 align-items-center justify-content-around">
-							<img src="<?php echo esc_url($img_icon_usl_first['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_first['alt']); ?>" class="img-fluid py-2"/>  
+							<img src="<?php echo esc_url($img_icon_usl_first['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_first['alt']); ?>" class="img-fluid py-2" />
 							<p><?php echo $text_usl_first; ?></p>
 						</div>
 					</div>
 					<div class="col-6">
 						<div id="card-nfc" class="services-card d-flex flex-column m-3 align-items-center justify-content-around">
-							<img src="<?php echo esc_url($img_icon_usl_second['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_second['alt']); ?>" class="img-fluid py-2"/>  
+							<img src="<?php echo esc_url($img_icon_usl_second['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_second['alt']); ?>" class="img-fluid py-2" />
 							<p><?php echo $text_usl_second; ?></p>
 						</div>
 					</div>
 					<div class="col-6">
 						<div id="card-cctv" class="services-card d-flex flex-column m-3 align-items-center justify-content-around">
-							<img src="<?php echo esc_url($img_icon_usl_third['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_third['alt']); ?>" class="img-fluid py-2"/>  
+							<img src="<?php echo esc_url($img_icon_usl_third['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_third['alt']); ?>" class="img-fluid py-2" />
 							<p><?php echo $text_usl_third; ?></p>
 						</div>
 					</div>
-					<div class="col-6">	
+					<div class="col-6">
 						<div id="card-doors" class="services-card d-flex flex-column m-3 align-items-center justify-content-around">
-							<img src="<?php echo esc_url($img_icon_usl_fourth['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_fourth['alt']); ?>" class="img-fluid py-2"/>  
+							<img src="<?php echo esc_url($img_icon_usl_fourth['url']); ?>" alt="<?php echo esc_attr($img_icon_usl_fourth['alt']); ?>" class="img-fluid py-2" />
 							<p><?php echo $text_usl_fourth; ?></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </section>
 
-    
-	
+<section class="home-banner">
+	<div class="container">
+		<div class="home-banner__track home-banner__track--desktop">
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide is-active">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-shlagbaum-01.webp" width="1116" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-shlagbaum-02.webp" width="1116" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-kamera-01.webp" width="1116" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-kamera-02.webp" width="1116" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-domofon-01.webp" width="1116" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-domofon-02.webp" width="1116" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
+			</a>
+		</div>
+
+		<div class="home-banner__track home-banner__track--mobile">
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide is-active">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-shlagbaum-01.webp" width="336" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-shlagbaum-02.webp" width="336" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-kamera-01.webp" width="336" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-kamera-02.webp" width="336" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
+			</a>
+			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-domofon-02.webp" width="336" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
+			</a>
+		</div>
+	</div>
+</section>
+
 <section>
 	<div class="container-fluid">
-        <div class="row">
+		<div class="row">
 			<div class="col bg-light-wave height-249 d-flex justify-content-center justify-content-lg-end">
 				<div class="d-flex flex-column align-items-center justify-content-center mr-rem-6 mt-2">
 					<p class="top-text-numbers"><?php echo $home_top_first; ?></p>
@@ -332,14 +373,14 @@ $('#card-doors').on('click', function() {
 					<p class="bottom-text-numbers"><?php echo $home_bottom_third; ?></p>
 				</div>
 			</div>
-        </div>
+		</div>
 	</div>
 </section>
 
 
 <!-- About company -->
 <section>
-    <div class="container">
+	<div class="container">
 		<div class="d-flex justify-content-center justify-content-lg-start mb-64">
 			<div>
 				<h2 class="catalog-goods-h1 px-4 px-md-2 text-center text-md-start"><?php echo $title_company; ?> </h2>
@@ -347,7 +388,7 @@ $('#card-doors').on('click', function() {
 				<div class="d-flex justify-content-center justify-content-lg-start"><a href="<?php echo esc_url($link_btn_company); ?>" class="home-more-btn"><?php echo $text_btn_company; ?></a></div>
 			</div>
 		</div>
-    </div>
+	</div>
 </section>
 <!-- /About company -->
 
@@ -377,7 +418,7 @@ $('#card-doors').on('click', function() {
 						<p class="mb-0"><a href="https://2gis.ru/ryazan/firm/6192977768630020/tab/reviews" class="text-decoration-underline" target="_blank" rel="noopener">Читать...</a></p>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
