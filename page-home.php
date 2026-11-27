@@ -309,41 +309,26 @@ $('#card-doors').on('click', function() {
 <section class="home-banner">
 	<div class="container">
 		<div class="home-banner__track home-banner__track--desktop">
-			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide is-active">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-shlagbaum-01.webp" width="1116" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
-			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-shlagbaum-02.webp" width="1116" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide is-active">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-domofon-02.webp" width="1116" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
 			</a>
 			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-kamera-01.webp" width="1116" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
 			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-kamera-02.webp" width="1116" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
-			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-domofon-01.webp" width="1116" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
-			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-domofon-02.webp" width="1116" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/desktop-shlagbaum-01.webp" width="1116" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
 			</a>
 		</div>
 
 		<div class="home-banner__track home-banner__track--mobile">
-			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide is-active">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-shlagbaum-01.webp" width="336" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
-			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-shlagbaum-02.webp" width="336" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
+			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide is-active">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-domofon-02.webp" width="336" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
 			</a>
 			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-kamera-01.webp" width="336" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
 			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/ustanovku-videonablyudeniya/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-kamera-02.webp" width="336" height="441" alt="Установим видеонаблюдение бесплатно!" loading="lazy">
-			</a>
-			<a href="<?php echo esc_url( home_url( '/uslugi/umny-domofon/' ) ); ?>" class="home-banner__slide">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-domofon-02.webp" width="336" height="441" alt="Установим умный домофон бесплатно!" loading="lazy">
+			<a href="<?php echo esc_url( home_url( '/uslugi/vorota-i-shlagbaumy/' ) ); ?>" class="home-banner__slide">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/banner/mobile-shlagbaum-01.webp" width="336" height="441" alt="Установим автоматические ворота или шлагбаум с распознаванием номера авто бесплатно!" loading="lazy">
 			</a>
 		</div>
 	</div>
